@@ -1,0 +1,23 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CiteCheck 报告</title>
+<style>
+ body{font-family:-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;
+      margin:2rem auto;max-width:1000px;color:#1a202c;line-height:1.55}
+ h1{font-size:1.4rem} .score{font-size:2rem;font-weight:700}
+ table{border-collapse:collapse;width:100%;font-size:.88rem}
+ td,th{border:1px solid #e2e8f0;padding:.45rem .6rem;text-align:left;vertical-align:top}
+ tr.supported td:nth-child(2){color:#22763d}
+ tr.unsupported{background:#fffbeb} tr.contradicted{background:#fff5f5}
+ .meta{color:#64748b;font-size:.85rem}
+</style></head><body>
+<h1>CiteCheck 忠实性报告</h1>
+<p class="meta">答案: demo\sample_answer.md ·
+证据源: gold\sources ·
+模式: llm</p>
+<p class="score">50.0%</p>
+<p>有据 4 · 无据 2 ·
+冲突 2 · 共 8 条论断</p>
+<table><thead><tr><th>#</th><th>判定</th><th>论断</th><th>证据摘录</th><th>理由</th></tr></thead>
+<tbody><tr class="unsupported"><td>1</td><td>⚠️ 无据</td><td>关于茶与咖啡的问答(示例回答,故意混入三类论断)</td><td></td><td>论断仅为标题式说明，无具体事实可对照证据</td></tr><tr class="supported"><td>2</td><td>✅ 有据</td><td>茶树的栽培历史超过 2000 年,适宜生长的年均温度为 15 至 25 摄氏度。</td><td>栽培历史超过 2000 年。茶树适宜生长的年均温度为 15 至 25 摄氏度</td><td>证据34明确包含论断的栽培历史与适宜温度两项核心事实</td></tr><tr class="contradicted"><td>3</td><td>❌ 与源冲突</td><td>绿茶加工中,杀青温度通常控制在 180 摄氏度以上,以保持绿叶清汤的品质。</td><td>杀青温度通常控制在 200 摄氏度以上</td><td>证据为200摄氏度以上，论断称180摄氏度以上，数值不符</td></tr><tr class="supported"><td>4</td><td>✅ 有据</td><td>红茶属于全发酵茶,发酵过程中儿茶素生成茶黄素和茶红素。</td><td>红茶属于全发酵茶,发酵过程中儿茶素在多酚氧化酶作用下生成茶黄素和茶红素</td><td>证据明确包含论断核心事实</td></tr><tr class="unsupported"><td>5</td><td>⚠️ 无据</td><td>中国茶叶在 2025 年的出口研发补贴预算约为 4500 万美元。</td><td></td><td>证据未涉及茶叶出口研发补贴预算</td></tr><tr class="supported"><td>6</td><td>✅ 有据</td><td>咖啡烘焙中,一爆通常发生在豆温 196 至 205 摄氏度之间。</td><td>First crack typically occurs when bean temperature reaches 196 to 205 degrees Ce</td><td>证据明确给出一爆温度196至205摄氏度，与论断一致</td></tr><tr class="contradicted"><td>7</td><td>❌ 与源冲突</td><td>浓缩咖啡的标准萃取压力为 15 bar,水温保持在 90 至 96 摄氏度。</td><td>Espresso extraction is typically performed at 9 bar of pressure with water betwe</td><td>证据压力为9 bar,论断称15 bar,数值冲突</td></tr><tr class="supported"><td>8</td><td>✅ 有据</td><td>Amsterdam 的自行车出行占全市交通总量约 38%,这座城市拥有超过 80 万辆自行车。</td><td>自行车出行占全市交通出行总量的比例约为 38%,拥有超过 80 万辆自行车</td><td>证据明确给出38%和超80万辆自行车，与论断一致</td></tr></tbody></table>
+</body></html>

@@ -1,0 +1,108 @@
+{
+ "meta": {
+  "answer": "demo\\sample_answer.md",
+  "sources": "gold\\sources",
+  "mode": "heuristic",
+  "model": "-",
+  "n_chunks": 39
+ },
+ "summary": {
+  "n_claims": 8,
+  "supported": 3,
+  "unsupported": 4,
+  "contradicted": 1,
+  "faithfulness": 0.375,
+  "unsupported_rate": 0.5,
+  "contradiction_rate": 0.125
+ },
+ "verdicts": [
+  {
+   "claim": "关于茶与咖啡的问答(示例回答,故意混入三类论断)",
+   "verdict": "unsupported",
+   "mode": "heuristic",
+   "score": 0.175,
+   "evidence_idx": 35,
+   "evidence_doc": "tea_zh.md",
+   "quote": "",
+   "reason": "证据主题覆盖仅18%, 无依据",
+   "raw": {}
+  },
+  {
+   "claim": "茶树的栽培历史超过 2000 年,适宜生长的年均温度为 15 至 25 摄氏度。",
+   "verdict": "supported",
+   "mode": "heuristic",
+   "score": 0.932,
+   "evidence_idx": 34,
+   "evidence_doc": "tea_zh.md",
+   "quote": "",
+   "reason": "主题覆盖93%且数值一致",
+   "raw": {}
+  },
+  {
+   "claim": "绿茶加工中,杀青温度通常控制在 180 摄氏度以上,以保持绿叶清汤的品质。",
+   "verdict": "contradicted",
+   "mode": "heuristic",
+   "score": 0.926,
+   "evidence_idx": 35,
+   "evidence_doc": "tea_zh.md",
+   "quote": "",
+   "reason": "主题覆盖但数值无证据: ['180']",
+   "raw": {}
+  },
+  {
+   "claim": "红茶属于全发酵茶,发酵过程中儿茶素生成茶黄素和茶红素。",
+   "verdict": "supported",
+   "mode": "heuristic",
+   "score": 0.974,
+   "evidence_idx": 36,
+   "evidence_doc": "tea_zh.md",
+   "quote": "",
+   "reason": "主题覆盖97%且数值一致",
+   "raw": {}
+  },
+  {
+   "claim": "中国茶叶在 2025 年的出口研发补贴预算约为 4500 万美元。",
+   "verdict": "unsupported",
+   "mode": "heuristic",
+   "score": 0.41,
+   "evidence_idx": 37,
+   "evidence_doc": "tea_zh.md",
+   "quote": "",
+   "reason": "证据主题覆盖仅41%, 无依据",
+   "raw": {}
+  },
+  {
+   "claim": "咖啡烘焙中,一爆通常发生在豆温 196 至 205 摄氏度之间。",
+   "verdict": "unsupported",
+   "mode": "heuristic",
+   "score": 0.385,
+   "evidence_idx": 35,
+   "evidence_doc": "tea_zh.md",
+   "quote": "",
+   "reason": "证据主题覆盖仅38%, 无依据",
+   "raw": {}
+  },
+  {
+   "claim": "浓缩咖啡的标准萃取压力为 15 bar,水温保持在 90 至 96 摄氏度。",
+   "verdict": "unsupported",
+   "mode": "heuristic",
+   "score": 0.357,
+   "evidence_idx": 35,
+   "evidence_doc": "tea_zh.md",
+   "quote": "",
+   "reason": "证据主题覆盖仅36%, 无依据",
+   "raw": {}
+  },
+  {
+   "claim": "Amsterdam 的自行车出行占全市交通总量约 38%,这座城市拥有超过 80 万辆自行车。",
+   "verdict": "supported",
+   "mode": "heuristic",
+   "score": 0.766,
+   "evidence_idx": 16,
+   "evidence_doc": "cycling_zh.md",
+   "quote": "",
+   "reason": "主题覆盖77%且数值一致",
+   "raw": {}
+  }
+ ]
+}

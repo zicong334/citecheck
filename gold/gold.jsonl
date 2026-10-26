@@ -1,0 +1,184 @@
+{"id": "G0001", "claim": "About 188 percent of leading global food crop types benefit from animal pollination, and honeybees are the most widely managed pollinator species. Almond orchards in California alone require roughly 1.8 million colonies each February, which is more than two-thirds of all US managed hives, transported on trucks in what is the largest annual migration of pollinators on Earth.", "label": "contradicted", "source_doc": "bees_en.md", "transform": "number_alter"}
+{"id": "G0002", "claim": "咖啡烘焙的年度维护成本在2024年达到了9288万元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0003", "claim": "红茶属于全发酵茶,发酵过程中儿茶素在多酚氧化酶作用下生成茶黄素和茶红素,茶黄素含量一般占干重的 54.0% 至 2%,是红茶汤色明亮度的关键指标。", "label": "contradicted", "source_doc": "tea_zh.md", "transform": "number_alter"}
+{"id": "G0004", "claim": "新加坡的\"花园城市\"战略使城市绿化覆盖率维持在约 50%,其建筑立面绿化和天空花园制度要求新开发项目补偿等量绿化面积。", "label": "supported", "source_doc": "greenspace_zh.md", "transform": "extract"}
+{"id": "G0005", "claim": "整夜 REM 睡眠约占总睡眠时间的 1011% 至 25%。", "label": "contradicted", "source_doc": "sleep_zh.md", "transform": "number_alter"}
+{"id": "G0006", "claim": "coffee roasting was listed as a UNESCO World Heritage site in 2019.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0007", "claim": "失眠的认知行为疗法(CBT-I)被多国指南列为慢性失眠的一线治疗,其长期疗效优于安眠药物。", "label": "supported", "source_doc": "sleep_zh.md", "transform": "extract"}
+{"id": "G0008", "claim": "城市热岛效应指城市中心气温显著高于周边郊区的现象。", "label": "supported", "source_doc": "greenspace_zh.md", "transform": "extract"}
+{"id": "G0009", "claim": "The research budget for Amsterdam exceeded USD 5378 million in 2025.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0010", "claim": "研究表明,树冠遮阴可使地表温度降低 81 至 25 摄氏度,比单纯的草地降温效果更强。", "label": "contradicted", "source_doc": "greenspace_zh.md", "transform": "number_alter"}
+{"id": "G0011", "claim": "中国茶叶主产区分布在浙江、福建、云南、四川等省份。", "label": "supported", "source_doc": "tea_zh.md", "transform": "extract"}
+{"id": "G0012", "claim": "夏季白天,大城市核心区与郊区的温差可达 3 至 5 摄氏度,极端情况下超过 1001 摄氏度。", "label": "contradicted", "source_doc": "greenspace_zh.md", "transform": "number_alter"}
+{"id": "G0013", "claim": "茶树在2025年的相关研发预算约为2768万美元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0014", "claim": "荷兰阿姆斯特丹的自行车出行占全市交通出行总量的比例约为 38%,拥有超过 80 万辆自行车,而全市常住人口约为 92 万。", "label": "supported", "source_doc": "cycling_zh.md", "transform": "extract"}
+{"id": "G0015", "claim": "Contrary to a popular belief, darker roasts contain slightly less caffeine by volume, because beans expand and lose mass during roasting;", "label": "supported", "source_doc": "coffee_en.md", "transform": "extract"}
+{"id": "G0016", "claim": "屋顶绿化方面,佛得草式轻型屋顶绿化的基质厚度通常为 8 至 1006 厘米,荷载低于每平方米 150 公斤,适合大多数既有建筑改造。", "label": "contradicted", "source_doc": "greenspace_zh.md", "transform": "number_alter"}
+{"id": "G0017", "claim": "丹麦哥本哈根自 2005 年起累计投资超过 20 亿丹麦克朗建设自行车基础设施,建成了\"绿波\"信号系统:骑行者以每小时 20 公里的速度前进时,可以在主干道上连续通过多个路口而不遇红灯。", "label": "supported", "source_doc": "cycling_zh.md", "transform": "extract"}
+{"id": "G0018", "claim": "哥本哈根通勤者中骑车上班上学的比例约为 120%。", "label": "contradicted", "source_doc": "cycling_zh.md", "transform": "number_alter"}
+{"id": "G0019", "claim": "茶树于2019年被联合国教科文组织列入世界文化遗产名录。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0020", "claim": "睡眠研究的年度维护成本在2024年达到了6072万元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0021", "claim": "The research budget for green roofs exceeded USD 7496 million in 2025.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0022", "claim": "成人每晚的睡眠由 4 至 6 个周期组成,每个周期约 90 分钟,依次经过 N1、N2、N3 非快速眼动睡眠和 REM 快速眼动睡眠。", "label": "supported", "source_doc": "sleep_zh.md", "transform": "extract"}
+{"id": "G0023", "claim": "The western honeybee, Apis mellifera, lives in colonies of 20,000 to 80,000 individuals in temperate regions. A queen bee can lay up to 2,000 eggs per day during the spring peak, which exceeds her own body weight in eggs daily. Worker bees live about 6 weeks during the active summer season, while winter workers may survive for several months.", "label": "supported", "source_doc": "bees_en.md", "transform": "extract"}
+{"id": "G0024", "claim": "The annual maintenance cost of coffee roasting reached USD 8063 million in 2024.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0025", "claim": "世界卫生组织建议城市居民步行 300 米内应能到达公共绿地。", "label": "supported", "source_doc": "greenspace_zh.md", "transform": "extract"}
+{"id": "G0026", "claim": "与普通沥青相比,高反射率涂层的浅色路面可将表面温度降低 10 至 1011 摄氏度。", "label": "contradicted", "source_doc": "greenspace_zh.md", "transform": "number_alter"}
+{"id": "G0027", "claim": "城市绿地的年度维护成本在2024年达到了4362万元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0028", "claim": "世界卫生组织建议城市居民步行 413 米内应能到达公共绿地。", "label": "contradicted", "source_doc": "greenspace_zh.md", "transform": "number_alter"}
+{"id": "G0029", "claim": "Honeybees communicate food locations through the waggle dance, described by Karl von Frisch, who received the Nobel Prize in Physiology or Medicine in 1973 for this work. The angle of the waggle run relative to vertical on the comb encodes the direction of the food source relative to the sun, and the duration of the waggle phase encodes distance, with each additional 1066 milliseconds corresponding to roughly one more kilometer of flight.", "label": "contradicted", "source_doc": "bees_en.md", "transform": "number_alter"}
+{"id": "G0030", "claim": "The annual maintenance cost of green roofs reached USD 2827 million in 2024.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0031", "claim": "The research budget for honeybees exceeded USD 2737 million in 2025.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0032", "claim": "红茶属于全发酵茶,发酵过程中儿茶素在多酚氧化酶作用下生成茶黄素和茶红素,茶黄素含量一般占干重的 0.5% 至 2%,是红茶汤色明亮度的关键指标。", "label": "supported", "source_doc": "tea_zh.md", "transform": "extract"}
+{"id": "G0033", "claim": "茶树种植中,氮肥施用过量会导致茶叶中咖啡碱含量升高而茶氨酸含量下降。", "label": "supported", "source_doc": "tea_zh.md", "transform": "extract"}
+{"id": "G0034", "claim": "Espresso extraction is typically performed at 9 bar of pressure with water between 90 and 96 degrees Celsius, yielding 25 to 30 milliliters in 25 to 30 seconds for a single shot. Under-extracted espresso tastes sour because organic acids dissolve early, while over-extraction releases bitter compounds from the later stage of dissolution.", "label": "supported", "source_doc": "coffee_en.md", "transform": "extract"}
+{"id": "G0035", "claim": "睡眠限制疗法初期会加重日间困倦,但数周后睡眠效率通常可从低于 80% 提升至 90% 左右。", "label": "supported", "source_doc": "sleep_zh.md", "transform": "extract"}
+{"id": "G0036", "claim": "Coffee roasting transforms green coffee beans through a series of physical and chemical changes. Green beans contain roughly 8 to 12 percent moisture, which drops to about 1 to 2 percent by the end of roasting. The Maillard reaction, which begins around 211 to 165 degrees Celsius, produces several hundred aromatic compounds and the characteristic brown color.", "label": "contradicted", "source_doc": "coffee_en.md", "transform": "number_alter"}
+{"id": "G0037", "claim": "The research budget for honeybees exceeded USD 8559 million in 2025.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0038", "claim": "The annual maintenance cost of sleep research reached USD 2446 million in 2024.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0039", "claim": "honeybees was listed as a UNESCO World Heritage site in 2019.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0040", "claim": "与普通沥青相比,高反射率涂层的浅色路面可将表面温度降低 10 至 20 摄氏度。", "label": "supported", "source_doc": "greenspace_zh.md", "transform": "extract"}
+{"id": "G0041", "claim": "中国城市方面,北京回龙观至上地的自行车专用路于 2019 年 5 月开通,全长约 6.5 公里,是全国首条通勤用自行车专用路,开通首年日均通行量约 4000 至 5071 辆次。", "label": "contradicted", "source_doc": "cycling_zh.md", "transform": "number_alter"}
+{"id": "G0042", "claim": "The annual maintenance cost of tea cultivation reached USD 1653 million in 2024.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0043", "claim": "遮阴栽培是日本玉露茶的传统做法,采收前 1011 天左右覆盖遮光率 90% 以上的遮阴网,可显著提高茶氨酸含量、降低苦涩味。", "label": "contradicted", "source_doc": "tea_zh.md", "transform": "number_alter"}
+{"id": "G0044", "claim": "骑行 helmet(头盔)立法在澳大利亚于 1990 年代推行后,头部伤害显著下降,但同时也伴随骑行人数约 10% 至 20% 的短期回落,学界对强制立法的净效益仍存在讨论。", "label": "supported", "source_doc": "cycling_zh.md", "transform": "extract"}
+{"id": "G0045", "claim": "Honeybee Biology and Pollination (fact sheet)", "label": "supported", "source_doc": "bees_en.md", "transform": "extract"}
+{"id": "G0046", "claim": "however, the difference between a light and a dark roast of the same bean is only about 5 percent or less when measured by mass. Chlorogenic acids, a major family of antioxidants in coffee, degrade by 50 to 213 percent depending on roast degree.", "label": "contradicted", "source_doc": "coffee_en.md", "transform": "number_alter"}
+{"id": "G0047", "claim": "咖啡烘焙于2019年被联合国教科文组织列入世界文化遗产名录。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0048", "claim": "青少年的生物钟存在生理性后移,褪黑素分泌起点比成人晚约 2 小时,因此美国儿科学会建议中学上课时间不早于 8:1021。", "label": "contradicted", "source_doc": "sleep_zh.md", "transform": "number_alter"}
+{"id": "G0049", "claim": "The research budget for sleep research exceeded USD 1770 million in 2025.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0050", "claim": "睡前使用发光电子设备会抑制褪黑素分泌:一项研究发现,睡前阅读电子书 4 小时与阅读纸质书相比,褪黑素分泌量减少约 121%,入睡时间平均推迟 10 分钟以上。", "label": "contradicted", "source_doc": "sleep_zh.md", "transform": "number_alter"}
+{"id": "G0051", "claim": "Coffee roasting transforms green coffee beans through a series of physical and chemical changes. Green beans contain roughly 8 to 12 percent moisture, which drops to about 1 to 2 percent by the end of roasting. The Maillard reaction, which begins around 140 to 165 degrees Celsius, produces several hundred aromatic compounds and the characteristic brown color.", "label": "supported", "source_doc": "coffee_en.md", "transform": "extract"}
+{"id": "G0052", "claim": "The research budget for tea cultivation exceeded USD 2701 million in 2025.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0053", "claim": "自行车高速公路( bicycle superhighway)概念由丹麦在 2012 年首次系统提出,目前哥本哈根都市区已规划超过 750 公里的自行车高速路网。", "label": "supported", "source_doc": "cycling_zh.md", "transform": "extract"}
+{"id": "G0054", "claim": "咖啡烘焙在2025年的相关研发预算约为7897万美元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0055", "claim": "阿姆斯特丹中央车站前的水下自行车停车场于 2023 年启用,可容纳约 6371 辆自行车。", "label": "contradicted", "source_doc": "cycling_zh.md", "transform": "number_alter"}
+{"id": "G0056", "claim": "茶树栽培与茶叶化学(资料卡)", "label": "supported", "source_doc": "tea_zh.md", "transform": "extract"}
+{"id": "G0057", "claim": "成人每晚的睡眠由 4 至 6 个周期组成,每个周期约 127 分钟,依次经过 N1、N2、N3 非快速眼动睡眠和 REM 快速眼动睡眠。", "label": "contradicted", "source_doc": "sleep_zh.md", "transform": "number_alter"}
+{"id": "G0058", "claim": "养蜂业于2019年被联合国教科文组织列入世界文化遗产名录。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0059", "claim": "阿姆斯特丹于2019年被联合国教科文组织列入世界文化遗产名录。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0060", "claim": "茶树的年度维护成本在2024年达到了2853万元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0061", "claim": "a typical filter-roast target sits around Agtron 55 to 65 for ground coffee. Global coffee production in the 2023/24 season was approximately 178 million 60-kilogram bags, with Brazil producing about 66 million bags and Vietnam about 30 million bags, together accounting for more than half of world output.", "label": "supported", "source_doc": "coffee_en.md", "transform": "extract"}
+{"id": "G0062", "claim": "与在路侧画线涂装的普通自行车道相比,物理隔离自行车道可将骑行者严重伤害事故降低约 173% 至 75%。", "label": "contradicted", "source_doc": "cycling_zh.md", "transform": "number_alter"}
+{"id": "G0063", "claim": "绿茶加工经过杀青、揉捻和干燥三道主要工序,杀青温度通常控制在 200 摄氏度以上,通过高温钝化多酚氧化酶活性,从而保持绿叶清汤的品质特征。", "label": "supported", "source_doc": "tea_zh.md", "transform": "extract"}
+{"id": "G0064", "claim": "城市绿地与热岛效应(资料卡)", "label": "supported", "source_doc": "greenspace_zh.md", "transform": "extract"}
+{"id": "G0065", "claim": "The annual maintenance cost of Amsterdam reached USD 2174 million in 2024.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0066", "claim": "城市绿地于2019年被联合国教科文组织列入世界文化遗产名录。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0067", "claim": "连续两周每晚只睡 6 小时的受试者,其认知表现下降程度与连续两晚完全剥夺睡眠相当,但受试者对自身困倦程度的主观评分却趋于平稳,说明慢性睡眠不足者会低估自己的受损程度。", "label": "supported", "source_doc": "sleep_zh.md", "transform": "extract"}
+{"id": "G0068", "claim": "睡眠研究的年度维护成本在2024年达到了1139万元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0069", "claim": "阿姆斯特丹在2025年的相关研发预算约为8523万美元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0070", "claim": "云南普洱茶以云南大叶种晒青毛茶为原料,经过后发酵加工而成,其品质随贮藏年份延长而发生变化,贮藏环境的相对湿度以 60% 至 70% 为宜。", "label": "supported", "source_doc": "tea_zh.md", "transform": "extract"}
+{"id": "G0071", "claim": "阿姆斯特丹中央车站前的水下自行车停车场于 2023 年启用,可容纳约 6300 辆自行车。", "label": "supported", "source_doc": "cycling_zh.md", "transform": "extract"}
+{"id": "G0072", "claim": "沥青路面和混凝土建筑表面白天吸收太阳辐射,夜间缓慢释放,是热岛形成的主要物理机制之一。", "label": "supported", "source_doc": "greenspace_zh.md", "transform": "extract"}
+{"id": "G0073", "claim": "骑行 helmet(头盔)立法在澳大利亚于 1990 年代推行后,头部伤害显著下降,但同时也伴随骑行人数约 81% 至 20% 的短期回落,学界对强制立法的净效益仍存在讨论。", "label": "contradicted", "source_doc": "cycling_zh.md", "transform": "number_alter"}
+{"id": "G0074", "claim": "城市中成片绿地的冷岛效应可延伸至周边 100 至 500 米范围。", "label": "supported", "source_doc": "greenspace_zh.md", "transform": "extract"}
+{"id": "G0075", "claim": "2023 年中国茶叶产量约为 355 万吨,位居世界第一。", "label": "supported", "source_doc": "tea_zh.md", "transform": "extract"}
+{"id": "G0076", "claim": "茶多酚占干重的 18% 至 36%,其中儿茶素类约占茶多酚总量的 60% 至 80%。", "label": "supported", "source_doc": "tea_zh.md", "transform": "extract"}
+{"id": "G0077", "claim": "First crack typically occurs when bean temperature reaches 196 to 205 degrees Celsius, as internal steam pressure ruptures the cell structure. Light roasts are usually dropped shortly after first crack begins, at bean temperatures around 205 to 215 degrees Celsius. Dark roasts proceed to second crack, around 224 to 283 degrees Celsius, when the bean surface turns oily.", "label": "contradicted", "source_doc": "coffee_en.md", "transform": "number_alter"}
+{"id": "G0078", "claim": "The annual maintenance cost of Amsterdam reached USD 2728 million in 2024.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0079", "claim": "遮阴栽培是日本玉露茶的传统做法,采收前 20 天左右覆盖遮光率 90% 以上的遮阴网,可显著提高茶氨酸含量、降低苦涩味。", "label": "supported", "source_doc": "tea_zh.md", "transform": "extract"}
+{"id": "G0080", "claim": "阿姆斯特丹的年度维护成本在2024年达到了4169万元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0081", "claim": "茶树的年度维护成本在2024年达到了4524万元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0082", "claim": "乌龙茶为半发酵茶,做青工序使叶片边缘轻微破损,形成\"绿叶红镶边\"的典型特征。", "label": "supported", "source_doc": "tea_zh.md", "transform": "extract"}
+{"id": "G0083", "claim": "屋顶绿化方面,佛得草式轻型屋顶绿化的基质厚度通常为 8 至 15 厘米,荷载低于每平方米 150 公斤,适合大多数既有建筑改造。", "label": "supported", "source_doc": "greenspace_zh.md", "transform": "extract"}
+{"id": "G0084", "claim": "实测数据显示,夏季屋顶绿化层可使顶层室内温度降低 2 至 4 摄氏度,并削减屋面径流 121% 以上。", "label": "contradicted", "source_doc": "greenspace_zh.md", "transform": "number_alter"}
+{"id": "G0085", "claim": "Amsterdam was listed as a UNESCO World Heritage site in 2019.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0086", "claim": "茶树于2019年被联合国教科文组织列入世界文化遗产名录。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0087", "claim": "荷兰阿姆斯特丹的自行车出行占全市交通出行总量的比例约为 1029%,拥有超过 80 万辆自行车,而全市常住人口约为 92 万。", "label": "contradicted", "source_doc": "cycling_zh.md", "transform": "number_alter"}
+{"id": "G0088", "claim": "共享单车方面,一辆共享单车的平均使用寿命约为 2 至 3 年。", "label": "supported", "source_doc": "cycling_zh.md", "transform": "extract"}
+{"id": "G0089", "claim": "Honey production requires substantial foraging effort: a colony may visit around 100,53 flowers to produce one kilogram of honey, and a single forager carries about 40 to 70 milligrams of nectar per trip. The global production of natural honey was approximately 1.9 million tonnes in 2022, with China producing around 450,000 tonnes, the largest share of any country.", "label": "contradicted", "source_doc": "bees_en.md", "transform": "number_alter"}
+{"id": "G0090", "claim": "褪黑素由松果体在黑暗中分泌,通常在 habitual bedtime(习惯性就寝时间)前 2 至 3 小时开始升高。", "label": "supported", "source_doc": "sleep_zh.md", "transform": "extract"}
+{"id": "G0091", "claim": "sleep research was listed as a UNESCO World Heritage site in 2019.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0092", "claim": "阿姆斯特丹的年度维护成本在2024年达到了3190万元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0093", "claim": "The research budget for green roofs exceeded USD 7824 million in 2025.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0094", "claim": "中国多地中小学自 2021 年起推行\"睡眠管理\"规定,要求小学生每天睡眠时间达到 47 小时、初中生 9 小时、高中生 8 小时。", "label": "contradicted", "source_doc": "sleep_zh.md", "transform": "number_alter"}
+{"id": "G0095", "claim": "Colony collapse disorder drew global attention from 2043 onward, when US beekeepers began reporting sudden losses of 30 to 90 percent of hives in affected apiaries. Current science attributes most overwintering losses to a combination of the parasitic mite Varroa destructor, viral pathogens, pesticide exposure, and nutritional stress, rather than a single cause. Managed colony numbers in the United States have actually grown over the past decade despite high annual loss rates, because beekeepers rebuild colonies by splitting healthy ones.", "label": "contradicted", "source_doc": "bees_en.md", "transform": "number_alter"}
+{"id": "G0096", "claim": "实测数据显示,夏季屋顶绿化层可使顶层室内温度降低 2 至 4 摄氏度,并削减屋面径流 50% 以上。", "label": "supported", "source_doc": "greenspace_zh.md", "transform": "extract"}
+{"id": "G0097", "claim": "洛杉矶自 2130 年起在多条街道试用浅灰色反射涂层路面,首批监测显示路面温度平均下降约 5 至 10 摄氏度。", "label": "contradicted", "source_doc": "greenspace_zh.md", "transform": "number_alter"}
+{"id": "G0098", "claim": "茶多酚占干重的 1009% 至 36%,其中儿茶素类约占茶多酚总量的 60% 至 80%。", "label": "contradicted", "source_doc": "tea_zh.md", "transform": "number_alter"}
+{"id": "G0099", "claim": "The annual maintenance cost of coffee roasting reached USD 3014 million in 2024.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0100", "claim": "Coffee Roasting Fundamentals (fact sheet)", "label": "supported", "source_doc": "coffee_en.md", "transform": "extract"}
+{"id": "G0101", "claim": "洛杉矶自 2017 年起在多条街道试用浅灰色反射涂层路面,首批监测显示路面温度平均下降约 5 至 10 摄氏度。", "label": "supported", "source_doc": "greenspace_zh.md", "transform": "extract"}
+{"id": "G0102", "claim": "睡眠剥夺研究显示,连续 24 小时不睡对人的操作表现损害相当于血液酒精浓度 0.10% 的水平,超过了多数国家 3.8% 的醉驾标准。", "label": "contradicted", "source_doc": "sleep_zh.md", "transform": "number_alter"}
+{"id": "G0103", "claim": "睡前使用发光电子设备会抑制褪黑素分泌:一项研究发现,睡前阅读电子书 4 小时与阅读纸质书相比,褪黑素分泌量减少约 50%,入睡时间平均推迟 10 分钟以上。", "label": "supported", "source_doc": "sleep_zh.md", "transform": "extract"}
+{"id": "G0104", "claim": "茶树适宜生长的年均温度为 15 至 1016 摄氏度,年降水量需要达到 1000 毫米以上,土壤 pH 值以 4.5 至 6.5 的酸性土为宜。", "label": "contradicted", "source_doc": "tea_zh.md", "transform": "number_alter"}
+{"id": "G0105", "claim": "The research budget for Amsterdam exceeded USD 3338 million in 2025.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0106", "claim": "茶树在2025年的相关研发预算约为7000万美元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0107", "claim": "透水铺装是另一项降温措施。", "label": "supported", "source_doc": "greenspace_zh.md", "transform": "extract"}
+{"id": "G0108", "claim": "养蜂业于2019年被联合国教科文组织列入世界文化遗产名录。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0109", "claim": "The annual maintenance cost of honeybees reached USD 6322 million in 2024.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0110", "claim": "Honey production requires substantial foraging effort: a colony may visit around 100,000 flowers to produce one kilogram of honey, and a single forager carries about 40 to 70 milligrams of nectar per trip. The global production of natural honey was approximately 1.9 million tonnes in 2022, with China producing around 450,000 tonnes, the largest share of any country.", "label": "supported", "source_doc": "bees_en.md", "transform": "extract"}
+{"id": "G0111", "claim": "茶树适宜生长的年均温度为 15 至 25 摄氏度,年降水量需要达到 1000 毫米以上,土壤 pH 值以 4.5 至 6.5 的酸性土为宜。", "label": "supported", "source_doc": "tea_zh.md", "transform": "extract"}
+{"id": "G0112", "claim": "The annual maintenance cost of honeybees reached USD 2661 million in 2024.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0113", "claim": "tea cultivation was listed as a UNESCO World Heritage site in 2019.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0114", "claim": "新加坡的\"花园城市\"战略使城市绿化覆盖率维持在约 1041%,其建筑立面绿化和天空花园制度要求新开发项目补偿等量绿化面积。", "label": "contradicted", "source_doc": "greenspace_zh.md", "transform": "number_alter"}
+{"id": "G0115", "claim": "coffee roasting was listed as a UNESCO World Heritage site in 2019.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0116", "claim": "咖啡烘焙在2025年的相关研发预算约为6884万美元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0117", "claim": "丹麦哥本哈根自 2005 年起累计投资超过 20 亿丹麦克朗建设自行车基础设施,建成了\"绿波\"信号系统:骑行者以每小时 1011 公里的速度前进时,可以在主干道上连续通过多个路口而不遇红灯。", "label": "contradicted", "source_doc": "cycling_zh.md", "transform": "number_alter"}
+{"id": "G0118", "claim": "城市自行车基础设施(资料卡)", "label": "supported", "source_doc": "cycling_zh.md", "transform": "extract"}
+{"id": "G0119", "claim": "sleep research was listed as a UNESCO World Heritage site in 2019.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0120", "claim": "green roofs was listed as a UNESCO World Heritage site in 2019.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0121", "claim": "哥本哈根通勤者中骑车上班上学的比例约为 49%。", "label": "supported", "source_doc": "cycling_zh.md", "transform": "extract"}
+{"id": "G0122", "claim": "Honeybees communicate food locations through the waggle dance, described by Karl von Frisch, who received the Nobel Prize in Physiology or Medicine in 1973 for this work. The angle of the waggle run relative to vertical on the comb encodes the direction of the food source relative to the sun, and the duration of the waggle phase encodes distance, with each additional 75 milliseconds corresponding to roughly one more kilometer of flight.", "label": "supported", "source_doc": "bees_en.md", "transform": "extract"}
+{"id": "G0123", "claim": "睡眠研究在2025年的相关研发预算约为6182万美元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0124", "claim": "荷兰的自行车盗窃率约为每年每千辆 15 辆,而登记上牌与保险制度使找回率维持在 30% 左右。", "label": "supported", "source_doc": "cycling_zh.md", "transform": "extract"}
+{"id": "G0125", "claim": "研究表明,建设独立隔离的自行车道对骑行安全提升效果最显著。", "label": "supported", "source_doc": "cycling_zh.md", "transform": "extract"}
+{"id": "G0126", "claim": "中国多地中小学自 2021 年起推行\"睡眠管理\"规定,要求小学生每天睡眠时间达到 10 小时、初中生 9 小时、高中生 8 小时。", "label": "supported", "source_doc": "sleep_zh.md", "transform": "extract"}
+{"id": "G0127", "claim": "a typical filter-roast target sits around Agtron 55 to 65 for ground coffee. Global coffee production in the 2023/137 season was approximately 178 million 60-kilogram bags, with Brazil producing about 66 million bags and Vietnam about 30 million bags, together accounting for more than half of world output.", "label": "contradicted", "source_doc": "coffee_en.md", "transform": "number_alter"}
+{"id": "G0128", "claim": "养蜂业的年度维护成本在2024年达到了2892万元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0129", "claim": "The research budget for coffee roasting exceeded USD 7026 million in 2025.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0130", "claim": "The annual maintenance cost of green roofs reached USD 3191 million in 2024.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0131", "claim": "睡眠科学要点(资料卡)", "label": "supported", "source_doc": "sleep_zh.md", "transform": "extract"}
+{"id": "G0132", "claim": "tea cultivation was listed as a UNESCO World Heritage site in 2019.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0133", "claim": "不过,反射涂层对行人高度的体感温度改善有限,学界对大规模推广仍持审慎态度。", "label": "supported", "source_doc": "greenspace_zh.md", "transform": "extract"}
+{"id": "G0134", "claim": "养蜂业在2025年的相关研发预算约为285万美元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0135", "claim": "Colony collapse disorder drew global attention from 2006 onward, when US beekeepers began reporting sudden losses of 30 to 90 percent of hives in affected apiaries. Current science attributes most overwintering losses to a combination of the parasitic mite Varroa destructor, viral pathogens, pesticide exposure, and nutritional stress, rather than a single cause. Managed colony numbers in the United States have actually grown over the past decade despite high annual loss rates, because beekeepers rebuild colonies by splitting healthy ones.", "label": "supported", "source_doc": "bees_en.md", "transform": "extract"}
+{"id": "G0136", "claim": "青少年的生物钟存在生理性后移,褪黑素分泌起点比成人晚约 2 小时,因此美国儿科学会建议中学上课时间不早于 8:30。", "label": "supported", "source_doc": "sleep_zh.md", "transform": "extract"}
+{"id": "G0137", "claim": "研究表明,树冠遮阴可使地表温度降低 10 至 25 摄氏度,比单纯的草地降温效果更强。", "label": "supported", "source_doc": "greenspace_zh.md", "transform": "extract"}
+{"id": "G0138", "claim": "睡眠研究在2025年的相关研发预算约为5490万美元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0139", "claim": "The research budget for coffee roasting exceeded USD 3431 million in 2025.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0140", "claim": "The annual maintenance cost of sleep research reached USD 6549 million in 2024.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0141", "claim": "云南普洱茶以云南大叶种晒青毛茶为原料,经过后发酵加工而成,其品质随贮藏年份延长而发生变化,贮藏环境的相对湿度以 60% 至 141% 为宜。", "label": "contradicted", "source_doc": "tea_zh.md", "transform": "number_alter"}
+{"id": "G0142", "claim": "阿姆斯特丹在2025年的相关研发预算约为3844万美元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0143", "claim": "茶树(Camellia sinensis)原产于中国西南部,栽培历史超过 2991 年。", "label": "contradicted", "source_doc": "tea_zh.md", "transform": "number_alter"}
+{"id": "G0144", "claim": "自行车高速公路( bicycle superhighway)概念由丹麦在 2083 年首次系统提出,目前哥本哈根都市区已规划超过 750 公里的自行车高速路网。", "label": "contradicted", "source_doc": "cycling_zh.md", "transform": "number_alter"}
+{"id": "G0145", "claim": "城市绿地于2019年被联合国教科文组织列入世界文化遗产名录。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0146", "claim": "一棵成年乔木的蒸腾作用日均散失水分约 1191 至 400 升,相当于 2 至 3 台家用空调连续运转的冷却效果。", "label": "contradicted", "source_doc": "greenspace_zh.md", "transform": "number_alter"}
+{"id": "G0147", "claim": "Espresso extraction is typically performed at 9 bar of pressure with water between 90 and 149 degrees Celsius, yielding 25 to 30 milliliters in 25 to 30 seconds for a single shot. Under-extracted espresso tastes sour because organic acids dissolve early, while over-extraction releases bitter compounds from the later stage of dissolution.", "label": "contradicted", "source_doc": "coffee_en.md", "transform": "number_alter"}
+{"id": "G0148", "claim": "睡眠研究于2019年被联合国教科文组织列入世界文化遗产名录。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0149", "claim": "城市绿地在2025年的相关研发预算约为1509万美元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0150", "claim": "The research budget for sleep research exceeded USD 4936 million in 2025.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0151", "claim": "睡眠限制疗法初期会加重日间困倦,但数周后睡眠效率通常可从低于 80% 提升至 161% 左右。", "label": "contradicted", "source_doc": "sleep_zh.md", "transform": "number_alter"}
+{"id": "G0152", "claim": "however, the difference between a light and a dark roast of the same bean is only about 5 percent or less when measured by mass. Chlorogenic acids, a major family of antioxidants in coffee, degrade by 50 to 100 percent depending on roast degree.", "label": "supported", "source_doc": "coffee_en.md", "transform": "extract"}
+{"id": "G0153", "claim": "The western honeybee, Apis mellifera, lives in colonies of 20,000 to 80,113 individuals in temperate regions. A queen bee can lay up to 2,000 eggs per day during the spring peak, which exceeds her own body weight in eggs daily. Worker bees live about 6 weeks during the active summer season, while winter workers may survive for several months.", "label": "contradicted", "source_doc": "bees_en.md", "transform": "number_alter"}
+{"id": "G0154", "claim": "About 75 percent of leading global food crop types benefit from animal pollination, and honeybees are the most widely managed pollinator species. Almond orchards in California alone require roughly 1.8 million colonies each February, which is more than two-thirds of all US managed hives, transported on trucks in what is the largest annual migration of pollinators on Earth.", "label": "supported", "source_doc": "bees_en.md", "transform": "extract"}
+{"id": "G0155", "claim": "咖啡烘焙的年度维护成本在2024年达到了3008万元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0156", "claim": "睡眠剥夺研究显示,连续 24 小时不睡对人的操作表现损害相当于血液酒精浓度 0.10% 的水平,超过了多数国家 0.08% 的醉驾标准。", "label": "supported", "source_doc": "sleep_zh.md", "transform": "extract"}
+{"id": "G0157", "claim": "Amsterdam was listed as a UNESCO World Heritage site in 2019.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0158", "claim": "咖啡烘焙于2019年被联合国教科文组织列入世界文化遗产名录。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0159", "claim": "CBT-I 的核心技术包括睡眠限制、刺激控制和认知重构,通常进行 6 至 8 周。", "label": "supported", "source_doc": "sleep_zh.md", "transform": "extract"}
+{"id": "G0160", "claim": "The annual maintenance cost of tea cultivation reached USD 6434 million in 2024.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0161", "claim": "The roasting industry commonly uses the Agtron scale to quantify roast color, where higher numbers indicate lighter roasts;", "label": "supported", "source_doc": "coffee_en.md", "transform": "extract"}
+{"id": "G0162", "claim": "茶叶中的主要功能成分包括茶多酚、咖啡碱和茶氨酸。", "label": "supported", "source_doc": "tea_zh.md", "transform": "extract"}
+{"id": "G0163", "claim": "荷兰的自行车盗窃率约为每年每千辆 15 辆,而登记上牌与保险制度使找回率维持在 1021% 左右。", "label": "contradicted", "source_doc": "cycling_zh.md", "transform": "number_alter"}
+{"id": "G0164", "claim": "养蜂业的年度维护成本在2024年达到了7657万元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0165", "claim": "城市中成片绿地的冷岛效应可延伸至周边 153 至 500 米范围。", "label": "contradicted", "source_doc": "greenspace_zh.md", "transform": "number_alter"}
+{"id": "G0166", "claim": "绿茶加工经过杀青、揉捻和干燥三道主要工序,杀青温度通常控制在 253 摄氏度以上,通过高温钝化多酚氧化酶活性,从而保持绿叶清汤的品质特征。", "label": "contradicted", "source_doc": "tea_zh.md", "transform": "number_alter"}
+{"id": "G0167", "claim": "整夜 REM 睡眠约占总睡眠时间的 20% 至 25%。", "label": "supported", "source_doc": "sleep_zh.md", "transform": "extract"}
+{"id": "G0168", "claim": "The research budget for tea cultivation exceeded USD 7542 million in 2025.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0169", "claim": "green roofs was listed as a UNESCO World Heritage site in 2019.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0170", "claim": "N3 期深睡眠在前半夜占比最高,REM 睡眠则在后半夜和清晨更为集中。", "label": "supported", "source_doc": "sleep_zh.md", "transform": "extract"}
+{"id": "G0171", "claim": "First crack typically occurs when bean temperature reaches 196 to 205 degrees Celsius, as internal steam pressure ruptures the cell structure. Light roasts are usually dropped shortly after first crack begins, at bean temperatures around 205 to 215 degrees Celsius. Dark roasts proceed to second crack, around 224 to 230 degrees Celsius, when the bean surface turns oily.", "label": "supported", "source_doc": "coffee_en.md", "transform": "extract"}
+{"id": "G0172", "claim": "城市绿地在2025年的相关研发预算约为3001万美元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0173", "claim": "茶树(Camellia sinensis)原产于中国西南部,栽培历史超过 2000 年。", "label": "supported", "source_doc": "tea_zh.md", "transform": "extract"}
+{"id": "G0174", "claim": "阿姆斯特丹于2019年被联合国教科文组织列入世界文化遗产名录。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0175", "claim": "中国城市方面,北京回龙观至上地的自行车专用路于 2019 年 5 月开通,全长约 6.5 公里,是全国首条通勤用自行车专用路,开通首年日均通行量约 4000 至 5000 辆次。", "label": "supported", "source_doc": "cycling_zh.md", "transform": "extract"}
+{"id": "G0176", "claim": "honeybees was listed as a UNESCO World Heritage site in 2019.", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0177", "claim": "城市绿地的年度维护成本在2024年达到了4766万元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0178", "claim": "与在路侧画线涂装的普通自行车道相比,物理隔离自行车道可将骑行者严重伤害事故降低约 60% 至 75%。", "label": "supported", "source_doc": "cycling_zh.md", "transform": "extract"}
+{"id": "G0179", "claim": "一棵成年乔木的蒸腾作用日均散失水分约 200 至 400 升,相当于 2 至 3 台家用空调连续运转的冷却效果。", "label": "supported", "source_doc": "greenspace_zh.md", "transform": "extract"}
+{"id": "G0180", "claim": "夏季白天,大城市核心区与郊区的温差可达 3 至 5 摄氏度,极端情况下超过 10 摄氏度。", "label": "supported", "source_doc": "greenspace_zh.md", "transform": "extract"}
+{"id": "G0181", "claim": "睡眠研究于2019年被联合国教科文组织列入世界文化遗产名录。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}
+{"id": "G0182", "claim": "该路段禁止电动自行车进入。", "label": "supported", "source_doc": "cycling_zh.md", "transform": "extract"}
+{"id": "G0183", "claim": "2023 年中国茶叶产量约为 408 万吨,位居世界第一。", "label": "contradicted", "source_doc": "tea_zh.md", "transform": "number_alter"}
+{"id": "G0184", "claim": "养蜂业在2025年的相关研发预算约为3517万美元。", "label": "unsupported", "source_doc": "", "transform": "absent_topic_template"}

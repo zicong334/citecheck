@@ -1,0 +1,148 @@
+{
+ "meta": {
+  "answer": "demo\\sample_answer.md",
+  "sources": "gold\\sources",
+  "mode": "llm",
+  "model": "deepseek-chat",
+  "n_chunks": 39
+ },
+ "summary": {
+  "n_claims": 8,
+  "supported": 4,
+  "unsupported": 2,
+  "contradicted": 2,
+  "faithfulness": 0.5,
+  "unsupported_rate": 0.25,
+  "contradiction_rate": 0.25
+ },
+ "verdicts": [
+  {
+   "claim": "关于茶与咖啡的问答(示例回答,故意混入三类论断)",
+   "verdict": "unsupported",
+   "mode": "llm",
+   "score": 0.0,
+   "evidence_idx": -1,
+   "evidence_doc": "",
+   "quote": "",
+   "reason": "论断仅为标题式说明，无具体事实可对照证据",
+   "raw": {
+    "verdict": "unsupported",
+    "evidence_idx": -1,
+    "quote": "",
+    "reason": "论断仅为标题式说明，无具体事实可对照证据"
+   }
+  },
+  {
+   "claim": "茶树的栽培历史超过 2000 年,适宜生长的年均温度为 15 至 25 摄氏度。",
+   "verdict": "supported",
+   "mode": "llm",
+   "score": 0.0,
+   "evidence_idx": 34,
+   "evidence_doc": "",
+   "quote": "栽培历史超过 2000 年。茶树适宜生长的年均温度为 15 至 25 摄氏度",
+   "reason": "证据34明确包含论断的栽培历史与适宜温度两项核心事实",
+   "raw": {
+    "verdict": "supported",
+    "evidence_idx": 34,
+    "quote": "栽培历史超过 2000 年。茶树适宜生长的年均温度为 15 至 25 摄氏度",
+    "reason": "证据34明确包含论断的栽培历史与适宜温度两项核心事实"
+   }
+  },
+  {
+   "claim": "绿茶加工中,杀青温度通常控制在 180 摄氏度以上,以保持绿叶清汤的品质。",
+   "verdict": "contradicted",
+   "mode": "llm",
+   "score": 0.0,
+   "evidence_idx": 35,
+   "evidence_doc": "",
+   "quote": "杀青温度通常控制在 200 摄氏度以上",
+   "reason": "证据为200摄氏度以上，论断称180摄氏度以上，数值不符",
+   "raw": {
+    "verdict": "contradicted",
+    "evidence_idx": 35,
+    "quote": "杀青温度通常控制在 200 摄氏度以上",
+    "reason": "证据为200摄氏度以上，论断称180摄氏度以上，数值不符"
+   }
+  },
+  {
+   "claim": "红茶属于全发酵茶,发酵过程中儿茶素生成茶黄素和茶红素。",
+   "verdict": "supported",
+   "mode": "llm",
+   "score": 0.0,
+   "evidence_idx": 36,
+   "evidence_doc": "",
+   "quote": "红茶属于全发酵茶,发酵过程中儿茶素在多酚氧化酶作用下生成茶黄素和茶红素",
+   "reason": "证据明确包含论断核心事实",
+   "raw": {
+    "verdict": "supported",
+    "evidence_idx": 36,
+    "quote": "红茶属于全发酵茶,发酵过程中儿茶素在多酚氧化酶作用下生成茶黄素和茶红素",
+    "reason": "证据明确包含论断核心事实"
+   }
+  },
+  {
+   "claim": "中国茶叶在 2025 年的出口研发补贴预算约为 4500 万美元。",
+   "verdict": "unsupported",
+   "mode": "llm",
+   "score": 0.0,
+   "evidence_idx": -1,
+   "evidence_doc": "",
+   "quote": "",
+   "reason": "证据未涉及茶叶出口研发补贴预算",
+   "raw": {
+    "verdict": "unsupported",
+    "evidence_idx": -1,
+    "quote": "",
+    "reason": "证据未涉及茶叶出口研发补贴预算"
+   }
+  },
+  {
+   "claim": "咖啡烘焙中,一爆通常发生在豆温 196 至 205 摄氏度之间。",
+   "verdict": "supported",
+   "mode": "llm",
+   "score": 0.0,
+   "evidence_idx": 10,
+   "evidence_doc": "",
+   "quote": "First crack typically occurs when bean temperature reaches 196 to 205 degrees Ce",
+   "reason": "证据明确给出一爆温度196至205摄氏度，与论断一致",
+   "raw": {
+    "verdict": "supported",
+    "evidence_idx": 10,
+    "quote": "First crack typically occurs when bean temperature reaches 196 to 205 degrees Celsius",
+    "reason": "证据明确给出一爆温度196至205摄氏度，与论断一致"
+   }
+  },
+  {
+   "claim": "浓缩咖啡的标准萃取压力为 15 bar,水温保持在 90 至 96 摄氏度。",
+   "verdict": "contradicted",
+   "mode": "llm",
+   "score": 0.0,
+   "evidence_idx": 14,
+   "evidence_doc": "",
+   "quote": "Espresso extraction is typically performed at 9 bar of pressure with water betwe",
+   "reason": "证据压力为9 bar,论断称15 bar,数值冲突",
+   "raw": {
+    "verdict": "contradicted",
+    "evidence_idx": 14,
+    "quote": "Espresso extraction is typically performed at 9 bar of pressure with water between 90 and 96 degrees Celsius",
+    "reason": "证据压力为9 bar,论断称15 bar,数值冲突"
+   }
+  },
+  {
+   "claim": "Amsterdam 的自行车出行占全市交通总量约 38%,这座城市拥有超过 80 万辆自行车。",
+   "verdict": "supported",
+   "mode": "llm",
+   "score": 0.0,
+   "evidence_idx": 16,
+   "evidence_doc": "",
+   "quote": "自行车出行占全市交通出行总量的比例约为 38%,拥有超过 80 万辆自行车",
+   "reason": "证据明确给出38%和超80万辆自行车，与论断一致",
+   "raw": {
+    "verdict": "supported",
+    "evidence_idx": 16,
+    "quote": "自行车出行占全市交通出行总量的比例约为 38%,拥有超过 80 万辆自行车",
+    "reason": "证据明确给出38%和超80万辆自行车，与论断一致"
+   }
+  }
+ ]
+}
