@@ -1,5 +1,7 @@
 # CiteCheck
 
+**中文** | [English](README_en.md)
+
 **RAG 引用忠实性检测器** — 逐句判定 LLM 回答是"有据 / 无据 / 与源冲突",并给出证据定位。
 
 给定一份回答(md/txt)和一组源文档,CiteCheck 把回答拆成句级论断(claims),对每条论断:
