@@ -6,7 +6,7 @@
 
 ## 早上待办(2026-10-28)
 1. **网页操作(只能用户做)**:GitHub 仓库 Settings→Rename `citecheck`→`faithsift`;Gitee 同样(旧地址自动重定向)
-2. **LLM 判官 v0.2 提示词复测**(README 已声明尚未复测):`.venv/Scripts/python.exe -m faithsift validate --dataset gold --mode llm` 和 `--dataset hard --mode llm`(key 在 .env.local,约 ¥0.5;跑完更新 README 实测成绩表)
+2. [已完成 2026-10-27 夜] LLM 判官 v0.2 复测:gold 99.44% / hard 100%,README 已更新:`.venv/Scripts/python.exe -m faithsift validate --dataset gold --mode llm` 和 `--dataset hard --mode llm`(key 在 .env.local,约 ¥0.5;跑完更新 README 实测成绩表)
 3. PyPI 发布前人工复查 pypi.org/project/faithsift 占名
 4. **全部本地 commit 待晨审后 push**(github + origin 两远端已配好;今晚新增:改名 commit 22add56 + 定位章节 commit 06ce86a)
 

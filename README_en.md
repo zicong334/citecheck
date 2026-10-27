@@ -21,10 +21,10 @@ covered". Separating them is what makes RAG hallucination governance actionable.
 
 ## Measured results (honest disclosure)
 
-| Dataset | Claims | Heuristic engine | Notes |
-|---|---|---|---|
-| `gold/gold.jsonl` (synthetic) | 178 | **100.0%** | lexical-friendly; a **regression floor** only |
-| `gold/hard_gold.jsonl` (hand-written) | 49 | **91.8%** | paraphrase / cross-lingual without digits / multi-hop / reversed direction / entity swap |
+| Dataset | Claims | Heuristic engine | LLM judge (measured, v0.2 prompt) | Notes |
+|---|---|---|---|---|
+| `gold/gold.jsonl` (synthetic) | 178 | **100.0%** | **99.44%** | lexical-friendly; a **regression floor** only |
+| `gold/hard_gold.jsonl` (hand-written) | 49 | **91.8%** | **100.0%** | paraphrase / cross-lingual without digits / multi-hop / reversed direction / entity swap |
 
 Per-capability accuracy on the hard set:
 
@@ -44,10 +44,11 @@ Multi-hop detection recall: **7/7**.
    lexically friendly by construction. It only proves refactors do not break what worked.
 2. The hard set is 49 claims written by one person, each with a `rationale` field. It
    exposes capability gaps; it is not a multi-annotator industrial benchmark.
-3. **The LLM judge has not been re-measured under the v0.2 prompt.**
-   `gold/validation_llm_v0.1.json` is the v0.1 result (99.46%, ¥0.29) over the old
-   184-claim gold set. v0.2 allows multi-hop index arrays, so re-run
-   `python -m faithsift validate --dataset gold --mode llm` with a real key.
+3. **The LLM judge has been re-measured under the v0.2 prompt** (night of 2026-10-27):
+   synthetic gold 178 claims **99.44%**, hand-written hard gold 49 claims **100%**
+   (multi-hop / cross-lingual / direction-reversal / entity-swap all correct), ≈¥0.5 total;
+   artifacts in `results/gold_validation_{gold,hard}_llm.json`. The v0.1-prompt result
+   (`gold/validation_llm_v0.1.json`, 99.46% over the old 184-claim set) is kept for comparison.
 
 ## Dual judges × three retrieval channels
 
