@@ -6,7 +6,7 @@
 
 ## 早上待办(2026-10-28)
 1. **网页操作(只能用户做)**:GitHub 仓库 Settings→Rename `citecheck`→`faithsift`;Gitee 同样(旧地址自动重定向)
-2. [已完成 2026-10-27 夜] LLM 判官 v0.2 复测:gold 99.44% / hard 100%,README 已更新:`.venv/Scripts/python.exe -m faithsift validate --dataset gold --mode llm` 和 `--dataset hard --mode llm`(key 在 .env.local,约 ¥0.5;跑完更新 README 实测成绩表)
+2. ~~LLM 判官 v0.2 提示词复测~~ **已完成(2026-10-27 夜)**:合成金标 99.44% / 人工困难金标 100%,README 中英版已更新,产物在 gold/validation_{gold,hard}_llm_v0.2.json,花费约 ¥0.5
 3. PyPI 发布前人工复查 pypi.org/project/faithsift 占名
 4. **全部本地 commit 待晨审后 push**(github + origin 两远端已配好;今晚新增:改名 commit 22add56 + 定位章节 commit 06ce86a)
 
@@ -79,7 +79,7 @@ LLM 模式需要密钥:环境变量 `DEEPSEEK_API_KEY`、`FAITHSIFT_ENV_FILE`,
 困难金标分项:实体错配 100%、多跳 100%、数字篡改 100%、单位 100%、
 跨语言 87.5%、方向 80%、中文改写 83.3%、相邻话题 66.7%;多跳召回 7/7。
 
-**未复测**:LLM 判官在 v0.2 提示词下的分数。`gold/validation_llm_v0.1.json` 是 v0.1 的结果
+**已复测(2026-10-27 夜更新)**:LLM 判官 v0.2 提示词全量复测完成(99.44%/100%)。`gold/validation_llm_v0.1.json` 是 v0.1 的历史结果
 (99.46%,¥0.29,对应 184 条旧金标),不要当 v0.2 的结论引用。
 
 ## 剩余错误(全部可解释,已写进 README 已知局限)
