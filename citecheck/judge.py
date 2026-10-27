@@ -101,10 +101,16 @@ class LLMJudge:
         from openai import OpenAI
         key = api_key or os.environ.get("DEEPSEEK_API_KEY")
         if not key:
-            env_file = os.environ.get("CITECHECK_ENV_FILE")
-            if env_file and Path(env_file).exists():
-                from dotenv import dotenv_values
-                key = dotenv_values(env_file).get("DEEPSEEK_API_KEY")
+            candidates = []
+            if os.environ.get("CITECHECK_ENV_FILE"):
+                candidates.append(Path(os.environ["CITECHECK_ENV_FILE"]))
+            candidates.append(Path(__file__).resolve().parent.parent / ".env")
+            for env_file in candidates:
+                if env_file.exists():
+                    from dotenv import dotenv_values
+                    key = dotenv_values(env_file).get("DEEPSEEK_API_KEY")
+                    if key:
+                        break
         if not key:
             raise RuntimeError("no DeepSeek key (env DEEPSEEK_API_KEY or CITECHECK_ENV_FILE)")
         self.client = OpenAI(api_key=key, base_url=base_url, timeout=90, max_retries=0)

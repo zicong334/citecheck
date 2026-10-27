@@ -16,7 +16,7 @@ CLI + 三格式报告 + demo,8 项离线测试绿,LLM 全量验证仅花 ¥0.29,
 .venv/Scripts/python.exe -m pytest tests/ -q            # 8 绿(离线,零API)
 .venv/Scripts/python.exe -m citecheck gold              # 重建金标(幂等)
 .venv/Scripts/python.exe -m citecheck validate --mode heuristic
-# LLM 模式需 CITECHECK_ENV_FILE 指向含 DEEPSEEK_API_KEY 的 .env
+# LLM 模式读仓库根 .env / CITECHECK_ENV_FILE / 环境变量 DEEPSEEK_API_KEY(三选一)
 .venv/Scripts/python.exe -m citecheck check demo/sample_answer.md --sources gold/sources --mode llm
 ```
 
