@@ -1,4 +1,4 @@
-# CiteCheck 忠实性报告
+# FaithSift 忠实性报告
 
 - 答案文件: `demo\multihop_answer.md`
 - 证据源: `gold\sources`

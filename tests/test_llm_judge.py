@@ -8,13 +8,13 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from citecheck.evidence import Chunk
-from citecheck.judge import BudgetStop, LLMJudge
+from faithsift.evidence import Chunk
+from faithsift.judge import BudgetStop, LLMJudge
 
 
 def _judge(monkeypatch, responses):
     """构造一个不联网的判官:按顺序返回给定的 JSON 响应。"""
-    monkeypatch.setattr("citecheck.judge._load_api_key", lambda explicit=None: "sk-test")
+    monkeypatch.setattr("faithsift.judge._load_api_key", lambda explicit=None: "sk-test")
     j = LLMJudge()
     calls = []
 
@@ -96,7 +96,7 @@ def test_budget_stop_propagates(monkeypatch):
 
 
 def test_prompt_allows_multi_hop_and_forbids_entailment():
-    from citecheck.judge import JUDGE_SYSTEM
+    from faithsift.judge import JUDGE_SYSTEM
     assert "多个" in JUDGE_SYSTEM and "多跳" in JUDGE_SYSTEM
     assert "严格一致" in JUDGE_SYSTEM
     assert "180" in JUDGE_SYSTEM or "200" in JUDGE_SYSTEM

@@ -2,10 +2,10 @@
 """源文档加载、分块与分词,以及兼容用的检索入口。
 
 分词是与语言无关的:ASCII 单词 + 中日韩单字/二元组,再叠加
-:mod:`citecheck.lexicon` 里的中英共享概念词元。这样一条中文论断与一段
+:mod:`faithsift.lexicon` 里的中英共享概念词元。这样一条中文论断与一段
 英文证据即使没有任何数字,也能在"讲的是同一件事"上重叠起来。
 
-本模块只管数据与分词。排序打分的逻辑在 :mod:`citecheck.retrieval`
+本模块只管数据与分词。排序打分的逻辑在 :mod:`faithsift.retrieval`
 (BM25、数值不变性、向量信号)。:func:`retrieve` 保留为薄封装,
 方便只想拿个 top-k 的调用方,循环里请改用 ``Retriever`` 以免重复建索引。
 """
@@ -116,7 +116,7 @@ def retrieve(claim: str, chunks: Sequence[Chunk], k: int = 3,
              backend: str = "lexical") -> list[tuple[Chunk, float]]:
     """向后兼容的一次性 top-k 检索(内部会新建一个检索器)。
 
-    Prefer :class:`citecheck.retrieval.Retriever` in loops: it indexes once.
+    Prefer :class:`faithsift.retrieval.Retriever` in loops: it indexes once.
     """
     from .retrieval import Retriever
 

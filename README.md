@@ -1,11 +1,14 @@
-# CiteCheck
+# FaithSift
 
 **中文** | [English](README_en.md)
+
+> 本项目原名 CiteCheck (renamed to FaithSift) —— 因名称冲突于 2026-10-27 更名,
+> 缘由与证据见 [CHANGELOG](CHANGELOG.md)。旧 `CITECHECK_*` 环境变量仍作回退。
 
 **RAG 回答的句子级引用忠实性检测器** —— 逐句判定 LLM 的回答是「有据 / 无据 / 与源冲突」,
 并给出结论所依赖的证据定位。
 
-给定一份回答(md/txt)和一组源文档,CiteCheck 会把回答拆成句级论断,对每条:
+给定一份回答(md/txt)和一组源文档,FaithSift 会把回答拆成句级论断,对每条:
 
 1. **检索**:BM25 词法 + 数值不变性 + 中英概念词表(可选再接向量通道),找出最相关的证据片段;
 2. **判定**三分类:**supported**(证据明确包含)/ **contradicted**(与同一事实的取值冲突)/
@@ -41,7 +44,7 @@
    但它仍然是一人判断,不是多人标注的工业集。
 3. **LLM 判官的分数尚未在 v0.2 提示词下复测**。仓库里的 `gold/validation_llm_v0.1.json`
    是 v0.1 提示词的结果(99.46%,¥0.29),对应的是 184 条旧金标。v0.2 改成了允许多跳数组,
-   需要用真实密钥重跑 `python -m citecheck validate --dataset gold --mode llm`。
+   需要用真实密钥重跑 `python -m faithsift validate --dataset gold --mode llm`。
 
 ## 双引擎 × 三检索通道
 
@@ -62,12 +65,12 @@
 python -m venv .venv && .venv/Scripts/pip install -e ".[dev]"
 python -m pytest tests/ -q                       # 70 项离线测试,零 API
 
-python -m citecheck gold                         # 重建两套金标(确定性)
-python -m citecheck validate --dataset gold      # 合成金标:回归下限
-python -m citecheck validate --dataset hard      # 困难金标:能力缺口
+python -m faithsift gold                         # 重建两套金标(确定性)
+python -m faithsift validate --dataset gold      # 合成金标:回归下限
+python -m faithsift validate --dataset hard      # 困难金标:能力缺口
 
 # 核查一份回答
-python -m citecheck check demo/sample_answer.md --sources gold/sources \
+python -m faithsift check demo/sample_answer.md --sources gold/sources \
     --mode heuristic --out results/check
 # -> results/check.{md,html,json}
 ```
@@ -77,7 +80,7 @@ python -m citecheck check demo/sample_answer.md --sources gold/sources \
 ## CLI
 
 ```text
-citecheck check <answer> --sources <dir>
+faithsift check <answer> --sources <dir>
     --mode heuristic|llm|both         判官
     --retriever lexical|hybrid|dense  检索通道
     --embedder hashing|<模型名>        向量后端
@@ -86,8 +89,8 @@ citecheck check <answer> --sources <dir>
     --fail-on-contradicted            出现与源冲突 -> 退出码 4
     --json                            机器可读输出
 
-citecheck gold                        重建 gold.jsonl 与 hard_gold.jsonl
-citecheck validate --dataset gold|hard --mode heuristic|llm
+faithsift gold                        重建 gold.jsonl 与 hard_gold.jsonl
+faithsift validate --dataset gold|hard --mode heuristic|llm
     --min-accuracy 0.85               准确率低于阈值 -> 退出码 5
 ```
 
@@ -121,7 +124,7 @@ citecheck validate --dataset gold|hard --mode heuristic|llm
 `数百` 这类约数不会被误转成 100。
 
 **概念词表补跨语言。** 只靠数字的话,一条不含数字的中文论断永远召回不到英文证据。
-`citecheck/lexicon.py` 把中英表面形式映射到共享概念词元
+`faithsift/lexicon.py` 把中英表面形式映射到共享概念词元
 (`茶树`/`tea` → `tea`,`一爆`/`first crack` → `first_crack`),
 约 250 个表面形式、120 个概念,覆盖随附的六个领域。
 
@@ -132,21 +135,21 @@ citecheck validate --dataset gold|hard --mode heuristic|llm
 **多跳真的需要两段。** 判官不满足于「某段沾边」,只有在第二段证据带来足够新增覆盖、
 并且合并后达到阈值时才判多跳支持;否则一篇主题相关但不含该事实的段落就会被当成证据。
 
-**成本保险丝。** `results/cost_ledger.jsonl` 逐调用记账,硬顶 ¥12(`CITECHECK_CAP` 可调),
+**成本保险丝。** `results/cost_ledger.jsonl` 逐调用记账,硬顶 ¥12(`FAITHSIFT_CAP` 可调,旧名 `CITECHECK_CAP` 仍作回退),
 到顶抛 `BudgetStop`,防止批量跑测试时超支。
 
 ## 结构
 
 ```text
-citecheck/claims.py     中英句级论断拆分
-citecheck/evidence.py   源加载 / 分块 / 分词
-citecheck/lexicon.py    中英概念词表 + 实体名录
-citecheck/numbers.py    中文数词与量级归一化
-citecheck/retrieval.py  BM25 + 数值不变性 + 可选向量的混合检索
-citecheck/embed.py      可选向量后端(OpenAI 兼容 / 哈希替身 / 磁盘缓存)
-citecheck/judge.py      双引擎判官(LLM JSON 判官 + 启发式,含多跳)
-citecheck/pipeline.py   端到端流水线 + 金标验证 + CI 门禁
-citecheck/report.py     md / html / json 报告渲染
+faithsift/claims.py     中英句级论断拆分
+faithsift/evidence.py   源加载 / 分块 / 分词
+faithsift/lexicon.py    中英概念词表 + 实体名录
+faithsift/numbers.py    中文数词与量级归一化
+faithsift/retrieval.py  BM25 + 数值不变性 + 可选向量的混合检索
+faithsift/embed.py      可选向量后端(OpenAI 兼容 / 哈希替身 / 磁盘缓存)
+faithsift/judge.py      双引擎判官(LLM JSON 判官 + 启发式,含多跳)
+faithsift/pipeline.py   端到端流水线 + 金标验证 + CI 门禁
+faithsift/report.py     md / html / json 报告渲染
 gold/                   两套金标 + 6 篇双语语料 + 验证产物
 demo/                   示例回答与渲染好的报告
 scripts/gap_report.py   按类别列出错分样本的开发脚本
@@ -158,7 +161,7 @@ tests/                  70 项离线测试
 真实密钥**不放进仓库**。加载顺序:
 
 1. 环境变量 `DEEPSEEK_API_KEY`
-2. `CITECHECK_ENV_FILE` 指向的文件(可以在仓库外)
+2. `FAITHSIFT_ENV_FILE` 指向的文件(可以在仓库外;旧名 `CITECHECK_ENV_FILE` 仍作回退)
 3. `.env.local`(已 gitignore,本地私有)
 4. `.env`(只有占位符)
 

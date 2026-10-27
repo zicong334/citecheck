@@ -27,7 +27,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from citecheck.claims import split_claims  # noqa: E402
+from faithsift.claims import split_claims  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent
 SOURCES = ROOT / "sources"

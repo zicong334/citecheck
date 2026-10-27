@@ -2,22 +2,37 @@
 
 本项目的所有重要变更记录在此。格式参考 Keep a Changelog,版本号遵循语义化版本。
 
+## [Unreleased] — 2026-10-27
+
+### 改名
+
+- **项目更名:CiteCheck (renamed to FaithSift)**。原因:调研发现 "CiteCheck" 名称四层撞车 ——
+  arXiv 已有 3 篇同名论文(含北大 2025《CiteCheck: Towards Accurate Citation Faithfulness
+  Detection》,arXiv:2502.10881,同任务、同语言的中文引用忠实性数据集)、GitHub 69 个同名仓库
+  (约 10 个与 RAG 引用忠实性直接同定位)、PyPI 与 npm 名称均被占用;"FaithSift" 已核实四层
+  干净(证据与核查方式见 `docs/survey_faithfulness_landscape.md`)。
+- 包目录 `citecheck/` → `faithsift/`;CLI 命令 `citecheck` → `faithsift`;
+  `python -m citecheck` → `python -m faithsift`;导入路径全部随迁。
+- 环境变量改用 `FAITHSIFT_ENV_FILE` / `FAITHSIFT_CAP` / `FAITHSIFT_EMBED_KEY` /
+  `FAITHSIFT_EMBED_BASE_URL`;旧 `CITECHECK_*` 变量名保留为回退(先读新名,没有再读旧名),
+  过渡期内旧配置继续可用。
+
 ## [0.2.0] — 2026-10-27
 
 主题:**把"合成金标 97.8%"这个数字背后的真实边界补上** —— 补检索通道、补多跳、补困难金标、补安全与 CI。
 
 ### 新增
 
-- **BM25 检索内核**(`citecheck/retrieval.py`):替换 v0.1 的朴素包含度。
+- **BM25 检索内核**(`faithsift/retrieval.py`):替换 v0.1 的朴素包含度。
   计入词频、文档长度与逆文档频率,排序质量与可解释性都更好。
-- **中英双语概念词表**(`citecheck/lexicon.py`):约 250 个中英表面形式映射到
+- **中英双语概念词表**(`faithsift/lexicon.py`):约 250 个中英表面形式映射到
   约 120 个共享概念词元(如 `茶树`/`tea` → `tea`,`一爆`/`first crack` →
   `first_crack`),外加实体名录。
   解决 v0.1「跨语言只能靠数字」的问题:没有数字的中文论断现在也能召回英文证据。
-- **可选向量通道**(`citecheck/embed.py`):OpenAI 兼容嵌入后端 + 零依赖的
+- **可选向量通道**(`faithsift/embed.py`):OpenAI 兼容嵌入后端 + 零依赖的
   哈希嵌入占位 + 内容寻址磁盘缓存;`--retriever hybrid|dense` 启用。
   向量不是必需品,缺 key 时自动退回词法通道。
-- **中文数词与量级归一化**(`citecheck/numbers.py`):`两千`→`2000`、
+- **中文数词与量级归一化**(`faithsift/numbers.py`):`两千`→`2000`、
   `四到六`→`4到6`、`一成`→`10%`、`10 万`→`100000`、
   `1.9 million`→`1900000`、`2,000`→`2000`。`数百` 这类约数不会被误转。
 - **多跳证据链**:判官字段新增 `evidence_idxs` 与 `multi_hop`;
@@ -34,7 +49,7 @@
   `--min-accuracy`(金标准确率阈值),退出码 3/4/5/6 语义明确。
 - **开发辅助脚本** `scripts/gap_report.py`:按类别列出错分样本,直接看到能力缺口。
 - **GitHub Actions**:3.11/3.12/3.13 矩阵跑离线测试 + 两道金标门禁 + 密钥扫描。
-- **安全**:`.env` 改为纯占位模板;真实密钥只从环境变量、`CITECHECK_ENV_FILE`
+- **安全**:`.env` 改为纯占位模板;真实密钥只从环境变量、`FAITHSIFT_ENV_FILE`
   或 `gitignored` 的 `.env.local` 读取;新增 `.env.example`、
   `tests/test_security.py`(扫描真实密钥形态并校验 `.env` 未被 git 跟踪)。
 

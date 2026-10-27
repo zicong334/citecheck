@@ -5,11 +5,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from citecheck.evidence import discover_sources, load_sources
-from citecheck.judge import (ClaimVerdict, HeuristicJudge, concept_polarity,
+from faithsift.evidence import discover_sources, load_sources
+from faithsift.judge import (ClaimVerdict, HeuristicJudge, concept_polarity,
                              polarity_conflict)
-from citecheck.retrieval import Retriever
-from citecheck.report import summarize, to_html, to_markdown
+from faithsift.retrieval import Retriever
+from faithsift.report import summarize, to_html, to_markdown
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCES = ROOT / "gold" / "sources"

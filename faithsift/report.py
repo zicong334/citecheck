@@ -47,7 +47,7 @@ def _problem_rows(verdicts: list[dict]) -> list[dict]:
 
 def to_markdown(verdicts: list[dict], summary: dict, meta: dict) -> str:
     hop = f",多跳 {summary.get('multi_hop', 0)}" if summary.get("multi_hop") else ""
-    lines = ["# CiteCheck 忠实性报告", "",
+    lines = ["# FaithSift 忠实性报告", "",
              f"- 答案文件: `{meta.get('answer', '?')}`",
              f"- 证据源: `{meta.get('sources', '?')}`",
              f"- 判分模式: `{meta.get('mode', '?')}` / 模型: `{meta.get('model', '-')}`",
@@ -149,9 +149,9 @@ def to_html(verdicts: list[dict], summary: dict, meta: dict) -> str:
 
     return f"""<!doctype html><html lang="zh"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CiteCheck 报告 · {summary['faithfulness']:.1%}</title>
+<title>FaithSift 报告 · {summary['faithfulness']:.1%}</title>
 <style>{_CSS}</style></head><body>
-<h1>CiteCheck 忠实性报告</h1>
+<h1>FaithSift 忠实性报告</h1>
 <p class="sub">{' · '.join(meta_bits)}</p>
 <p class="score" style="color:{_score_color(summary['faithfulness'])}">
 {summary['faithfulness']:.1%}</p>
@@ -172,7 +172,7 @@ def to_html(verdicts: list[dict], summary: dict, meta: dict) -> str:
 <table><thead><tr><th>#</th><th>判定</th><th>论断</th><th>证据</th>
 <th>证据摘录</th><th>理由</th></tr></thead>
 <tbody>{''.join(rows)}</tbody></table>
-<p class="sub">由 CiteCheck 生成 · 判定标准: supported=证据明确包含 /
+<p class="sub">由 FaithSift 生成 · 判定标准: supported=证据明确包含 /
 contradicted=同一事实取值冲突 / unsupported=证据沉默</p>
 </body></html>"""
 

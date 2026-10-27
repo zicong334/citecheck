@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""命令行入口:``python -m citecheck <子命令> ...``
+"""命令行入口:``python -m faithsift <子命令> ...``
 
 子命令
 ------
@@ -35,9 +35,9 @@ GATES = {"fail_under": 3, "contradicted": 4, "accuracy": 5}
 
 def _build_parser() -> argparse.ArgumentParser:
     ap = argparse.ArgumentParser(
-        prog="citecheck",
+        prog="faithsift",
         description="面向 RAG 回答的句子级引用忠实性检测器。")
-    ap.add_argument("--version", action="version", version="citecheck 0.2.0")
+    ap.add_argument("--version", action="version", version="faithsift 0.2.0")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
     c = sub.add_parser("check", help="核查一份回答对证据源的忠实性")
@@ -115,7 +115,7 @@ def _cmd_check(args: argparse.Namespace) -> int:
                            out_prefix=None if args.no_report else Path(args.out),
                            retriever=args.retriever, embedder=args.embedder)
     except RuntimeError as e:  # missing credentials / backend
-        print(f"citecheck: {e}", file=sys.stderr)
+        print(f"faithsift: {e}", file=sys.stderr)
         return 6
 
     if args.mode == "both":
@@ -161,7 +161,7 @@ def _cmd_validate(args: argparse.Namespace) -> int:
     gold = Path(args.gold) if args.gold else \
         ROOT / "gold" / ("hard_gold.jsonl" if args.dataset == "hard" else "gold.jsonl")
     if not gold.exists():
-        print(f"citecheck: missing gold set {gold}; run `citecheck gold`",
+        print(f"faithsift: missing gold set {gold}; run `faithsift gold`",
               file=sys.stderr)
         return 2
     try:
@@ -171,7 +171,7 @@ def _cmd_validate(args: argparse.Namespace) -> int:
             top_k=args.top_k, retriever=args.retriever, embedder=args.embedder,
             progress=args.limit is None or args.limit > 50)
     except RuntimeError as e:
-        print(f"citecheck: {e}", file=sys.stderr)
+        print(f"faithsift: {e}", file=sys.stderr)
         return 6
 
     out = Path(args.out) if args.out else \

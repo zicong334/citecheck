@@ -1,4 +1,8 @@
-# HANDOVER — CiteCheck v0.2(2026-10-27)
+# HANDOVER — FaithSift v0.2(2026-10-27)
+
+> 本项目原名 CiteCheck (renamed to FaithSift),2026-10-27 因名称四层撞车改名
+> (arXiv:2502.10881 等,详见 CHANGELOG 与 docs/survey_faithfulness_landscape.md)。
+> 旧 `CITECHECK_*` 环境变量仍作回退;本地文件夹名 `citecheck` 保持不变。
 
 ## 现状(一句话)
 
@@ -20,15 +24,15 @@ v0.1 打通了链路,v0.2 补的是**链路背后的真实能力**:BM25 + 双语
 
 ```bash
 .venv/Scripts/python.exe -m pytest tests/ -q                    # 70 项(离线,零 API)
-.venv/Scripts/python.exe -m citecheck gold                      # 重建两套金标(幂等)
-.venv/Scripts/python.exe -m citecheck validate --dataset gold   # 合成金标 -> 100%
-.venv/Scripts/python.exe -m citecheck validate --dataset hard   # 困难金标 -> 91.8%
+.venv/Scripts/python.exe -m faithsift gold                      # 重建两套金标(幂等)
+.venv/Scripts/python.exe -m faithsift validate --dataset gold   # 合成金标 -> 100%
+.venv/Scripts/python.exe -m faithsift validate --dataset hard   # 困难金标 -> 91.8%
 .venv/Scripts/python.exe scripts/gap_report.py --dataset hard   # 按类别看错分
-.venv/Scripts/python.exe -m citecheck check demo/sample_answer.md \
+.venv/Scripts/python.exe -m faithsift check demo/sample_answer.md \
     --sources gold/sources --mode heuristic --out demo/report
 ```
 
-LLM 模式需要密钥:环境变量 `DEEPSEEK_API_KEY`、`CITECHECK_ENV_FILE`,
+LLM 模式需要密钥:环境变量 `DEEPSEEK_API_KEY`、`FAITHSIFT_ENV_FILE`,
 或本地 `.env.local`(已 gitignore)。**仓库内 `.env` 只有占位符。**
 
 ## v0.2 做了什么
@@ -57,7 +61,7 @@ LLM 模式需要密钥:环境变量 `DEEPSEEK_API_KEY`、`CITECHECK_ENV_FILE`,
    会因为共享数字 10 被判成方向相反。
 4. **概念覆盖的分母不加权于未登录词之外**,且要求最少 3 个概念(或 2 个概念 + 数字全中),
    防止"只提到咖啡/烘焙两个词"的无关论断被判成全支持。
-5. **成本保险丝**保留:CITECHECK_CAP 默认 ¥12,到顶抛 BudgetStop。
+5. **成本保险丝**保留:FAITHSIFT_CAP 默认 ¥12,到顶抛 BudgetStop。
 
 ## 实测数字(v0.2,离线词法引擎)
 

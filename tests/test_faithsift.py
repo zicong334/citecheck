@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
-"""citecheck 的基础离线单元测试(不发起任何 API 调用)。"""
+"""faithsift 的基础离线单元测试(不发起任何 API 调用)。"""
 import json
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from citecheck.claims import split_claims
-from citecheck.evidence import discover_sources, load_sources, retrieve, tokenize
-from citecheck.judge import HeuristicJudge, _parse_json
-from citecheck.pipeline import check_answer, validate_against_gold
-from citecheck.report import summarize, to_markdown
+from faithsift.claims import split_claims
+from faithsift.evidence import discover_sources, load_sources, retrieve, tokenize
+from faithsift.judge import HeuristicJudge, _parse_json
+from faithsift.pipeline import check_answer, validate_against_gold
+from faithsift.report import summarize, to_markdown
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCES = ROOT / "gold" / "sources"
@@ -57,7 +57,7 @@ def test_heuristic_three_way():
 
 
 def test_gold_exists_and_balanced():
-    assert GOLD.exists(), "run: python -m citecheck gold"
+    assert GOLD.exists(), "run: python -m faithsift gold"
     recs = [json.loads(x) for x in GOLD.read_text(encoding="utf-8").splitlines()]
     labels = {r["label"] for r in recs}
     assert labels == {"supported", "unsupported", "contradicted"}

@@ -1,7 +1,7 @@
 # 引用忠实性检测 Landscape 调研 + "CiteCheck" 名称冲突检查
 
 - **调研日期**:2026-10-27
-- **委托背景**:为自建 RAG 引用忠实性检测器(当前代号 CiteCheck,v0.2)撰写"与已发表工作的关系"章节做系统调研,并做名称冲突检查。
+- **委托背景**:为自建 RAG 引用忠实性检测器(当时代号 CiteCheck (renamed to FaithSift),v0.2)撰写"与已发表工作的关系"章节做系统调研,并做名称冲突检查。
 - **本工具特点基线**(用于重叠度评估):
   1. 回答拆句级论断 → 检索证据 → 三分类 supported / unsupported / contradicted(把"证据沉默"单列是卖点)
   2. 双引擎:零 API 词法判官(BM25 + 数值不变性 + 中英概念词表,合成金标 97.8%)+ DeepSeek 结构化 JSON 判官(99.46%)
@@ -237,3 +237,15 @@
 - "FacTool 后续"系统清单:未做引文级追踪
 - 与"词法判官+数值不变性+概念词表"完全对标的现成工具:未找到
 - 与"中文论断→英文源跨语言证据检索"完全对标的现成管道:未找到
+
+---
+
+## 改名决定(2026-10-27)
+
+用户已拍板:项目由 **CiteCheck (renamed to FaithSift)**。依据即本调研第 5–7 节:
+"CiteCheck" 在 arXiv(3 篇同名论文,含北大 2025《CiteCheck: Towards Accurate Citation
+Faithfulness Detection》,arXiv:2502.10881,同任务、同语言)、GitHub(69 个同名仓,
+约 10 个与 RAG 引用忠实性直接同定位)、PyPI、npm 四层全部撞车;"FaithSift" 四层
+核实干净(2026-10-27)。落地范围:包目录/导入路径/CLI 命令/文档品牌全部改为
+`faithsift`;环境变量改用 `FAITHSIFT_*`,旧 `CITECHECK_*` 名保留为回退;本地文件夹名
+`citecheck` 不改。本文正文中的 "CiteCheck" 撞车证据均指改名前的旧项目名,保持原样存档。

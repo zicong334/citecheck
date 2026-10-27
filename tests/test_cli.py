@@ -6,7 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from citecheck.cli import main
+from faithsift.cli import main
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCES = ROOT / "gold" / "sources"
@@ -102,8 +102,9 @@ def test_missing_gold_reports_usage_error(tmp_path, capsys):
 
 def test_llm_mode_without_key_reports_cleanly(tmp_path, capsys, monkeypatch):
     monkeypatch.delenv("DEEPSEEK_API_KEY", raising=False)
-    monkeypatch.delenv("CITECHECK_ENV_FILE", raising=False)
-    monkeypatch.setattr("citecheck.judge._load_api_key", lambda explicit=None: None)
+    monkeypatch.delenv("FAITHSIFT_ENV_FILE", raising=False)
+    monkeypatch.delenv("CITECHECK_ENV_FILE", raising=False)  # 旧名回退也删掉
+    monkeypatch.setattr("faithsift.judge._load_api_key", lambda explicit=None: None)
     ans = _write(tmp_path, ANSWER_OK)
     rc = main(["check", str(ans), "--sources", str(SOURCES),
                "--mode", "llm", "--no-report"])

@@ -69,7 +69,7 @@ def test_env_example_documents_required_keys():
     assert example.exists()
     text = example.read_text(encoding="utf-8")
     assert "DEEPSEEK_API_KEY" in text
-    assert "CITECHECK_CAP" in text
+    assert "FAITHSIFT_CAP" in text
 
 
 def test_gitignore_covers_secret_files():

@@ -6,7 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from citecheck.pipeline import validate_against_gold
+from faithsift.pipeline import validate_against_gold
 
 ROOT = Path(__file__).resolve().parent.parent
 GOLD = ROOT / "gold" / "gold.jsonl"
@@ -20,7 +20,7 @@ def _load(path):
 
 
 def test_hard_gold_exists_and_structured():
-    assert HARD.exists(), "运行 python -m citecheck gold 生成困难金标"
+    assert HARD.exists(), "运行 python -m faithsift gold 生成困难金标"
     recs = _load(HARD)
     assert len(recs) >= 40
     labels = {r["label"] for r in recs}
@@ -41,7 +41,7 @@ def test_hard_gold_multihop_records_are_consistent():
 
 def test_hard_gold_numbers_are_not_in_corpus():
     """number_alter 类用例篡改后的数字,必须在语料里确实不存在。"""
-    from citecheck.evidence import distinctive_numbers
+    from faithsift.evidence import distinctive_numbers
     corpus = "\n".join(p.read_text(encoding="utf-8")
                        for p in sorted(SOURCES.glob("*.md")))
     corpus_nums = distinctive_numbers(corpus)

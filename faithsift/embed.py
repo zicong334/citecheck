@@ -90,16 +90,19 @@ class OpenAIEmbedder:
                  batch: int = 64):
         from openai import OpenAI
 
-        key = (api_key or os.environ.get("CITECHECK_EMBED_KEY")
+        key = (api_key or os.environ.get("FAITHSIFT_EMBED_KEY")
+               or os.environ.get("CITECHECK_EMBED_KEY")  # 旧名回退
                or os.environ.get("OPENAI_API_KEY"))
         if not key:
             raise RuntimeError(
-                "no embedding key (CITECHECK_EMBED_KEY or OPENAI_API_KEY); "
+                "no embedding key (FAITHSIFT_EMBED_KEY or OPENAI_API_KEY); "
                 "use --retriever lexical or --embedder hashing instead")
         self.client = OpenAI(
             api_key=key,
-            base_url=base_url or os.environ.get(
-                "CITECHECK_EMBED_BASE_URL", "https://api.openai.com/v1"),
+            base_url=(base_url
+                       or os.environ.get("FAITHSIFT_EMBED_BASE_URL")
+                       or os.environ.get("CITECHECK_EMBED_BASE_URL")  # 旧名回退
+                       or "https://api.openai.com/v1"),
             timeout=90, max_retries=1)
         self.model = model
         self.batch = batch

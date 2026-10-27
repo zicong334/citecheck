@@ -3,13 +3,13 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "citecheck"
+name = "faithsift"
 version = "0.2.0"
-description = "RAG 回答的句子级引用忠实性检测器:三分类判定 + 跨语言召回 + 多跳证据"
+description = "FaithSift —— RAG 回答的句子级引用忠实性检测器:三分类判定 + 跨语言召回 + 多跳证据"
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}
-authors = [{name = "CiteCheck contributors"}]
+authors = [{name = "FaithSift contributors"}]
 keywords = ["rag", "hallucination", "citation", "faithfulness", "llm", "nli"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -35,14 +35,14 @@ dependencies = [
 dev = ["pytest>=8"]
 
 [project.urls]
-Homepage = "https://github.com/example/citecheck"
-Issues = "https://github.com/example/citecheck/issues"
+Homepage = "https://github.com/example/faithsift"
+Issues = "https://github.com/example/faithsift/issues"
 
 [project.scripts]
-citecheck = "citecheck.cli:main"
+faithsift = "faithsift.cli:main"
 
 [tool.setuptools.packages.find]
-include = ["citecheck*"]
+include = ["faithsift*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

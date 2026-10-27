@@ -217,7 +217,9 @@ class Ledger:
         self.path = Path(path)
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.cap = cap if cap is not None else float(
-            os.environ.get("CITECHECK_CAP", "12"))
+            os.environ.get("FAITHSIFT_CAP")
+            or os.environ.get("CITECHECK_CAP")  # 旧名回退(CiteCheck → FaithSift)
+            or "12")
         self.total = 0.0
         if self.path.exists():
             for line in self.path.read_text(encoding="utf-8").splitlines():
@@ -251,15 +253,18 @@ def _parse_json(text: str) -> dict:
 def _load_api_key(explicit: str | None = None) -> str | None:
     """按优先级取 DeepSeek key,绝不把密钥写进仓库文件。
 
-    顺序:显式传入 > 进程环境变量 > ``CITECHECK_ENV_FILE`` 指向的文件
-    > 仓库根的 ``.env.local``(本地私有) > 仓库根的 ``.env``(只有占位符)。
+    顺序:显式传入 > 进程环境变量 > ``FAITHSIFT_ENV_FILE`` 指向的文件
+    (旧名 ``CITECHECK_ENV_FILE`` 仍作回退) > 仓库根的 ``.env.local``(本地私有)
+    > 仓库根的 ``.env``(只有占位符)。
     """
     key = explicit or os.environ.get("DEEPSEEK_API_KEY")
     if key and key.strip() and not key.startswith("sk-your"):
         return key.strip()
     candidates: list[Path] = []
-    if os.environ.get("CITECHECK_ENV_FILE"):
-        candidates.append(Path(os.environ["CITECHECK_ENV_FILE"]))
+    env_file_var = (os.environ.get("FAITHSIFT_ENV_FILE")
+                    or os.environ.get("CITECHECK_ENV_FILE"))  # 旧名回退
+    if env_file_var:
+        candidates.append(Path(env_file_var))
     root = Path(__file__).resolve().parent.parent
     candidates.extend([root / ".env.local", root / ".env"])
     for env_file in candidates:

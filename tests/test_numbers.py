@@ -5,8 +5,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from citecheck.evidence import distinctive_numbers
-from citecheck.numbers import (apply_magnitude, cn_to_int, normalize_numerals,
+from faithsift.evidence import distinctive_numbers
+from faithsift.numbers import (apply_magnitude, cn_to_int, normalize_numerals,
                                strip_separators)
 
 

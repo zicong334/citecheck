@@ -45,7 +45,7 @@ from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from citecheck.evidence import distinctive_numbers  # noqa: E402
+from faithsift.evidence import distinctive_numbers  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent
 SOURCES = ROOT / "sources"

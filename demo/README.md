@@ -13,16 +13,16 @@
 重新生成(离线):
 
 ```bash
-python -m citecheck check demo/sample_answer.md --sources gold/sources \
+python -m faithsift check demo/sample_answer.md --sources gold/sources \
     --mode heuristic --out demo/report
-python -m citecheck check demo/multihop_answer.md --sources gold/sources \
+python -m faithsift check demo/multihop_answer.md --sources gold/sources \
     --mode heuristic --out demo/report_multihop
 ```
 
 重新生成 LLM 版(需要真实密钥,会产生费用):
 
 ```bash
-python -m citecheck check demo/sample_answer.md --sources gold/sources \
+python -m faithsift check demo/sample_answer.md --sources gold/sources \
     --mode llm --out demo/report_llm
 ```
 

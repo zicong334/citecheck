@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-"""CiteCheck:RAG 回答的句子级引用忠实性检测器。
+"""FaithSift:RAG 回答的句子级引用忠实性检测器。
 
 公开 API::
 
-    from citecheck import check_answer, LLMJudge, HeuristicJudge, Retriever
+    from faithsift import check_answer, LLMJudge, HeuristicJudge, Retriever
 
 最小用法::
 
@@ -11,7 +11,7 @@
     result["summary"]["faithfulness"]
 
 v0.2 新增:BM25 + 双语概念词表的检索器(``Retriever``)、
-可选向量通道(:mod:`citecheck.embed`)、多跳证据链
+可选向量通道(:mod:`faithsift.embed`)、多跳证据链
 (``ClaimVerdict.multi_hop``)。
 """
 from .claims import split_claims

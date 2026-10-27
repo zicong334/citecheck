@@ -2,6 +2,9 @@
 
 > 本文件是项目的**底层规则**,优先级高于任何单次对话里的临时措辞。
 > 任何在本仓库工作的 AI 代理或协作者,开工前必须先读本文件。
+>
+> 项目原名 CiteCheck (renamed to FaithSift),2026-10-27 改名;历史文档里的
+> CiteCheck 均指本项目。包/命令/导入一律用 `faithsift`。
 
 ## 1. 语言规约(强制)
 
@@ -58,7 +61,7 @@
 一个改动算"完成",需要同时满足:
 
 1. `python -m pytest tests/ -q` 全绿(离线);
-2. `python -m citecheck validate --dataset gold` 准确率不低于既有基线(当前 97.8%);
+2. `python -m faithsift validate --dataset gold` 准确率不低于既有基线(当前 97.8%);
 3. 新增能力在 `gold/hard_gold.jsonl` 上有可解释的分数变化,并在 HANDOVER 里注明;
 4. 相关文档(README / HANDOVER / CHANGELOG)同步更新,且用中文;
 5. 没有新增网络依赖到离线路径。
@@ -66,15 +69,15 @@
 ## 5. 目录职责
 
 ```
-citecheck/claims.py     中英句级论断拆分
-citecheck/evidence.py   源加载 / 分块 / 分词(含双语概念词表)
-citecheck/lexicon.py    中英概念词表 + 实体名录(零依赖的跨语言召回基础)
-citecheck/numbers.py    中文数词 → 阿拉伯数字归一化
-citecheck/retrieval.py  BM25 / 数值不变性 / 向量通道的混合检索
-citecheck/embed.py      可选向量后端(OpenAI 兼容 / 哈希占位 / 磁盘缓存)
-citecheck/judge.py      双引擎判官(LLM JSON 判官 + 词法启发式,含多跳)
-citecheck/pipeline.py   端到端流水线 + 金标验证 + CI 门禁
-citecheck/report.py     md / html / json 报告渲染
+faithsift/claims.py     中英句级论断拆分
+faithsift/evidence.py   源加载 / 分块 / 分词(含双语概念词表)
+faithsift/lexicon.py    中英概念词表 + 实体名录(零依赖的跨语言召回基础)
+faithsift/numbers.py    中文数词 → 阿拉伯数字归一化
+faithsift/retrieval.py  BM25 / 数值不变性 / 向量通道的混合检索
+faithsift/embed.py      可选向量后端(OpenAI 兼容 / 哈希占位 / 磁盘缓存)
+faithsift/judge.py      双引擎判官(LLM JSON 判官 + 词法启发式,含多跳)
+faithsift/pipeline.py   端到端流水线 + 金标验证 + CI 门禁
+faithsift/report.py     md / html / json 报告渲染
 gold/                   合成金标(回归下限) + 困难金标(能力缺口) + 双语语料
 scripts/                开发辅助脚本(不参与打包)
 tests/                  离线测试

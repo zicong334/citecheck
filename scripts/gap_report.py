@@ -17,7 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from citecheck.pipeline import validate_against_gold  # noqa: E402
+from faithsift.pipeline import validate_against_gold  # noqa: E402
 
 
 def main() -> int:

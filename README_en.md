@@ -1,6 +1,10 @@
-# CiteCheck
+# FaithSift
 
 [中文](README.md) | **English**
+
+> Formerly named CiteCheck (renamed to FaithSift) on 2026-10-27 due to name
+> collisions — see [CHANGELOG](CHANGELOG.md). Legacy `CITECHECK_*` environment
+> variables are still honoured as fallbacks.
 
 Sentence-level **citation-faithfulness checker for RAG answers**. Feed it an answer
 (md/txt) plus the sources your RAG pipeline retrieved from; it splits the answer into
@@ -43,7 +47,7 @@ Multi-hop detection recall: **7/7**.
 3. **The LLM judge has not been re-measured under the v0.2 prompt.**
    `gold/validation_llm_v0.1.json` is the v0.1 result (99.46%, ¥0.29) over the old
    184-claim gold set. v0.2 allows multi-hop index arrays, so re-run
-   `python -m citecheck validate --dataset gold --mode llm` with a real key.
+   `python -m faithsift validate --dataset gold --mode llm` with a real key.
 
 ## Dual judges × three retrieval channels
 
@@ -65,11 +69,11 @@ the whole plumbing (but it cannot bridge languages).
 python -m venv .venv && .venv/Scripts/pip install -e ".[dev]"
 python -m pytest tests/ -q                       # 70 offline tests, zero API
 
-python -m citecheck gold                         # rebuild both gold sets (deterministic)
-python -m citecheck validate --dataset gold      # synthetic: regression floor
-python -m citecheck validate --dataset hard      # hard: capability gaps
+python -m faithsift gold                         # rebuild both gold sets (deterministic)
+python -m faithsift validate --dataset gold      # synthetic: regression floor
+python -m faithsift validate --dataset hard      # hard: capability gaps
 
-python -m citecheck check demo/sample_answer.md --sources gold/sources \
+python -m faithsift check demo/sample_answer.md --sources gold/sources \
     --mode heuristic --out results/check
 # -> results/check.{md,html,json}
 ```
@@ -77,7 +81,7 @@ python -m citecheck check demo/sample_answer.md --sources gold/sources \
 ## CLI
 
 ```text
-citecheck check <answer> --sources <dir>
+faithsift check <answer> --sources <dir>
     --mode heuristic|llm|both
     --retriever lexical|hybrid|dense
     --embedder hashing|<model>
@@ -86,8 +90,8 @@ citecheck check <answer> --sources <dir>
     --fail-on-contradicted           any contradicted claim      -> exit 4
     --json
 
-citecheck gold
-citecheck validate --dataset gold|hard --mode heuristic|llm
+faithsift gold
+faithsift validate --dataset gold|hard --mode heuristic|llm
     --min-accuracy 0.85              accuracy below threshold -> exit 5
 ```
 
@@ -123,7 +127,7 @@ in Chinese answers break both retrieval and the numeric consistency check. Appro
 markers such as "数百" are deliberately not converted.
 
 **A concept lexicon fills the cross-lingual gap.** With numbers only, a digit-free Chinese
-claim can never retrieve English evidence. `citecheck/lexicon.py` maps Chinese and English
+claim can never retrieve English evidence. `faithsift/lexicon.py` maps Chinese and English
 surface forms onto shared concept tokens (`茶树`/`tea` → `tea`, `一爆`/`first crack` →
 `first_crack`): ~250 surface forms, ~120 concepts, covering the six bundled domains.
 
@@ -138,20 +142,21 @@ related": a second chunk is only admitted when it adds enough new coverage and t
 clears a threshold.
 
 **Cost fuse.** `results/cost_ledger.jsonl` records every call, hard-capped at ¥12
-(`CITECHECK_CAP`), raising `BudgetStop` at the limit.
+(`FAITHSIFT_CAP`; the legacy `CITECHECK_CAP` is still read as a fallback),
+raising `BudgetStop` at the limit.
 
 ## Layout
 
 ```text
-citecheck/claims.py     zh/en sentence-level claim splitter
-citecheck/evidence.py   source loading, chunking, tokenisation
-citecheck/lexicon.py    bilingual concept lexicon + entity gazetteer
-citecheck/numbers.py    Chinese numeral & magnitude normalisation
-citecheck/retrieval.py  BM25 + numeric invariance + optional dense signal
-citecheck/embed.py      optional embedders (OpenAI-compatible / hashing / cache)
-citecheck/judge.py      LLM judge + heuristic judge (multi-hop aware)
-citecheck/pipeline.py   end-to-end pipelines, gold validation, CI gates
-citecheck/report.py     md / html / json rendering
+faithsift/claims.py     zh/en sentence-level claim splitter
+faithsift/evidence.py   source loading, chunking, tokenisation
+faithsift/lexicon.py    bilingual concept lexicon + entity gazetteer
+faithsift/numbers.py    Chinese numeral & magnitude normalisation
+faithsift/retrieval.py  BM25 + numeric invariance + optional dense signal
+faithsift/embed.py      optional embedders (OpenAI-compatible / hashing / cache)
+faithsift/judge.py      LLM judge + heuristic judge (multi-hop aware)
+faithsift/pipeline.py   end-to-end pipelines, gold validation, CI gates
+faithsift/report.py     md / html / json rendering
 gold/                   both gold sets + 6 bilingual source docs + validation artifacts
 demo/                   sample answers and rendered reports
 scripts/gap_report.py   dev helper: per-category error listing
@@ -163,7 +168,8 @@ tests/                  70 offline tests
 Real keys never enter the repo. Resolution order:
 
 1. `DEEPSEEK_API_KEY` environment variable
-2. the file pointed to by `CITECHECK_ENV_FILE` (can live outside the repo)
+2. the file pointed to by `FAITHSIFT_ENV_FILE` (can live outside the repo; the
+   legacy `CITECHECK_ENV_FILE` still works as a fallback)
 3. `.env.local` (gitignored, local only)
 4. `.env` (placeholders only)
 
