@@ -2,51 +2,52 @@
  "meta": {
   "answer": "demo\\sample_answer.md",
   "sources": "gold\\sources",
-  "mode": "heuristic",
+  "retriever": "lexical",
+  "embedder": "-",
+  "n_claims": 7,
   "model": "-",
+  "mode": "heuristic",
   "n_chunks": 39
  },
  "summary": {
-  "n_claims": 8,
-  "supported": 3,
-  "unsupported": 4,
-  "contradicted": 1,
-  "faithfulness": 0.375,
-  "unsupported_rate": 0.5,
-  "contradiction_rate": 0.125
+  "n_claims": 7,
+  "supported": 4,
+  "unsupported": 1,
+  "contradicted": 2,
+  "faithfulness": 0.5714,
+  "unsupported_rate": 0.1429,
+  "contradiction_rate": 0.2857,
+  "multi_hop": 1
  },
  "verdicts": [
-  {
-   "claim": "关于茶与咖啡的问答(示例回答,故意混入三类论断)",
-   "verdict": "unsupported",
-   "mode": "heuristic",
-   "score": 0.175,
-   "evidence_idx": 35,
-   "evidence_doc": "tea_zh.md",
-   "quote": "",
-   "reason": "证据主题覆盖仅18%, 无依据",
-   "raw": {}
-  },
   {
    "claim": "茶树的栽培历史超过 2000 年,适宜生长的年均温度为 15 至 25 摄氏度。",
    "verdict": "supported",
    "mode": "heuristic",
-   "score": 0.932,
+   "score": 0.915,
    "evidence_idx": 34,
    "evidence_doc": "tea_zh.md",
    "quote": "",
-   "reason": "主题覆盖93%且数值一致",
+   "reason": "主题覆盖91%且数值一致",
+   "evidence_idxs": [
+    34
+   ],
+   "multi_hop": false,
    "raw": {}
   },
   {
    "claim": "绿茶加工中,杀青温度通常控制在 180 摄氏度以上,以保持绿叶清汤的品质。",
    "verdict": "contradicted",
    "mode": "heuristic",
-   "score": 0.926,
+   "score": 0.91,
    "evidence_idx": 35,
    "evidence_doc": "tea_zh.md",
    "quote": "",
-   "reason": "主题覆盖但数值无证据: ['180']",
+   "reason": "主题匹配但数值无证据: 180",
+   "evidence_idxs": [
+    35
+   ],
+   "multi_hop": false,
    "raw": {}
   },
   {
@@ -58,50 +59,71 @@
    "evidence_doc": "tea_zh.md",
    "quote": "",
    "reason": "主题覆盖97%且数值一致",
+   "evidence_idxs": [
+    36
+   ],
+   "multi_hop": false,
    "raw": {}
   },
   {
    "claim": "中国茶叶在 2025 年的出口研发补贴预算约为 4500 万美元。",
    "verdict": "unsupported",
    "mode": "heuristic",
-   "score": 0.41,
+   "score": 0.316,
    "evidence_idx": 37,
    "evidence_doc": "tea_zh.md",
    "quote": "",
-   "reason": "证据主题覆盖仅41%, 无依据",
+   "reason": "证据主题覆盖仅32%, 无依据",
+   "evidence_idxs": [
+    37
+   ],
+   "multi_hop": false,
    "raw": {}
   },
   {
    "claim": "咖啡烘焙中,一爆通常发生在豆温 196 至 205 摄氏度之间。",
-   "verdict": "unsupported",
+   "verdict": "supported",
    "mode": "heuristic",
-   "score": 0.385,
-   "evidence_idx": 35,
-   "evidence_doc": "tea_zh.md",
+   "score": 0.787,
+   "evidence_idx": 10,
+   "evidence_doc": "coffee_en.md",
    "quote": "",
-   "reason": "证据主题覆盖仅38%, 无依据",
+   "reason": "主题覆盖79%且数值一致",
+   "evidence_idxs": [
+    10,
+    35
+   ],
+   "multi_hop": true,
    "raw": {}
   },
   {
    "claim": "浓缩咖啡的标准萃取压力为 15 bar,水温保持在 90 至 96 摄氏度。",
-   "verdict": "unsupported",
+   "verdict": "contradicted",
    "mode": "heuristic",
-   "score": 0.357,
-   "evidence_idx": 35,
-   "evidence_doc": "tea_zh.md",
+   "score": 0.856,
+   "evidence_idx": 14,
+   "evidence_doc": "coffee_en.md",
    "quote": "",
-   "reason": "证据主题覆盖仅36%, 无依据",
+   "reason": "主题匹配但数值无证据: 15",
+   "evidence_idxs": [
+    14
+   ],
+   "multi_hop": false,
    "raw": {}
   },
   {
    "claim": "Amsterdam 的自行车出行占全市交通总量约 38%,这座城市拥有超过 80 万辆自行车。",
    "verdict": "supported",
    "mode": "heuristic",
-   "score": 0.766,
+   "score": 0.765,
    "evidence_idx": 16,
    "evidence_doc": "cycling_zh.md",
    "quote": "",
-   "reason": "主题覆盖77%且数值一致",
+   "reason": "主题覆盖76%且数值一致",
+   "evidence_idxs": [
+    16
+   ],
+   "multi_hop": false,
    "raw": {}
   }
  ]

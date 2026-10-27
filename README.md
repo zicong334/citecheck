@@ -2,58 +2,181 @@
 
 **中文** | [English](README_en.md)
 
-**RAG 引用忠实性检测器** — 逐句判定 LLM 回答是"有据 / 无据 / 与源冲突",并给出证据定位。
+**RAG 回答的句子级引用忠实性检测器** —— 逐句判定 LLM 的回答是「有据 / 无据 / 与源冲突」,
+并给出结论所依赖的证据定位。
 
-给定一份回答(md/txt)和一组源文档,CiteCheck 把回答拆成句级论断(claims),对每条论断:
-1. 词法检索最相关的证据片段(中文按字符二元组、英文按词,零分词依赖);
-2. 判定三分类:**supported**(证据明确包含)/ **contradicted**(与证据冲突)/ **unsupported**(证据中无依据);
-3. 输出证据摘录、理由与整体忠实性得分(supported 占比),渲染 md / html / json 三种报告。
+给定一份回答(md/txt)和一组源文档,CiteCheck 会把回答拆成句级论断,对每条:
 
-## 双引擎
-| 引擎 | 依赖 | 合成金标准确率* | 用途 |
+1. **检索**:BM25 词法 + 数值不变性 + 中英概念词表(可选再接向量通道),找出最相关的证据片段;
+2. **判定**三分类:**supported**(证据明确包含)/ **contradicted**(与同一事实的取值冲突)/
+   **unsupported**(证据沉默,既不支持也不冲突);
+3. **出报告**:逐条证据摘录、理由、整体忠实性得分,渲染 md / html / json。
+
+`unsupported` 被单列出来是整套设计的核心:把「说错了」和「编了一个语料没覆盖的话题」分开,
+工程上才能判断问题出在检索召回还是生成篡改。
+
+## 实测成绩(诚实声明)
+
+| 数据集 | 条数 | 启发式引擎 | 说明 |
 |---|---|---|---|
-| `heuristic` | 零 API,纯词法+数值一致性规则 | **97.8%**(三类 F1: 1.00/0.97/0.96) | 离线快检、CI 门禁 |
-| `llm` | DeepSeek(结构化 JSON 判官) | **99.5%**(三类 F1: 0.99/0.99/1.00) | 语义级判定(改写、蕴含、跨语言) |
+| `gold/gold.jsonl`(合成) | 178 | **100.0%** | 词法友好,只作**回归下限** |
+| `gold/hard_gold.jsonl`(人工) | 49 | **91.8%** | 改写 / 跨语言无数字 / 多跳 / 方向反转 / 实体错配 |
 
-\* 在 184 条三类平衡合成金标上测得(`gold/build_gold.py` 确定性生成:原文抽取=supported、数字篡改=contradicted、无关主题模板=unsupported)。LLM 引擎全量验证成本仅 **¥0.29**。**诚实声明**:合成金标偏词法友好,是回归下限而非人类评估替代品。
+困难金标按类别的准确率:
 
-**已知边界**(demo 可复现):启发式引擎是单语词法匹配——中文论断引用英文源时,依赖数值信号检索(数字是跨语言的);纯语义跨语言对照请用 `--mode llm`。LLM 判官提示词明确禁止"数值逻辑蕴含"(证据"200度以上"≠论断"180度以上",判 contradicted)。
+| 能力 | 准确率 | 能力 | 准确率 |
+|---|---|---|---|
+| 实体错配(张冠李戴) | 100% | 数字篡改 | 100% |
+| 多跳证据 | 100% | 单位错误 | 100% |
+| 跨语言(无数字) | 87.5% | 中文同义改写 | 83.3% |
+| 方向反转 | 80% | 相邻话题 vs 冲突 | 66.7% |
+
+多跳证据召回 **7/7**。
+
+**必须说清楚的三件事:**
+
+1. 合成金标 100% 不代表真实水平。它由「原文抽取 / 数字篡改 / 模板套话」三类规则生成,
+   天然对词法友好。它只保证重构不会把做对的事弄坏。
+2. 困难金标是人工撰写的 49 条,每条都写了标注理由(`rationale` 字段),
+   但它仍然是一人判断,不是多人标注的工业集。
+3. **LLM 判官的分数尚未在 v0.2 提示词下复测**。仓库里的 `gold/validation_llm_v0.1.json`
+   是 v0.1 提示词的结果(99.46%,¥0.29),对应的是 184 条旧金标。v0.2 改成了允许多跳数组,
+   需要用真实密钥重跑 `python -m citecheck validate --dataset gold --mode llm`。
+
+## 双引擎 × 三检索通道
+
+| 维度 | 选项 | 依赖 | 用途 |
+|---|---|---|---|
+| 判官 | `heuristic` | 零 API、纯本地规则 | CI 门禁、离线快检、批量回归 |
+| 判官 | `llm` | DeepSeek 结构化 JSON 判官 | 语义级判定:改写、蕴含陷阱、跨语言 |
+| 检索 | `lexical` | 零依赖(BM25 + 数值 + 概念词表) | 默认通道 |
+| 检索 | `hybrid` | 需嵌入后端,BM25+数值+向量融合 | 开放领域、重度改写 |
+| 检索 | `dense` | 需嵌入后端,纯向量 + 数值 | 语义召回为主 |
+
+向量通道永远不是必需品:没有 key 时 `--retriever hybrid` 会自动退回 `lexical`,
+不会崩。离线替身 `--embedder hashing` 可以把整条链路的接线跑通(但它不跨语言)。
 
 ## 快速开始
+
 ```bash
-python -m venv .venv && .venv/Scripts/pip install openai python-dotenv pytest
-python -m pytest tests/ -q                      # 8 项离线自检
+python -m venv .venv && .venv/Scripts/pip install -e ".[dev]"
+python -m pytest tests/ -q                       # 70 项离线测试,零 API
 
-python -m citecheck gold                        # 重建金标集(确定性,seed=20261027)
-python -m citecheck validate --mode heuristic   # 词法引擎 vs 金标
-python -m citecheck validate --mode llm         # LLM 引擎 vs 金标(需 key,约¥2)
+python -m citecheck gold                         # 重建两套金标(确定性)
+python -m citecheck validate --dataset gold      # 合成金标:回归下限
+python -m citecheck validate --dataset hard      # 困难金标:能力缺口
 
-# 检查一份回答
+# 核查一份回答
 python -m citecheck check demo/sample_answer.md --sources gold/sources \
     --mode heuristic --out results/check
 # -> results/check.{md,html,json}
 ```
-LLM 模式需要 DeepSeek key:环境变量 `DEEPSEEK_API_KEY`,或 `CITECHECK_ENV_FILE` 指向 .env。
-成本保险丝:`results/cost_ledger.jsonl` 逐调用记账,硬顶 ¥12(`CITECHECK_CAP` 可调),到顶抛 `BudgetStop`。
 
-## 判定标准(与 LLM 判官提示词一致)
-- **supported**:证据明确包含论断核心事实;同义改写算支持;
-- **contradicted**:同一事实、不同取值(数字不符/方向相反/实体张冠李戴);
-- **unsupported**:证据对论断主题保持沉默——既不支持也不冲突。
+`demo/report_multihop.md` 是多跳 + 跨语言召回的示例(3 条论断全对)。
 
-第三类是 RAG 幻觉治理最容易被忽略的:模型说得头头是道,但检索源里根本没有——
-把"无据"单列出来,才能区分"说错了"和"编了一个对不上的话题"。
+## CLI
+
+```text
+citecheck check <answer> --sources <dir>
+    --mode heuristic|llm|both         判官
+    --retriever lexical|hybrid|dense  检索通道
+    --embedder hashing|<模型名>        向量后端
+    --top-k N --out results/check
+    --fail-under 0.9                  忠实性低于阈值 -> 退出码 3
+    --fail-on-contradicted            出现与源冲突 -> 退出码 4
+    --json                            机器可读输出
+
+citecheck gold                        重建 gold.jsonl 与 hard_gold.jsonl
+citecheck validate --dataset gold|hard --mode heuristic|llm
+    --min-accuracy 0.85               准确率低于阈值 -> 退出码 5
+```
+
+退出码:`0` 成功 · `2` 用法错误 · `3` 忠实性不达标 · `4` 存在冲突论断
+· `5` 准确率不达标 · `6` 缺少密钥。
+
+`--fail-under` / `--fail-on-contradicted` / `--min-accuracy` 就是挂在 CI 上的那道门禁。
+
+## 判定标准(与 LLM 提示词一致)
+
+- **supported**:证据明确包含论断的核心事实(实体与关系一致;非数值事实的同义改写、
+  跨语言翻译算支持);需要多段证据才能成立时,把用到的片段编号全部列出。
+- **contradicted**:证据就**同一事实**给出不同取值 —— 数字不符、方向相反(升高/降低、
+  高于/低于)、实体张冠李戴、单位不同。
+- **unsupported**:证据对论断主题保持沉默 —— 既不支持也不冲突。
+
+三条硬规则:
+
+1. **禁止数值逻辑蕴含**。证据说「200 度以上」、论断说「180 度以上」⇒ `contradicted`,
+   哪怕逻辑上能推出来。改一个数字就是篡改。
+2. **相邻话题不等于冲突**。语料讨论了邻近话题但没给论断所说的这个事实 ⇒ `unsupported`。
+3. **声称支持必须给证据**。每条判定带 `evidence_idx`(多跳时为数组)。
+
+## 几个值得一提的设计
+
+**数字跨语言不变。** 数字不随翻译改变,所以「一爆 196 至 205 摄氏度」的中文论断能命中
+英文段落。这一条把 LLM 引擎的 demo 从 5/8 提到 8/8。
+
+**中文数词归一化。** 「两千」「四到六」「一成」「10 万」「1.9 million」「2,000」
+都会先归一化成阿拉伯数字再比对,否则中文回答里的数词既进不了检索、也进不了数值校验。
+`数百` 这类约数不会被误转成 100。
+
+**概念词表补跨语言。** 只靠数字的话,一条不含数字的中文论断永远召回不到英文证据。
+`citecheck/lexicon.py` 把中英表面形式映射到共享概念词元
+(`茶树`/`tea` → `tea`,`一爆`/`first crack` → `first_crack`),
+约 250 个表面形式、120 个概念,覆盖随附的六个领域。
+
+**实体名录防张冠李戴。** 论断点名阿姆斯特丹,而「2005 年起投资 20 亿丹麦克朗」讲的是
+哥本哈根 —— 数字全对、主题全对,但结论是错的。判官会把「只讲别的实体」的片段划为旁证,
+数字全部落在旁证里就判 `contradicted`(实体错配)。
+
+**多跳真的需要两段。** 判官不满足于「某段沾边」,只有在第二段证据带来足够新增覆盖、
+并且合并后达到阈值时才判多跳支持;否则一篇主题相关但不含该事实的段落就会被当成证据。
+
+**成本保险丝。** `results/cost_ledger.jsonl` 逐调用记账,硬顶 ¥12(`CITECHECK_CAP` 可调),
+到顶抛 `BudgetStop`,防止批量跑测试时超支。
 
 ## 结构
-```
+
+```text
 citecheck/claims.py     中英句级论断拆分
-citecheck/evidence.py   源加载/分块/双语词法检索(零依赖)
-citecheck/judge.py      LLM 判官(JSON 鲁棒解析+退避+记账) + 启发式判官
-citecheck/pipeline.py   check_answer / validate_against_gold
-citecheck/report.py     md/html/json 报告渲染
-gold/                   确定性金标生成器 + 6 篇双语源语料(茶/骑行/咖啡/睡眠/蜜蜂/绿地)
-demo/                   静态示例报告
+citecheck/evidence.py   源加载 / 分块 / 分词
+citecheck/lexicon.py    中英概念词表 + 实体名录
+citecheck/numbers.py    中文数词与量级归一化
+citecheck/retrieval.py  BM25 + 数值不变性 + 可选向量的混合检索
+citecheck/embed.py      可选向量后端(OpenAI 兼容 / 哈希替身 / 磁盘缓存)
+citecheck/judge.py      双引擎判官(LLM JSON 判官 + 启发式,含多跳)
+citecheck/pipeline.py   端到端流水线 + 金标验证 + CI 门禁
+citecheck/report.py     md / html / json 报告渲染
+gold/                   两套金标 + 6 篇双语语料 + 验证产物
+demo/                   示例回答与渲染好的报告
+scripts/gap_report.py   按类别列出错分样本的开发脚本
+tests/                  70 项离线测试
 ```
 
-## License & Status
-MIT. v0.1(2026-10-27 通宵构建)。后续路线:真实 RAG 日志回放、NLI 小模型引擎、多跳证据链核验。
+## 密钥与安全
+
+真实密钥**不放进仓库**。加载顺序:
+
+1. 环境变量 `DEEPSEEK_API_KEY`
+2. `CITECHECK_ENV_FILE` 指向的文件(可以在仓库外)
+3. `.env.local`(已 gitignore,本地私有)
+4. `.env`(只有占位符)
+
+`tests/test_security.py` 会扫描仓库内文件是否出现真实密钥形态,并校验 `.env` 未被 git 跟踪。
+CI 里单独跑这个文件。
+
+> 如果真实密钥曾经出现在文件里,请到控制台**轮换**它,而不是只删文件 —— 已经分发出去的副本不受你控制。
+
+## 已知局限(v0.2 仍未解决)
+
+- **同语言重度改写**:仍主要依赖词法覆盖,「低估自己有多困」对「低估自己的受损程度」
+  这类改写会漏判。这是向量通道该解决的问题。
+- **相邻话题 vs 取值冲突**:「荷兰头盔立法始于 2010 年」语料讲的是澳大利亚 1990 年代,
+  按定义是 `unsupported`,但词法引擎只看到「主题沾边 + 数字缺失」,会判成 `contradicted`。
+- **无数字的语义方向**:依赖方向词表(提高/降低、促进/抑制),词表外的表达会漏。
+- **概念词表只覆盖六个领域**:开放语料请用 `--retriever hybrid` 或 `--mode llm`。
+- **金标规模小**:49 条困难样本足以暴露缺口,不足以给出置信区间。
+
+## License
+
+MIT。

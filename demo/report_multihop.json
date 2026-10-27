@@ -1,0 +1,71 @@
+{
+ "meta": {
+  "answer": "demo\\multihop_answer.md",
+  "sources": "gold\\sources",
+  "retriever": "lexical",
+  "embedder": "-",
+  "n_claims": 3,
+  "model": "-",
+  "mode": "heuristic",
+  "n_chunks": 39
+ },
+ "summary": {
+  "n_claims": 3,
+  "supported": 3,
+  "unsupported": 0,
+  "contradicted": 0,
+  "faithfulness": 1.0,
+  "unsupported_rate": 0.0,
+  "contradiction_rate": 0.0,
+  "multi_hop": 2
+ },
+ "verdicts": [
+  {
+   "claim": "﻿茶树喜欢 15 至 25 摄氏度的年均气温,而制作绿茶时杀青温度要升到 200 摄氏度以上。",
+   "verdict": "supported",
+   "mode": "heuristic",
+   "score": 1.0,
+   "evidence_idx": 35,
+   "evidence_doc": "tea_zh.md",
+   "quote": "",
+   "reason": "多跳支持(2段证据, 覆盖100%)",
+   "evidence_idxs": [
+    35,
+    34
+   ],
+   "multi_hop": true,
+   "raw": {}
+  },
+  {
+   "claim": "蜜蜂用摇摆舞把食物所在的方向和距离告诉同伴。",
+   "verdict": "supported",
+   "mode": "heuristic",
+   "score": 1.0,
+   "evidence_idx": 2,
+   "evidence_doc": "bees_en.md",
+   "quote": "",
+   "reason": "主题覆盖100%且数值一致",
+   "evidence_idxs": [
+    2
+   ],
+   "multi_hop": false,
+   "raw": {}
+  },
+  {
+   "claim": "阿姆斯特丹约有 38% 的出行靠自行车,哥本哈根通勤者里骑车上班上学的约占 49%。",
+   "verdict": "supported",
+   "mode": "heuristic",
+   "score": 1.0,
+   "evidence_idx": 17,
+   "evidence_doc": "cycling_zh.md",
+   "quote": "",
+   "reason": "多跳支持(2段证据, 覆盖100%)",
+   "evidence_idxs": [
+    17,
+    16
+   ],
+   "multi_hop": true,
+   "raw": {}
+  }
+ ]
+}

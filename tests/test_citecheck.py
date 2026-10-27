@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Offline unit tests for citecheck (no API calls)."""
+"""citecheck 的基础离线单元测试(不发起任何 API 调用)。"""
 import json
 import sys
 from pathlib import Path

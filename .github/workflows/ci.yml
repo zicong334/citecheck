@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: 离线测试 (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: 安装依赖
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: 重建金标(确定性,用于校验生成器可复现)
+        run: python -m citecheck gold
+
+      - name: 金标产出一致性
+        run: git diff --exit-code -- gold/gold.jsonl gold/hard_gold.jsonl
+
+      - name: 离线单元测试
+        run: python -m pytest tests/ -q
+
+      - name: 合成金标回归门禁(≥97%)
+        run: python -m citecheck validate --dataset gold --min-accuracy 0.97
+
+      - name: 困难金标能力门禁(≥85%)
+        run: python -m citecheck validate --dataset hard --min-accuracy 0.85
+
+      - name: 示例回答可被检出问题(--fail-on-contradicted 应失败)
+        run: |
+          set +e
+          python -m citecheck check demo/sample_answer.md --sources gold/sources \
+            --mode heuristic --no-report --fail-on-contradicted
+          code=$?
+          set -e
+          echo "exit=$code"
+          test "$code" = "4"
+
+  security:
+    name: 密钥扫描
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest
+      - name: 仓库内不得出现真实密钥
+        run: python -m pytest tests/test_security.py -q

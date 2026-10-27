@@ -4,11 +4,28 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "citecheck"
-version = "0.1.0"
-description = "Sentence-level citation faithfulness checker for RAG answers (heuristic + LLM judge, bilingual zh/en)"
+version = "0.2.0"
+description = "RAG 回答的句子级引用忠实性检测器:三分类判定 + 跨语言召回 + 多跳证据"
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}
+authors = [{name = "CiteCheck contributors"}]
+keywords = ["rag", "hallucination", "citation", "faithfulness", "llm", "nli"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: Chinese (Simplified)",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Quality Assurance",
+    "Typing :: Typed",
+]
 dependencies = [
     "openai>=1.40",
     "python-dotenv>=1.0",
@@ -16,6 +33,10 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/example/citecheck"
+Issues = "https://github.com/example/citecheck/issues"
 
 [project.scripts]
 citecheck = "citecheck.cli:main"
@@ -25,3 +46,4 @@ include = ["citecheck*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+addopts = "-ra"

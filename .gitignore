@@ -1,7 +1,18 @@
+# 虚拟环境与缓存
 .venv/
 __pycache__/
 *.pyc
-results/
+.pytest_cache/
+.cache/
+
+# 构建产物
+dist/
+build/
 *.egg-info/
 
+# 运行产物
+results/
+
+# 密钥:只提交 .env.example。真实密钥放环境变量或 .env.local。
 .env
+.env.local

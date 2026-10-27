@@ -1,17 +1,22 @@
 # -*- coding: utf-8 -*-
-"""Deterministic gold-set builder.
+"""确定性合成金标生成器(回归下限,不是能力证明)。
 
-Three label classes generated from the source corpus:
-  supported     extracted verbatim sentences (facts present in sources)
-  contradicted  sentences with one distinctive number altered to a value
-                absent from the whole corpus (direct conflict with source)
-  unsupported   template claims about corpus entities on topics the corpus
-                never addresses (budgets, heritage listings...) -> no evidence
-                either way. Topic absence is asserted by a guard list checked
-                against the corpus at build time.
+从随附语料生成三类标签:
 
-Output: gold/gold.jsonl  {"id","claim","label","source_doc","transform"}
-Usage:  python gold/build_gold.py
+  supported     直接抽取的原文句子(源文档明确包含该事实)
+  contradicted  把句子里的一个特征数字改成**整个语料都不存在**的值
+                (与源文档直接冲突)
+  unsupported   用模板套在语料实体上、但主题是语料从未涉及的内容
+                (预算、世界遗产名录……)——证据两头都不占。
+                主题缺失由构建期的守卫词表对语料做断言,防止语料改动后
+                这条假设悄悄失效。
+
+这套数据是词法友好的:supported 是原文,contradicted 只差一个 token。
+它的用途是**回归下限**——保证重构不会把已经做对的事情弄坏。
+真实场景的能力请对照 ``gold/hard_gold.jsonl``。
+
+输出:gold/gold.jsonl  {"id","claim","label","source_doc","transform"}
+用法:python gold/build_gold.py
 """
 from __future__ import annotations
 
