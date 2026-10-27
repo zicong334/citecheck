@@ -179,6 +179,14 @@ Real keys never enter the repo. Resolution order:
 > If a real key was ever written to a file, **rotate** it in the console — deleting the
 > file is not enough, copies already distributed are out of your control.
 
+## Relation to prior work (honest positioning)
+
+Full survey (40+ entries, each with verification status and links): [docs/survey_faithfulness_landscape.md](docs/survey_faithfulness_landscape.md).
+
+- **Not claimed as novel**: the split→retrieve→judge pipeline is an established paradigm since 2023 (FActScore, SAFE, RAGAS, DeepEval, ALCE); the "evidence-silent" third class has precedents in FEVER (NotEnoughInfo) and NLI (neutral). The former name "CiteCheck" collided with a 2025 PKU paper of the same name (arXiv:2502.10881, Chinese citation-faithfulness dataset) — the reason this project was renamed **FaithSift**; no code/data lineage from that work.
+- **Defensible differentiators** (within the verified survey scope): ① a **pure-lexical zero-API judge** — existing low-cost checkers are neural small models; an auditable lexical+numeric judge has no found counterpart; ② **seed-fixed deterministic gold used to audit the judges themselves** (arXiv:2607.20527 documents severe disagreement among neural judges, motivating this); ③ a **zh-claim→en-source cross-lingual lexical retrieval pipeline** (numeric invariance + concept lexicon, no identical design found); ④ engineered multi-hop evidence judging (lineage: FEVEROUS).
+- Citation discipline: 4 survey entries marked "unverified (training memory only)" must be human-checked before formal citation.
+
 ## Known limitations (still open in v0.2)
 
 - **Heavy same-language paraphrase** still relies on lexical coverage; "underestimates how
