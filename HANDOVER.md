@@ -29,11 +29,12 @@
 
 > 下面是 v0.2 的交接原文,保留作背景。
 
-## 早上待办(2026-10-28)
+## 早上待办(2026-10-29 更新)
 1. **网页操作(只能用户做)**:GitHub 仓库 Settings→Rename `citecheck`→`faithsift`;Gitee 同样(旧地址自动重定向)
-2. ~~LLM 判官 v0.2 提示词复测~~ **已完成(2026-10-27 夜)**:合成金标 99.44% / 人工困难金标 100%,README 中英版已更新,产物在 gold/validation_{gold,hard}_llm_v0.2.json,花费约 ¥0.5
-3. PyPI 发布前人工复查 pypi.org/project/faithsift 占名
-4. **全部本地 commit 待晨审后 push**(github + origin 两远端已配好;今晚新增:改名 commit 22add56 + 定位章节 commit 06ce86a)
+2. ~~LLM 判官 v0.2 提示词复测~~ 已完成(v0.2 夜 99.44%/100%,v0.3 又在 150 条上复测 99.33%)
+3. PyPI 抢注 `faithsift` 前人工复查 pypi.org/project/faithsift(调研代理核过一层,发布前再确认);`pip install -e .[semantic]` 才会装 fastembed,发布时把它作为 extra 说明
+4. **全部本地 commit 待晨审后 push**(github + origin 两远端已配好;累计 14 个 commit,含改名 22add56、定位章节 06ce86a、LLM复测 cfa8cd8、v0.3 语义通道 41fee5b)
+5. v0.3 的两个盲区是**特性不是缺陷**,对外说明时保持这个口径:情态篡改词法 0%(仅 LLM 83%)、相邻话题词法 64%(LLM 100%)——它们正是"为什么需要 LLM 判官/向量通道"的证据,不要为了让数字好看而删类别或改金标
 
 ## 现状(一句话)
 
