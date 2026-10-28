@@ -13,6 +13,10 @@
 v0.2 新增:BM25 + 双语概念词表的检索器(``Retriever``)、
 可选向量通道(:mod:`faithsift.embed`)、多跳证据链
 (``ClaimVerdict.multi_hop``)。
+
+v0.3 新增:本地离线向量后端 ``embed.LocalOnnxEmbedder``(``--embedder local``,
+fastembed + 多语 MiniLM,不含 torch,缺依赖自动退回词法);判官可选接入语义余弦
+(``HeuristicJudge.attach_semantic``)补重度同义改写;困难金标扩到 150 条。
 """
 from .claims import split_claims
 from .evidence import (Chunk, discover_sources, distinctive_numbers,
@@ -24,7 +28,7 @@ from .lexicon import concepts, entities
 from .pipeline import check_answer, gate_failures, validate_against_gold
 from .retrieval import BM25Index, Retriever, build_retriever, numeric_hit
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 
 __all__ = [
     "split_claims", "Chunk", "discover_sources", "distinctive_numbers",

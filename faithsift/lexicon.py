@@ -66,7 +66,10 @@ ZH: dict[str, str] = {
     # --- sleep -----------------------------------------------------------
     "睡眠": "sleep", "快速眼动": "rem", "深睡眠": "deep_sleep",
     "深度睡眠": "deep_sleep", "周期": "cycle", "睡眠剥夺": "sleep_deprivation",
-    "不睡": "sleep_deprivation", "酒精": "alcohol", "醉驾": "drunk_driving",
+    "不睡": "sleep_deprivation", "睡眠不足": "sleep_deprivation",
+    "睡不够": "sleep_deprivation", "低估": "underestimate", "受损": "impairment",
+    "困倦": "sleepiness", "慢性": "chronic", "长期": "chronic",
+    "酒精": "alcohol", "醉驾": "drunk_driving",
     "认知": "cognitive", "褪黑素": "melatonin", "松果体": "pineal_gland",
     "电子书": "ereader", "电子设备": "ereader", "屏幕": "screen",
     "青少年": "adolescent", "生物钟": "circadian", "昼夜节律": "circadian",
@@ -83,6 +86,7 @@ ZH: dict[str, str] = {
     "养蜂": "beekeeping", "采集蜂": "forager", "觅食": "foraging",
     "蜂箱": "hive", "蜂巢": "hive", "迁徙": "migration",
     "产卵": "egg", "卵": "egg", "春季": "spring", "花粉": "pollen",
+    "温带": "temperate", "个体": "individual",
     # --- green space -----------------------------------------------------
     "热岛": "heat_island", "绿地": "green_space", "绿化": "green_space",
     "城市绿地": "green_space", "树冠": "canopy", "蒸腾": "transpiration",
@@ -158,6 +162,10 @@ EN: dict[str, str] = {
     "deep sleep": "deep_sleep", "cycle": "cycle", "cycles": "cycle",
     "sleep deprivation": "sleep_deprivation", "alcohol": "alcohol",
     "drunk driving": "drunk_driving", "cognitive": "cognitive",
+    "underestimate": "underestimate", "underestimates": "underestimate",
+    "underestimated": "underestimate", "impairment": "impairment",
+    "impaired": "impairment", "sleepiness": "sleepiness", "sleepy": "sleepiness",
+    "chronic": "chronic",
     "melatonin": "melatonin", "pineal": "pineal_gland",
     "pineal gland": "pineal_gland", "e-reader": "ereader",
     "ebook": "ereader", "screen": "screen", "teenager": "adolescent",
@@ -187,6 +195,8 @@ EN: dict[str, str] = {
     "foragers": "forager", "foraging": "foraging", "flight": "flight",
     "migration": "migration", "apiary": "apiary", "apiaries": "apiary",
     "egg": "egg", "eggs": "egg", "spring": "spring", "pollen": "pollen",
+    "temperate": "temperate", "individual": "individual",
+    "individuals": "individual", "production": "output",
     # --- green space -----------------------------------------------------
     "heat island": "heat_island", "urban heat island": "heat_island",
     "green space": "green_space", "green spaces": "green_space",
@@ -211,7 +221,7 @@ EN: dict[str, str] = {
     "duration": "duration", "temperature": "temperature",
     "celsius": "celsius", "degrees celsius": "celsius",
     "altitude": "altitude", "concentration": "concentration",
-    "share": "share", "average": "average", "annual": "annual",
+    "share": "share", "average": "average", "annual average": "annual_average",
     "study": "study", "studies": "study", "experiment": "experiment",
 }
 

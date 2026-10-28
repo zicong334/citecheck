@@ -37,7 +37,7 @@ def _build_parser() -> argparse.ArgumentParser:
     ap = argparse.ArgumentParser(
         prog="faithsift",
         description="面向 RAG 回答的句子级引用忠实性检测器。")
-    ap.add_argument("--version", action="version", version="faithsift 0.2.0")
+    ap.add_argument("--version", action="version", version="faithsift 0.3.0")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
     c = sub.add_parser("check", help="核查一份回答对证据源的忠实性")
@@ -51,7 +51,9 @@ def _build_parser() -> argparse.ArgumentParser:
                    choices=["lexical", "hybrid", "dense"],
                    help="检索通道:lexical=BM25+数值(离线);hybrid/dense 需配 --embedder")
     c.add_argument("--embedder", default=None,
-                   help="向量后端:'hashing'(离线替身)或嵌入模型名")
+                   help="向量后端:'hashing'(离线替身)、'local'(本地离线 ONNX 多语模型,"
+                        "需 pip install 'faithsift[semantic]')、'local:<hf-model-id>',"
+                        "或 OpenAI 兼容的嵌入模型名")
     c.add_argument("--top-k", type=int, default=3, help="每条论断取多少证据片段")
     c.add_argument("--out", default="results/check",
                    help="报告前缀;会写出 .md/.html/.json 三份")

@@ -20,6 +20,7 @@
 from __future__ import annotations
 
 import math
+import sys
 from collections import Counter
 from dataclasses import dataclass
 from typing import Protocol, Sequence
@@ -194,20 +195,42 @@ def build_retriever(
     chunks: Sequence[Chunk],
     backend: str = "lexical",
     embedder_model: str | None = None,
+    cache_dir: str | None = None,
     **kwargs,
 ) -> Retriever:
-    """便捷工厂:传入 ``embedder_model`` 时顺带建好向量索引。"""
+    """便捷工厂:传入 ``embedder_model`` 时顺带建好向量索引。
+
+    ``embedder_model`` 取值:
+      * ``hashing``            —— 零依赖离线替身(不跨语言),用于跑通接线;
+      * ``local`` / ``local:<hf-model-id>`` —— 本地离线 ONNX 多语模型(fastembed);
+      * 其它字符串             —— 视作 OpenAI 兼容端点的嵌入模型名(需要 key)。
+
+    本地后端缺依赖或模型加载失败时,打印中文提示并**自动退回词法通道**
+    (dense=None -> Retriever 把 backend 降级为 lexical),不会崩;这与
+    "hybrid 未配 embedder 时退回 lexical" 是同一套降级哲学。
+    """
     dense = None
     if embedder_model:
-        from .embed import CachedEmbedder, DenseIndex as _DenseIndex, HashingEmbedder
+        from .embed import (CachedEmbedder, DenseIndex as _DenseIndex,
+                            HashingEmbedder, SemanticBackendUnavailable)
 
+        emb = None
         if embedder_model == "hashing":
             emb = HashingEmbedder()
+        elif embedder_model == "local" or embedder_model.startswith("local:"):
+            from .embed import LocalOnnxEmbedder
+            try:
+                emb = CachedEmbedder(
+                    LocalOnnxEmbedder(embedder_model, cache_dir=cache_dir))
+            except SemanticBackendUnavailable as e:
+                print(f"faithsift: {e}", file=sys.stderr)
+                print("faithsift: 已退回词法检索(--retriever lexical)。",
+                      file=sys.stderr)
         else:
             from .embed import OpenAIEmbedder
-
             emb = CachedEmbedder(OpenAIEmbedder(model=embedder_model))
-        dense = _DenseIndex(list(chunks), emb)
+        if emb is not None:
+            dense = _DenseIndex(list(chunks), emb)
     return Retriever(chunks, backend=backend, dense=dense, **kwargs)
 
 

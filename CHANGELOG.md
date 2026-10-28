@@ -17,6 +17,46 @@
   `FAITHSIFT_EMBED_BASE_URL`;旧 `CITECHECK_*` 变量名保留为回退(先读新名,没有再读旧名),
   过渡期内旧配置继续可用。
 
+## [0.3.0] — 2026-10-28
+
+主题:**给词法引擎补一条本地离线语义通道,修掉三个已知弱点,并把困难金标扩到 150 条压测**。
+
+### 新增
+
+- **本地离线向量后端 `LocalOnnxEmbedder`**(`faithsift/embed.py`):基于 fastembed
+  (onnxruntime,不含 torch),默认多语模型 `paraphrase-multilingual-MiniLM-L12-v2`
+  (384 维、中↔英跨语言、无需 query/passage 前缀,契合只有 `encode` 的 Embedder 协议)。
+  `--embedder local`(或 `local:<hf-model-id>`)启用;首次经 `HF_ENDPOINT` 国内镜像下载、
+  之后离线复用,并套用既有 `CachedEmbedder` 磁盘缓存。
+- **依赖隔离**:fastembed 惰性导入,新增 `[semantic]` 可选 extra;核心包不装向量依赖
+  也能 import、也能跑词法引擎(实测 `import faithsift` + 词法验证不牵入
+  fastembed/onnxruntime/numpy/torch)。缺依赖或模型加载失败抛 `SemanticBackendUnavailable`,
+  由 `build_retriever` 捕获、打印中文提示并**自动退回 lexical**。
+- **语义证据接入判官**:`HeuristicJudge.attach_semantic()` 在词法/概念覆盖之外补一条
+  余弦证据(阈值 0.75,实测标定),专治"字面不重合的重度同义改写";排在所有冲突判定
+  之后,只用于 `supported` 兜底。纯词法档(未接向量)行为完全不变。
+- **困难金标扩到 150 条**(`gold/build_hard_gold.py`):13 个类别,新增「量级错误
+  (10 万↔100 万)、时间/时态错配、情态篡改(可能↔确定)」。每条带 `rationale`,
+  固定 seed 确定性可重建;`_check_cases` 自检扩到量级/时间类(篡改值须语料外)并查重。
+
+### 修复(困难金标三个弱点,原 49 条子集)
+
+- **相邻话题 vs 冲突 66.7% → 100%**:缺失数字只有在**同一事实槽(共享区分度概念)+
+  同一实体**里找到竞争取值才判 `contradicted`,否则视为语料沉默判 `unsupported`
+  (「荷兰头盔立法 2010」源文实为澳大利亚 1990 年代 → 现判 unsupported)。
+- **方向反转 80% → 100%**:新增烘焙「深/浅」定性刻度反义词识别,补上数字/方向词都抓不到的
+  「Agtron 数值越大越深」(源文 higher numbers indicate lighter roasts)。
+- **中文同义改写 83.3% → 100%(词法+向量)**:补同义词概念(低估/睡眠不足/慢性…),
+  重度改写由语义余弦兜底;纯词法档「四到六周期」这类仍漏(已计入局限)。
+- **跨语言无数字 87.5% → 100%**:概念词表补 `annual average`,并修 `_cjk_ratio`
+  只在中文字符与拉丁字母间取比例(忽略数字/标点),避免数字密集的中文证据被误判为跨语言。
+
+### 实测(详见 README「实测成绩」)
+
+- 合成金标 178:词法 100% / LLM 99.44%。困难金标 150:词法 88.7% / 词法+向量 88.7%
+  (原 49 条子集 100%)/ LLM 99.33%。本轮 LLM 复测合计约 ¥0.54,记进 `results/cost_ledger.jsonl`。
+- 新暴露的最大缺口:**情态篡改词法档 0%**(无语义情态信号),LLM 83%——如实计入,未改金标迁就。
+
 ## [0.2.0] — 2026-10-27
 
 主题:**把"合成金标 97.8%"这个数字背后的真实边界补上** —— 补检索通道、补多跳、补困难金标、补安全与 CI。

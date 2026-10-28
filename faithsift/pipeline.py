@@ -27,9 +27,11 @@ def _make_judge(mode: str, model: str, ledger_path: Path | None):
 
 
 def _attach_idf(judge, ret) -> None:
-    """把检索侧的 IDF 表交给需要它的判官(启发式覆盖度加权用)。"""
+    """把检索侧的 IDF 表(和可选向量索引)交给需要它们的判官。"""
     if hasattr(judge, "attach_idf"):
         judge.attach_idf(ret.bm25.idf)
+    if hasattr(judge, "attach_semantic") and getattr(ret, "dense", None) is not None:
+        judge.attach_semantic(ret.dense)
 
 
 def _load(answers: Path, sources: Path, retriever: str, embedder: str | None):

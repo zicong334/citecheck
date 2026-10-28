@@ -1,8 +1,33 @@
-# HANDOVER — FaithSift v0.2(2026-10-27)
+# HANDOVER — FaithSift v0.3(2026-10-28)
 
 > 本项目原名 CiteCheck (renamed to FaithSift),2026-10-27 因名称四层撞车改名
 > (arXiv:2502.10881 等,详见 CHANGELOG 与 docs/survey_faithfulness_landscape.md)。
 > 旧 `CITECHECK_*` 环境变量仍作回退;本地文件夹名 `citecheck` 保持不变。
+
+## v0.3 做了什么(2026-10-28,本轮)
+
+一句话:**给词法引擎补一条本地离线语义通道,修掉困难金标三个弱点,金标扩到 150 条压测**。
+
+1. **任务1 本地离线向量后端**:`faithsift/embed.py` 新增 `LocalOnnxEmbedder`
+   (fastembed + 多语 MiniLM,不含 torch),`--embedder local` 启用,`HF_ENDPOINT`
+   国内镜像下载、离线复用、套 `CachedEmbedder` 缓存。依赖隔离:fastembed 惰性导入 +
+   `[semantic]` extra,缺依赖自动退回 lexical(实测核心包 import 不牵入 numpy/onnx)。
+   `--retriever hybrid|dense` 已在 150 条困难金标上跑通。语义余弦还接进了判官
+   (`attach_semantic`,阈值 0.75),专补"字面不重合的重度同义改写"。
+2. **任务2 三个弱点(原 49 条子集,词法档)**:相邻话题 66.7%→100%(缺失数字要
+   同事实槽+同实体有竞争取值才判冲突)、方向反转 80%→100%(新增烘焙深/浅定性刻度
+   反义词)、中文改写 83.3%→100%(同义词概念 + 语义兜底)、跨语言 87.5%→100%
+   (概念词表补 `annual average` + 修 `_cjk_ratio` 忽略数字/标点)。每个修复都配了
+   回归测试(`tests/test_weakness_fixes.py`)。
+3. **任务3 困难金标 49→150**(`gold/build_hard_gold.py`):13 类,新增量级错误/时间错配/
+   情态篡改,确定性可重建,自检查重+篡改值语料外校验。
+
+**实测(150 条困难金标)**:词法 88.7% / 词法+向量 88.7%(原 49 条子集 100%)/ LLM 99.33%;
+合成金标 178:词法 100% / LLM 99.44%。本轮 LLM 花费约 ¥0.54(记进 cost_ledger)。
+**最大新缺口:情态篡改词法档 0%**(无语义情态信号,LLM 83%)——如实计入,未改金标迁就实现。
+离线测试 70 → **89 项全绿**(向量端到端用例无 fastembed/模型时自动 skip)。
+
+> 下面是 v0.2 的交接原文,保留作背景。
 
 ## 早上待办(2026-10-28)
 1. **网页操作(只能用户做)**:GitHub 仓库 Settings→Rename `citecheck`→`faithsift`;Gitee 同样(旧地址自动重定向)
