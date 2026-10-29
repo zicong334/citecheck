@@ -80,7 +80,9 @@ HF 国内镜像下载、之后完全离线并复用磁盘缓存;缺依赖或下�
 纯离线替身 `--embedder hashing` 可把整条链路接线跑通(但它不跨语言)。
 
 ```bash
-pip install -e ".[semantic]"          # 装本地向量后端(fastembed)
+pip install faithsift                 # PyPI 发布版(词法判官,零依赖)
+pip install "faithsift[semantic]"     # PyPI 发布版 + 本地离线向量通道(fastembed)
+pip install -e ".[semantic]"          # 开发:源码可编辑安装
 export HF_ENDPOINT=https://hf-mirror.com   # 国内镜像(可选,首次下载用)
 python -m faithsift check answer.md --sources gold/sources \
     --retriever hybrid --embedder local      # 词法+数值+向量融合
