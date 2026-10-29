@@ -1,0 +1,2100 @@
+{
+ "mode": "heuristic",
+ "model": "-",
+ "retriever": "hybrid",
+ "embedder": "local",
+ "gold": "D:\\科研工作台\\09_工具软件\\citecheck\\gold\\hard_gold.jsonl",
+ "n": 150,
+ "accuracy": 0.8867,
+ "confusion": {
+  "supported": {
+   "supported": 56,
+   "unsupported": 2,
+   "contradicted": 0
+  },
+  "unsupported": {
+   "supported": 5,
+   "unsupported": 18,
+   "contradicted": 0
+  },
+  "contradicted": {
+   "supported": 5,
+   "unsupported": 5,
+   "contradicted": 59
+  }
+ },
+ "per_class": {
+  "supported": {
+   "precision": 0.8485,
+   "recall": 0.9655,
+   "f1": 0.9032,
+   "n": 58
+  },
+  "unsupported": {
+   "precision": 0.72,
+   "recall": 0.7826,
+   "f1": 0.75,
+   "n": 23
+  },
+  "contradicted": {
+   "precision": 1.0,
+   "recall": 0.8551,
+   "f1": 0.9219,
+   "n": 69
+  }
+ },
+ "by_category": {
+  "crosslingual": {
+   "n": 18,
+   "accuracy": 0.9444
+  },
+  "direction": {
+   "n": 14,
+   "accuracy": 0.8571
+  },
+  "entity_swap": {
+   "n": 12,
+   "accuracy": 0.9167
+  },
+  "magnitude": {
+   "n": 8,
+   "accuracy": 1.0
+  },
+  "modal": {
+   "n": 6,
+   "accuracy": 0.0
+  },
+  "multi_hop": {
+   "n": 14,
+   "accuracy": 0.9286
+  },
+  "near_miss": {
+   "n": 11,
+   "accuracy": 0.6364
+  },
+  "number_alter": {
+   "n": 15,
+   "accuracy": 1.0
+  },
+  "paraphrase_zh": {
+   "n": 16,
+   "accuracy": 1.0
+  },
+  "plausible_absent": {
+   "n": 12,
+   "accuracy": 0.9167
+  },
+  "temporal": {
+   "n": 6,
+   "accuracy": 0.8333
+  },
+  "unit": {
+   "n": 8,
+   "accuracy": 1.0
+  },
+  "verbatim": {
+   "n": 10,
+   "accuracy": 1.0
+  }
+ },
+ "multi_hop": {
+  "expected": 14,
+  "detected": 13,
+  "recall": 0.9286
+ },
+ "details": [
+  {
+   "id": "H0001",
+   "label": "supported",
+   "pred": "supported",
+   "category": "paraphrase_zh",
+   "score": 1.0,
+   "multi_hop": true,
+   "evidence_idxs": [
+    29,
+    32
+   ],
+   "reason": "多跳支持(2段证据, 覆盖100%)",
+   "claim": "长期睡不够的人往往低估自己到底有多困。"
+  },
+  {
+   "id": "H0002",
+   "label": "unsupported",
+   "pred": "supported",
+   "category": "near_miss",
+   "score": 1.0,
+   "multi_hop": true,
+   "evidence_idxs": [
+    24,
+    25
+   ],
+   "reason": "多跳支持(2段证据, 覆盖100%)",
+   "claim": "新加坡的屋顶绿化覆盖率在全球城市中排名第一。"
+  },
+  {
+   "id": "H0003",
+   "label": "supported",
+   "pred": "supported",
+   "category": "paraphrase_zh",
+   "score": 0.77,
+   "multi_hop": true,
+   "evidence_idxs": [
+    35,
+    36
+   ],
+   "reason": "主题覆盖77%且数值一致",
+   "claim": "绿茶的加工要经过杀青、揉捻和干燥这几道主要工序。"
+  },
+  {
+   "id": "H0004",
+   "label": "supported",
+   "pred": "supported",
+   "category": "crosslingual",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    35
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "Green tea is processed with high-temperature fixation to deactivate polyphenol o"
+  },
+  {
+   "id": "H0005",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "magnitude",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    1
+   ],
+   "reason": "主题匹配但数值无证据: 200000,800000",
+   "claim": "一个蜂群在温带地区通常有 20 万至 80 万只个体。"
+  },
+  {
+   "id": "H0006",
+   "label": "supported",
+   "pred": "supported",
+   "category": "multi_hop",
+   "score": 1.0,
+   "multi_hop": true,
+   "evidence_idxs": [
+    17,
+    16
+   ],
+   "reason": "多跳支持(2段证据, 覆盖100%)",
+   "claim": "阿姆斯特丹约有 38% 的出行靠自行车,哥本哈根通勤者里骑车上班上学的约占 49%。"
+  },
+  {
+   "id": "H0007",
+   "label": "supported",
+   "pred": "supported",
+   "category": "paraphrase_zh",
+   "score": 0.62,
+   "multi_hop": true,
+   "evidence_idxs": [
+    38,
+    35
+   ],
+   "reason": "主题覆盖62%且数值一致",
+   "claim": "给茶树遮阴能显著提高茶叶中的茶氨酸,并减轻苦涩味。"
+  },
+  {
+   "id": "H0008",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "plausible_absent",
+   "score": 0.169,
+   "multi_hop": false,
+   "evidence_idxs": [
+    19
+   ],
+   "reason": "证据主题覆盖仅17%, 无依据",
+   "claim": "中国在 2024 年发布了城市绿地建设的新国家标准。"
+  },
+  {
+   "id": "H0009",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "direction",
+   "score": 0.664,
+   "multi_hop": true,
+   "evidence_idxs": [
+    38,
+    35
+   ],
+   "reason": "概念theanine方向相反(论断降/证据升)",
+   "claim": "遮阴栽培会降低茶氨酸含量并让茶叶更苦涩。"
+  },
+  {
+   "id": "H0010",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "entity_swap",
+   "score": 0.43,
+   "multi_hop": false,
+   "evidence_idxs": [
+    17
+   ],
+   "reason": "实体错配: 论断指向 denmark 但证据是 amsterdam,netherlands",
+   "claim": "丹麦的自行车出行占全市交通总量的比例约为 38%。"
+  },
+  {
+   "id": "H0011",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "unit",
+   "score": 0.692,
+   "multi_hop": false,
+   "evidence_idxs": [
+    28
+   ],
+   "reason": "主题匹配但数值无证据: 900",
+   "claim": "成人每个睡眠周期约持续 900 分钟。"
+  },
+  {
+   "id": "H0012",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "near_miss",
+   "score": 0.484,
+   "multi_hop": false,
+   "evidence_idxs": [
+    38
+   ],
+   "reason": "证据主题覆盖仅48%, 无依据",
+   "claim": "玉露茶在采收前覆盖的遮阴网通常为黑色尼龙材质。"
+  },
+  {
+   "id": "H0013",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "number_alter",
+   "score": 0.894,
+   "multi_hop": false,
+   "evidence_idxs": [
+    29
+   ],
+   "reason": "主题匹配但数值无证据: 0.12",
+   "claim": "睡眠剥夺 24 小时后,人的操作表现相当于血液酒精浓度 0.12% 的水平。"
+  },
+  {
+   "id": "H0014",
+   "label": "supported",
+   "pred": "supported",
+   "category": "multi_hop",
+   "score": 0.565,
+   "multi_hop": true,
+   "evidence_idxs": [
+    9,
+    10
+   ],
+   "reason": "主题覆盖57%且数值一致",
+   "claim": "Green beans start at about 8 to 12 percent moisture, and first crack happens at "
+  },
+  {
+   "id": "H0015",
+   "label": "supported",
+   "pred": "supported",
+   "category": "crosslingual",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    23
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "A mature tree's daily transpiration has a cooling effect comparable to running t"
+  },
+  {
+   "id": "H0016",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "direction",
+   "score": 0.767,
+   "multi_hop": false,
+   "evidence_idxs": [
+    30
+   ],
+   "reason": "数值50方向相反(论断升/证据降)",
+   "claim": "睡前阅读电子书 4 小时会使褪黑素分泌增加约 50%。"
+  },
+  {
+   "id": "H0017",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "plausible_absent",
+   "score": 0.057,
+   "multi_hop": false,
+   "evidence_idxs": [
+    16
+   ],
+   "reason": "证据主题覆盖仅6%, 无依据",
+   "claim": "蜜蜂的蜂群数量在 2023 年全球范围内增长了 8%。"
+  },
+  {
+   "id": "H0018",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "near_miss",
+   "score": 0.247,
+   "multi_hop": false,
+   "evidence_idxs": [
+    31
+   ],
+   "reason": "证据主题覆盖仅25%, 无依据",
+   "claim": "褪黑素补充剂能安全有效地改善成人失眠。"
+  },
+  {
+   "id": "H0019",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "temporal",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    5
+   ],
+   "reason": "主题匹配但数值无证据: 2016",
+   "claim": "蜂群崩溃失调从 2016 年前后开始受到全球关注。"
+  },
+  {
+   "id": "H0020",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "near_miss",
+   "score": 0.797,
+   "multi_hop": true,
+   "evidence_idxs": [
+    20,
+    16
+   ],
+   "reason": "相邻话题, 语料未就同一事实给出取值: 2010",
+   "claim": "荷兰的自行车头盔强制立法始于 2010 年。"
+  },
+  {
+   "id": "H0021",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "unit",
+   "score": 0.837,
+   "multi_hop": true,
+   "evidence_idxs": [
+    14,
+    38
+   ],
+   "reason": "主题匹配但数值无证据: 19",
+   "claim": "浓缩咖啡的标准萃取压力为 19 bar。"
+  },
+  {
+   "id": "H0022",
+   "label": "supported",
+   "pred": "supported",
+   "category": "paraphrase_zh",
+   "score": 0.893,
+   "multi_hop": false,
+   "evidence_idxs": [
+    25
+   ],
+   "reason": "主题覆盖89%且数值一致",
+   "claim": "夏季屋顶绿化可使顶层室内温度降低 2 至 4 摄氏度,并削减屋面径流一半以上。"
+  },
+  {
+   "id": "H0023",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "number_alter",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    10
+   ],
+   "reason": "主题匹配但数值无证据: 218",
+   "claim": "一爆通常发生在豆温 196 至 218 摄氏度之间。"
+  },
+  {
+   "id": "H0024",
+   "label": "supported",
+   "pred": "unsupported",
+   "category": "crosslingual",
+   "score": 0.141,
+   "multi_hop": false,
+   "evidence_idxs": [
+    35
+   ],
+   "reason": "证据主题覆盖仅14%, 无依据",
+   "claim": "同一种豆子,浅烘与深烘之间的咖啡因差异按重量算通常不超过百分之五。"
+  },
+  {
+   "id": "H0025",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "magnitude",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    4
+   ],
+   "reason": "主题匹配但数值无证据: 1000000",
+   "claim": "一个蜂群要拜访约 100 万朵花,才能产出一公斤蜂蜜。"
+  },
+  {
+   "id": "H0026",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "magnitude",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    9
+   ],
+   "reason": "主题匹配但数值无证据: 120,80",
+   "claim": "咖啡生豆的含水率高达 80% 至 120%。"
+  },
+  {
+   "id": "H0027",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "entity_swap",
+   "score": 0.676,
+   "multi_hop": false,
+   "evidence_idxs": [
+    37
+   ],
+   "reason": "主题匹配但数值无证据: 66000000",
+   "claim": "中国的咖啡产量约为 6600 万袋,位居世界第一。"
+  },
+  {
+   "id": "H0028",
+   "label": "supported",
+   "pred": "supported",
+   "category": "multi_hop",
+   "score": 0.735,
+   "multi_hop": true,
+   "evidence_idxs": [
+    36,
+    35
+   ],
+   "reason": "主题覆盖74%且数值一致",
+   "claim": "茶多酚占干重的 18% 至 36%,而茶黄素一般占红茶干重的 0.5% 至 2%。"
+  },
+  {
+   "id": "H0029",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "number_alter",
+   "score": 0.722,
+   "multi_hop": true,
+   "evidence_idxs": [
+    10,
+    35
+   ],
+   "reason": "主题匹配但数值无证据: 208",
+   "claim": "咖啡一爆通常发生在豆温 196 至 208 摄氏度之间。"
+  },
+  {
+   "id": "H0030",
+   "label": "supported",
+   "pred": "supported",
+   "category": "crosslingual",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    12
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "咖啡行业用 Agtron 值量化烘焙颜色,数值越高表示烘焙越浅。"
+  },
+  {
+   "id": "H0031",
+   "label": "contradicted",
+   "pred": "unsupported",
+   "category": "modal",
+   "score": 0.466,
+   "multi_hop": false,
+   "evidence_idxs": [
+    38
+   ],
+   "reason": "证据主题覆盖仅47%, 无依据",
+   "claim": "遮阴栽培必然能消除茶叶的全部苦涩味。"
+  },
+  {
+   "id": "H0032",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "plausible_absent",
+   "score": 0.368,
+   "multi_hop": false,
+   "evidence_idxs": [
+    24
+   ],
+   "reason": "证据主题覆盖仅37%, 无依据",
+   "claim": "新加坡要求新建住宅项目在屋顶安装太阳能板。"
+  },
+  {
+   "id": "H0033",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "number_alter",
+   "score": 0.91,
+   "multi_hop": false,
+   "evidence_idxs": [
+    16
+   ],
+   "reason": "主题匹配但数值无证据: 43",
+   "claim": "阿姆斯特丹的自行车出行约占全市交通总量的 43%。"
+  },
+  {
+   "id": "H0034",
+   "label": "supported",
+   "pred": "supported",
+   "category": "multi_hop",
+   "score": 1.0,
+   "multi_hop": true,
+   "evidence_idxs": [
+    23,
+    25
+   ],
+   "reason": "多跳支持(2段证据, 覆盖100%)",
+   "claim": "城市树冠遮阴能让地表降温 10 至 25 摄氏度,而屋顶绿化只让顶层室内降温 2 至 4 摄氏度。"
+  },
+  {
+   "id": "H0035",
+   "label": "contradicted",
+   "pred": "supported",
+   "category": "modal",
+   "score": 0.58,
+   "multi_hop": false,
+   "evidence_idxs": [
+    20
+   ],
+   "reason": "主题覆盖58%且数值一致",
+   "claim": "强制头盔立法对骑行安全的净效益在学界已有定论。"
+  },
+  {
+   "id": "H0036",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "direction",
+   "score": 0.632,
+   "multi_hop": true,
+   "evidence_idxs": [
+    18,
+    20
+   ],
+   "reason": "数值60方向相反(论断升/证据降)",
+   "claim": "修建物理隔离自行车道后,骑行者遭遇严重伤害事故的概率会上升约 60% 至 75%。"
+  },
+  {
+   "id": "H0037",
+   "label": "supported",
+   "pred": "supported",
+   "category": "paraphrase_zh",
+   "score": 0.875,
+   "multi_hop": false,
+   "evidence_idxs": [
+    30
+   ],
+   "reason": "主题覆盖87%且数值一致",
+   "claim": "褪黑素由松果体在黑暗中分泌,通常在习惯性就寝时间前两三个小时开始升高。"
+  },
+  {
+   "id": "H0038",
+   "label": "supported",
+   "pred": "supported",
+   "category": "crosslingual",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    17
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "Copenhagen built a green-wave signal system so that cyclists can keep passing in"
+  },
+  {
+   "id": "H0039",
+   "label": "supported",
+   "pred": "supported",
+   "category": "paraphrase_zh",
+   "score": 0.727,
+   "multi_hop": true,
+   "evidence_idxs": [
+    29,
+    32
+   ],
+   "reason": "主题覆盖73%且数值一致",
+   "claim": "连续两周每晚只睡六小时的人,认知表现受损程度和连续两晚完全被剥夺睡眠差不多。"
+  },
+  {
+   "id": "H0040",
+   "label": "supported",
+   "pred": "supported",
+   "category": "crosslingual",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    23
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "Urban tree canopy cools the ground far more effectively than plain grass."
+  },
+  {
+   "id": "H0041",
+   "label": "supported",
+   "pred": "supported",
+   "category": "verbatim",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    25
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "佛得草式轻型屋顶绿化的基质厚度通常为 8 至 15 厘米,荷载低于每平方米 150 公斤。"
+  },
+  {
+   "id": "H0042",
+   "label": "supported",
+   "pred": "supported",
+   "category": "crosslingual",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    29
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "Chronic sleep deprivation makes people underestimate their own impairment."
+  },
+  {
+   "id": "H0043",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "entity_swap",
+   "score": 0.204,
+   "multi_hop": false,
+   "evidence_idxs": [
+    38
+   ],
+   "reason": "实体错配: 论断指向 japan 但证据是 china,fujian",
+   "claim": "日本的茶叶产量在 2023 年约为 355 万吨,位居世界第一。"
+  },
+  {
+   "id": "H0044",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "temporal",
+   "score": 0.742,
+   "multi_hop": false,
+   "evidence_idxs": [
+    16
+   ],
+   "reason": "主题匹配但数值无证据: 2033",
+   "claim": "阿姆斯特丹中央车站前的水下自行车停车场尚未建成,预计 2033 年启用。"
+  },
+  {
+   "id": "H0045",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "entity_swap",
+   "score": 0.31,
+   "multi_hop": true,
+   "evidence_idxs": [
+    16,
+    15
+   ],
+   "reason": "实体错配: 论断指向 amsterdam 但证据是 copenhagen,denmark",
+   "claim": "阿姆斯特丹自 2005 年起累计投资超过 20 亿丹麦克朗建设自行车基础设施。"
+  },
+  {
+   "id": "H0046",
+   "label": "supported",
+   "pred": "supported",
+   "category": "multi_hop",
+   "score": 0.603,
+   "multi_hop": true,
+   "evidence_idxs": [
+    26,
+    23
+   ],
+   "reason": "主题覆盖60%且数值一致",
+   "claim": "树冠遮阴可使地表温度降低 10 至 25 摄氏度,而高反射率的浅色路面可使表面温度降低 10 至 20 摄氏度。"
+  },
+  {
+   "id": "H0047",
+   "label": "supported",
+   "pred": "supported",
+   "category": "crosslingual",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    9
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "咖啡烘焙中的美拉德反应会生成数百种芳香化合物。"
+  },
+  {
+   "id": "H0048",
+   "label": "supported",
+   "pred": "supported",
+   "category": "multi_hop",
+   "score": 0.552,
+   "multi_hop": true,
+   "evidence_idxs": [
+    17,
+    16
+   ],
+   "reason": "主题覆盖55%且数值一致",
+   "claim": "阿姆斯特丹的自行车出行约占全市交通总量的 38%,而哥本哈根自 2005 年起累计投资超过 20 亿丹麦克朗。"
+  },
+  {
+   "id": "H0049",
+   "label": "supported",
+   "pred": "supported",
+   "category": "paraphrase_zh",
+   "score": 0.623,
+   "multi_hop": true,
+   "evidence_idxs": [
+    36,
+    35
+   ],
+   "reason": "主题覆盖62%且数值一致",
+   "claim": "红茶发酵时儿茶素会转成茶黄素和茶红素,其中茶黄素决定茶汤的明亮度。"
+  },
+  {
+   "id": "H0050",
+   "label": "contradicted",
+   "pred": "unsupported",
+   "category": "entity_swap",
+   "score": 0.051,
+   "multi_hop": false,
+   "evidence_idxs": [
+    12
+   ],
+   "reason": "证据主题覆盖仅5%, 无依据",
+   "claim": "巴西的天然蜂蜜产量约为 45 万吨,居各国首位。"
+  },
+  {
+   "id": "H0051",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "unit",
+   "score": 0.969,
+   "multi_hop": false,
+   "evidence_idxs": [
+    19
+   ],
+   "reason": "主题匹配但数值无证据: 13",
+   "claim": "北京回龙观至上地的自行车专用路全长约 13 公里。"
+  },
+  {
+   "id": "H0052",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "magnitude",
+   "score": 0.957,
+   "multi_hop": false,
+   "evidence_idxs": [
+    16
+   ],
+   "reason": "主题匹配但数值无证据: 8000000",
+   "claim": "阿姆斯特丹拥有超过 800 万辆自行车。"
+  },
+  {
+   "id": "H0053",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "number_alter",
+   "score": 0.856,
+   "multi_hop": false,
+   "evidence_idxs": [
+    14
+   ],
+   "reason": "主题匹配但数值无证据: 106",
+   "claim": "浓缩咖啡通常在 9 bar 压力下萃取,水温保持在 90 至 106 摄氏度。"
+  },
+  {
+   "id": "H0054",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "direction",
+   "score": 0.804,
+   "multi_hop": true,
+   "evidence_idxs": [
+    25,
+    23
+   ],
+   "reason": "数值2方向相反(论断升/证据降)",
+   "claim": "夏季屋顶绿化会使顶层室内温度上升 2 至 4 摄氏度。"
+  },
+  {
+   "id": "H0055",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "magnitude",
+   "score": 0.968,
+   "multi_hop": false,
+   "evidence_idxs": [
+    29
+   ],
+   "reason": "主题匹配但数值无证据: 1.0",
+   "claim": "连续 24 小时不睡相当于血液酒精浓度 1.0% 的水平。"
+  },
+  {
+   "id": "H0056",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "plausible_absent",
+   "score": 0.124,
+   "multi_hop": false,
+   "evidence_idxs": [
+    24
+   ],
+   "reason": "证据主题覆盖仅12%, 无依据",
+   "claim": "垂直花园的自动灌溉系统通常由太阳能供电。"
+  },
+  {
+   "id": "H0057",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "entity_swap",
+   "score": 0.448,
+   "multi_hop": false,
+   "evidence_idxs": [
+    16
+   ],
+   "reason": "实体错配: 论断指向 amsterdam 但证据是 copenhagen,denmark",
+   "claim": "阿姆斯特丹已规划超过 750 公里的自行车高速路网。"
+  },
+  {
+   "id": "H0058",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "number_alter",
+   "score": 0.887,
+   "multi_hop": false,
+   "evidence_idxs": [
+    29
+   ],
+   "reason": "主题匹配但数值无证据: 0.14",
+   "claim": "睡眠剥夺 24 小时后,操作表现相当于血液酒精浓度 0.14% 的水平。"
+  },
+  {
+   "id": "H0059",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "plausible_absent",
+   "score": 0.23,
+   "multi_hop": false,
+   "evidence_idxs": [
+    37
+   ],
+   "reason": "证据主题覆盖仅23%, 无依据",
+   "claim": "普洱茶的收藏市场价格在过去十年上涨了约三倍。"
+  },
+  {
+   "id": "H0060",
+   "label": "unsupported",
+   "pred": "supported",
+   "category": "near_miss",
+   "score": 1.0,
+   "multi_hop": true,
+   "evidence_idxs": [
+    26,
+    22
+   ],
+   "reason": "多跳支持(2段证据, 覆盖100%)",
+   "claim": "透水铺装的使用寿命通常比沥青路面长一倍。"
+  },
+  {
+   "id": "H0061",
+   "label": "contradicted",
+   "pred": "unsupported",
+   "category": "modal",
+   "score": 0.026,
+   "multi_hop": false,
+   "evidence_idxs": [
+    5
+   ],
+   "reason": "证据主题覆盖仅3%, 无依据",
+   "claim": "科学家已确定瓦螨是蜜蜂越冬死亡的唯一原因。"
+  },
+  {
+   "id": "H0062",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "number_alter",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    34
+   ],
+   "reason": "主题匹配但数值无证据: 35",
+   "claim": "茶树适宜生长的年均温度为 15 至 35 摄氏度。"
+  },
+  {
+   "id": "H0063",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "entity_swap",
+   "score": 0.149,
+   "multi_hop": false,
+   "evidence_idxs": [
+    21
+   ],
+   "reason": "实体错配: 论断指向 los_angeles 但证据是 singapore",
+   "claim": "洛杉矶的城市绿化覆盖率维持在约 50%。"
+  },
+  {
+   "id": "H0064",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "number_alter",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    17
+   ],
+   "reason": "主题匹配但数值无证据: 59",
+   "claim": "哥本哈根通勤者中骑车上班上学的比例约为 59%。"
+  },
+  {
+   "id": "H0065",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "entity_swap",
+   "score": 0.488,
+   "multi_hop": false,
+   "evidence_idxs": [
+    17
+   ],
+   "reason": "实体错配: 论断指向 copenhagen 但证据是 amsterdam,netherlands",
+   "claim": "哥本哈根的自行车出行占全市交通总量的比例约为 38%。"
+  },
+  {
+   "id": "H0066",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "direction",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    12
+   ],
+   "reason": "概念烘焙程度方向相反(论断升/证据降)",
+   "claim": "Agtron 数值越大表示烘焙程度越深。"
+  },
+  {
+   "id": "H0067",
+   "label": "contradicted",
+   "pred": "supported",
+   "category": "modal",
+   "score": 0.602,
+   "multi_hop": false,
+   "evidence_idxs": [
+    26
+   ],
+   "reason": "主题覆盖60%且数值一致",
+   "claim": "反射涂层路面已被证实适合大规模推广。"
+  },
+  {
+   "id": "H0068",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "unit",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    4
+   ],
+   "reason": "主题匹配但数值无证据: 400,700",
+   "claim": "单只采集蜂每次携带约 400 至 700 毫克花蜜。"
+  },
+  {
+   "id": "H0069",
+   "label": "supported",
+   "pred": "supported",
+   "category": "verbatim",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    34
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "茶树适宜生长的年均温度为 15 至 25 摄氏度,年降水量需要达到 1000 毫米以上。"
+  },
+  {
+   "id": "H0070",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "direction",
+   "score": 0.848,
+   "multi_hop": false,
+   "evidence_idxs": [
+    30
+   ],
+   "reason": "概念melatonin方向相反(论断升/证据降)",
+   "claim": "睡前使用发光电子设备会促进褪黑素分泌。"
+  },
+  {
+   "id": "H0071",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "temporal",
+   "score": 0.838,
+   "multi_hop": true,
+   "evidence_idxs": [
+    19,
+    15
+   ],
+   "reason": "主题匹配但数值无证据: 2029",
+   "claim": "北京回龙观至上地的自行车专用路将于 2029 年 5 月才开通。"
+  },
+  {
+   "id": "H0072",
+   "label": "unsupported",
+   "pred": "supported",
+   "category": "plausible_absent",
+   "score": 0.735,
+   "multi_hop": true,
+   "evidence_idxs": [
+    18,
+    5
+   ],
+   "reason": "多跳支持(2段证据, 覆盖73%)",
+   "claim": "有机农业能完全避免农药对蜜蜂的伤害。"
+  },
+  {
+   "id": "H0073",
+   "label": "supported",
+   "pred": "supported",
+   "category": "multi_hop",
+   "score": 0.732,
+   "multi_hop": true,
+   "evidence_idxs": [
+    4,
+    1
+   ],
+   "reason": "主题覆盖73%且数值一致",
+   "claim": "Colonies hold 20,000 to 80,000 bees, and a single forager carries about 40 to 70"
+  },
+  {
+   "id": "H0074",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "unit",
+   "score": 0.973,
+   "multi_hop": false,
+   "evidence_idxs": [
+    25
+   ],
+   "reason": "主题匹配但数值无证据: 1500",
+   "claim": "佛得草式轻型屋顶绿化的荷载低于每平方米 1500 公斤。"
+  },
+  {
+   "id": "H0075",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "near_miss",
+   "score": 0.259,
+   "multi_hop": false,
+   "evidence_idxs": [
+    38
+   ],
+   "reason": "证据主题覆盖仅26%, 无依据",
+   "claim": "日本的玉露茶产区主要分布在静冈县和福冈县。"
+  },
+  {
+   "id": "H0076",
+   "label": "unsupported",
+   "pred": "supported",
+   "category": "near_miss",
+   "score": 0.75,
+   "multi_hop": false,
+   "evidence_idxs": [
+    9
+   ],
+   "reason": "主题覆盖75%且数值一致",
+   "claim": "咖啡生豆在烘焙前的含水率会随产地海拔显著变化。"
+  },
+  {
+   "id": "H0077",
+   "label": "supported",
+   "pred": "supported",
+   "category": "verbatim",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    4
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "全球天然蜂蜜产量在 2022 年约为 190 万吨。"
+  },
+  {
+   "id": "H0078",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "unit",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    10
+   ],
+   "reason": "主题匹配但数值无证据: 240",
+   "claim": "一爆之后,浅色烘焙通常在豆温 230 至 240 摄氏度出豆。"
+  },
+  {
+   "id": "H0079",
+   "label": "supported",
+   "pred": "supported",
+   "category": "paraphrase_zh",
+   "score": 0.562,
+   "multi_hop": true,
+   "evidence_idxs": [
+    36,
+    37
+   ],
+   "reason": "主题覆盖56%且数值一致",
+   "claim": "乌龙茶只做部分发酵,做青会让叶片边缘破损,形成绿叶带红边的样子。"
+  },
+  {
+   "id": "H0080",
+   "label": "supported",
+   "pred": "supported",
+   "category": "crosslingual",
+   "score": 0.819,
+   "multi_hop": false,
+   "evidence_idxs": [
+    9
+   ],
+   "reason": "主题覆盖82%且数值一致",
+   "claim": "咖啡生豆在烘焙前含有相当比例的水分,烘焙结束时基本被烘干。"
+  },
+  {
+   "id": "H0081",
+   "label": "supported",
+   "pred": "supported",
+   "category": "multi_hop",
+   "score": 1.0,
+   "multi_hop": true,
+   "evidence_idxs": [
+    32,
+    28
+   ],
+   "reason": "多跳支持(2段证据, 覆盖100%)",
+   "claim": "成人每夜约经历 4 至 6 个睡眠周期,而针对慢性失眠的 CBT-I 通常要持续 6 至 8 周。"
+  },
+  {
+   "id": "H0082",
+   "label": "supported",
+   "pred": "unsupported",
+   "category": "multi_hop",
+   "score": 0.053,
+   "multi_hop": false,
+   "evidence_idxs": [
+    7
+   ],
+   "reason": "证据主题覆盖仅5%, 无依据",
+   "claim": "全球天然蜂蜜产量在 2022 年约为 190 万吨,而加利福尼亚的扁桃园每年二月需要约 180 万个蜂群。"
+  },
+  {
+   "id": "H0083",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "direction",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    12
+   ],
+   "reason": "概念烘焙程度方向相反(论断升/证据降)",
+   "claim": "咖啡豆烘焙得越深,Agtron 数值就越高。"
+  },
+  {
+   "id": "H0084",
+   "label": "supported",
+   "pred": "supported",
+   "category": "crosslingual",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    2
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "蜜蜂跳摇摆舞时,舞蹈相对竖直方向的角度编码了食物相对太阳的方位。"
+  },
+  {
+   "id": "H0085",
+   "label": "supported",
+   "pred": "supported",
+   "category": "paraphrase_zh",
+   "score": 0.648,
+   "multi_hop": false,
+   "evidence_idxs": [
+    23
+   ],
+   "reason": "主题覆盖65%且数值一致",
+   "claim": "城市中成片绿地的冷岛效应,可以延伸到周边一百至五百米的范围。"
+  },
+  {
+   "id": "H0086",
+   "label": "contradicted",
+   "pred": "supported",
+   "category": "modal",
+   "score": 1.0,
+   "multi_hop": true,
+   "evidence_idxs": [
+    31,
+    5
+   ],
+   "reason": "多跳支持(2段证据, 覆盖100%)",
+   "claim": "美国受管理蜂群数量的增长,说明蜂群崩溃问题已被彻底解决。"
+  },
+  {
+   "id": "H0087",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "plausible_absent",
+   "score": 0.291,
+   "multi_hop": false,
+   "evidence_idxs": [
+    38
+   ],
+   "reason": "证据主题覆盖仅29%, 无依据",
+   "claim": "冷萃咖啡的咖啡因含量高于热冲咖啡。"
+  },
+  {
+   "id": "H0088",
+   "label": "supported",
+   "pred": "supported",
+   "category": "multi_hop",
+   "score": 1.0,
+   "multi_hop": true,
+   "evidence_idxs": [
+    35,
+    34
+   ],
+   "reason": "多跳支持(2段证据, 覆盖100%)",
+   "claim": "茶树喜欢 15 至 25 摄氏度的年均气温,而制作绿茶时杀青温度要升到 200 摄氏度以上。"
+  },
+  {
+   "id": "H0089",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "direction",
+   "score": 0.798,
+   "multi_hop": true,
+   "evidence_idxs": [
+    38,
+    35
+   ],
+   "reason": "概念theanine方向相反(论断降/证据升)",
+   "claim": "遮阴栽培会降低茶叶中的茶氨酸含量。"
+  },
+  {
+   "id": "H0090",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "magnitude",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    12
+   ],
+   "reason": "主题匹配但数值无证据: 660000000",
+   "claim": "巴西的咖啡产量约为 6.6 亿袋。"
+  },
+  {
+   "id": "H0091",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "direction",
+   "score": 0.771,
+   "multi_hop": true,
+   "evidence_idxs": [
+    23,
+    26
+   ],
+   "reason": "数值10方向相反(论断升/证据降)",
+   "claim": "树冠遮阴会使地表温度升高 10 至 25 摄氏度。"
+  },
+  {
+   "id": "H0092",
+   "label": "supported",
+   "pred": "supported",
+   "category": "crosslingual",
+   "score": 0.81,
+   "multi_hop": false,
+   "evidence_idxs": [
+    17
+   ],
+   "reason": "主题覆盖81%且数值一致",
+   "claim": "Copenhagen has invested heavily in cycling infrastructure for years, and roughly"
+  },
+  {
+   "id": "H0093",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "plausible_absent",
+   "score": 0.032,
+   "multi_hop": false,
+   "evidence_idxs": [
+    8
+   ],
+   "reason": "证据主题覆盖仅3%, 无依据",
+   "claim": "咖啡烘焙企业普遍采用人工智能来控制烘焙曲线。"
+  },
+  {
+   "id": "H0094",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "number_alter",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    24
+   ],
+   "reason": "主题匹配但数值无证据: 800",
+   "claim": "世界卫生组织建议城市居民步行 800 米内应能到达公共绿地。"
+  },
+  {
+   "id": "H0095",
+   "label": "supported",
+   "pred": "supported",
+   "category": "multi_hop",
+   "score": 1.0,
+   "multi_hop": true,
+   "evidence_idxs": [
+    19,
+    18
+   ],
+   "reason": "多跳支持(2段证据, 覆盖100%)",
+   "claim": "隔离自行车道可把严重伤害事故降低约 60% 至 75%,而北京回龙观自行车专用路全长约 6.5 公里。"
+  },
+  {
+   "id": "H0096",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "near_miss",
+   "score": 0.379,
+   "multi_hop": false,
+   "evidence_idxs": [
+    23
+   ],
+   "reason": "证据主题覆盖仅38%, 无依据",
+   "claim": "研究表明,城市绿地面积每增加 10%,周边房价上涨约 3%。"
+  },
+  {
+   "id": "H0097",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "number_alter",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    23
+   ],
+   "reason": "主题匹配但数值无证据: 28",
+   "claim": "树冠遮阴可使地表温度降低 10 至 28 摄氏度。"
+  },
+  {
+   "id": "H0098",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "plausible_absent",
+   "score": 0.535,
+   "multi_hop": false,
+   "evidence_idxs": [
+    16
+   ],
+   "reason": "证据主题覆盖仅53%, 无依据",
+   "claim": "阿姆斯特丹的自行车盗窃案在 2024 年下降了 12%。"
+  },
+  {
+   "id": "H0099",
+   "label": "unsupported",
+   "pred": "supported",
+   "category": "near_miss",
+   "score": 1.0,
+   "multi_hop": true,
+   "evidence_idxs": [
+    36,
+    37
+   ],
+   "reason": "多跳支持(2段证据, 覆盖100%)",
+   "claim": "铁观音属于乌龙茶,主产于福建安溪。"
+  },
+  {
+   "id": "H0100",
+   "label": "supported",
+   "pred": "supported",
+   "category": "multi_hop",
+   "score": 0.573,
+   "multi_hop": true,
+   "evidence_idxs": [
+    30,
+    28
+   ],
+   "reason": "主题覆盖57%且数值一致",
+   "claim": "整夜 REM 睡眠约占总睡眠的 20% 至 25%,而睡前阅读电子书 4 小时会让褪黑素分泌减少约 50%。"
+  },
+  {
+   "id": "H0101",
+   "label": "supported",
+   "pred": "supported",
+   "category": "verbatim",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    10
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "First crack typically occurs when bean temperature reaches 196 to 205 degrees Ce"
+  },
+  {
+   "id": "H0102",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "unit",
+   "score": 0.837,
+   "multi_hop": false,
+   "evidence_idxs": [
+    14
+   ],
+   "reason": "主题匹配但数值无证据: 15",
+   "claim": "浓缩咖啡的标准萃取压力为 15 bar。"
+  },
+  {
+   "id": "H0103",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "direction",
+   "score": 0.809,
+   "multi_hop": true,
+   "evidence_idxs": [
+    18,
+    20
+   ],
+   "reason": "数值60方向相反(论断升/证据降)",
+   "claim": "物理隔离自行车道会使骑行者严重伤害事故上升约 60% 至 75%。"
+  },
+  {
+   "id": "H0104",
+   "label": "supported",
+   "pred": "supported",
+   "category": "verbatim",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    35
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "茶多酚占干重的 18% 至 36%,其中儿茶素类约占茶多酚总量的 60% 至 80%。"
+  },
+  {
+   "id": "H0105",
+   "label": "supported",
+   "pred": "supported",
+   "category": "paraphrase_zh",
+   "score": 0.753,
+   "multi_hop": true,
+   "evidence_idxs": [
+    38,
+    35
+   ],
+   "reason": "主题覆盖75%且数值一致",
+   "claim": "氮肥施用过量会让茶叶里的咖啡碱含量升高,同时茶氨酸含量下降。"
+  },
+  {
+   "id": "H0106",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "direction",
+   "score": 0.776,
+   "multi_hop": true,
+   "evidence_idxs": [
+    26,
+    22
+   ],
+   "reason": "数值10方向相反(论断升/证据降)",
+   "claim": "高反射率涂层的浅色路面会使表面温度上升 10 至 20 摄氏度。"
+  },
+  {
+   "id": "H0107",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "entity_swap",
+   "score": 0.332,
+   "multi_hop": false,
+   "evidence_idxs": [
+    19
+   ],
+   "reason": "实体错配: 论断指向 beijing 但证据是 amsterdam,netherlands",
+   "claim": "北京的自行车出行占全市交通总量的比例约为 38%。"
+  },
+  {
+   "id": "H0108",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "temporal",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    31
+   ],
+   "reason": "主题匹配但数值无证据: 2011",
+   "claim": "中国多地中小学自 2011 年起推行睡眠管理规定。"
+  },
+  {
+   "id": "H0109",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "number_alter",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    4
+   ],
+   "reason": "主题匹配但数值无证据: 2100000",
+   "claim": "全球天然蜂蜜产量在 2022 年约为 210 万吨。"
+  },
+  {
+   "id": "H0110",
+   "label": "supported",
+   "pred": "supported",
+   "category": "verbatim",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    1
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "A queen bee can lay up to 2,000 eggs per day during the spring peak."
+  },
+  {
+   "id": "H0111",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "direction",
+   "score": 0.776,
+   "multi_hop": true,
+   "evidence_idxs": [
+    26,
+    23
+   ],
+   "reason": "数值5方向相反(论断升/证据降)",
+   "claim": "洛杉矶试用反射涂层后,路面温度平均上升约 5 至 10 摄氏度。"
+  },
+  {
+   "id": "H0112",
+   "label": "contradicted",
+   "pred": "supported",
+   "category": "direction",
+   "score": 0.698,
+   "multi_hop": false,
+   "evidence_idxs": [
+    22
+   ],
+   "reason": "主题覆盖70%且数值一致",
+   "claim": "城市中心的气温通常低于周边郊区 3 至 5 摄氏度。"
+  },
+  {
+   "id": "H0113",
+   "label": "supported",
+   "pred": "supported",
+   "category": "multi_hop",
+   "score": 1.0,
+   "multi_hop": true,
+   "evidence_idxs": [
+    36,
+    37
+   ],
+   "reason": "多跳支持(2段证据, 覆盖100%)",
+   "claim": "红茶里的茶黄素一般占干重 0.5% 至 2%,而中国 2023 年的茶叶产量约为 355 万吨。"
+  },
+  {
+   "id": "H0114",
+   "label": "contradicted",
+   "pred": "supported",
+   "category": "direction",
+   "score": 0.795,
+   "multi_hop": true,
+   "evidence_idxs": [
+    32,
+    29
+   ],
+   "reason": "主题覆盖79%且数值一致",
+   "claim": "睡眠限制疗法会降低睡眠效率。"
+  },
+  {
+   "id": "H0115",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "unit",
+   "score": 0.959,
+   "multi_hop": false,
+   "evidence_idxs": [
+    35
+   ],
+   "reason": "主题匹配但数值无证据: 250",
+   "claim": "绿茶杀青温度通常控制在 250 摄氏度以上。"
+  },
+  {
+   "id": "H0116",
+   "label": "supported",
+   "pred": "supported",
+   "category": "multi_hop",
+   "score": 0.715,
+   "multi_hop": true,
+   "evidence_idxs": [
+    7,
+    4
+   ],
+   "reason": "主题覆盖72%且数值一致",
+   "claim": "生产一公斤蜂蜜需要蜜蜂访问约 10 万朵花,而全球约 75% 的主要农作物类型受益于动物授粉。"
+  },
+  {
+   "id": "H0117",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "plausible_absent",
+   "score": 0.145,
+   "multi_hop": false,
+   "evidence_idxs": [
+    30
+   ],
+   "reason": "证据主题覆盖仅14%, 无依据",
+   "claim": "CBT-I 通常由精神科医生在医院内以团体形式开展。"
+  },
+  {
+   "id": "H0118",
+   "label": "supported",
+   "pred": "supported",
+   "category": "crosslingual",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    4
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "一个蜂群要拜访大约十万朵花,才能产出一公斤蜂蜜。"
+  },
+  {
+   "id": "H0119",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "temporal",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    26
+   ],
+   "reason": "主题匹配但数值无证据: 2007",
+   "claim": "洛杉矶自 2007 年起在多条街道试用浅灰色反射涂层路面。"
+  },
+  {
+   "id": "H0120",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "number_alter",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    37
+   ],
+   "reason": "主题匹配但数值无证据: 3750000",
+   "claim": "2023 年中国茶叶产量约为 375 万吨,位居世界第一。"
+  },
+  {
+   "id": "H0121",
+   "label": "supported",
+   "pred": "supported",
+   "category": "crosslingual",
+   "score": 0.744,
+   "multi_hop": false,
+   "evidence_idxs": [
+    11
+   ],
+   "reason": "主题覆盖74%且数值一致",
+   "claim": "深度烘焙的咖啡豆按体积算,咖啡因反而略少于浅烘。"
+  },
+  {
+   "id": "H0122",
+   "label": "supported",
+   "pred": "supported",
+   "category": "paraphrase_zh",
+   "score": 0.588,
+   "multi_hop": true,
+   "evidence_idxs": [
+    32,
+    29
+   ],
+   "reason": "主题覆盖59%且数值一致",
+   "claim": "失眠的认知行为疗法中,睡眠限制在刚开始的阶段会加重白天的困倦。"
+  },
+  {
+   "id": "H0123",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "number_alter",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    34
+   ],
+   "reason": "主题匹配但数值无证据: 16",
+   "claim": "茶树适宜生长的年均温度为 16 至 25 摄氏度。"
+  },
+  {
+   "id": "H0124",
+   "label": "supported",
+   "pred": "supported",
+   "category": "crosslingual",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    1
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "蜂王在春季高峰期每天能产下两千粒卵。"
+  },
+  {
+   "id": "H0125",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "number_alter",
+   "score": 0.969,
+   "multi_hop": false,
+   "evidence_idxs": [
+    19
+   ],
+   "reason": "主题匹配但数值无证据: 8.5",
+   "claim": "北京回龙观至上地的自行车专用路全长约 8.5 公里。"
+  },
+  {
+   "id": "H0126",
+   "label": "supported",
+   "pred": "supported",
+   "category": "paraphrase_zh",
+   "score": 0.858,
+   "multi_hop": false,
+   "evidence_idxs": [
+    28
+   ],
+   "reason": "语义相似86%(向量通道), 字面改写但事实一致",
+   "claim": "成年人一夜大约会经历四到六个睡眠周期,每个周期九十分钟上下。"
+  },
+  {
+   "id": "H0127",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "entity_swap",
+   "score": 0.016,
+   "multi_hop": false,
+   "evidence_idxs": [
+    1
+   ],
+   "reason": "实体错配: 论断指向 vietnam 但证据是 california",
+   "claim": "越南的扁桃园每年二月需要约 180 万个蜂群授粉。"
+  },
+  {
+   "id": "H0128",
+   "label": "supported",
+   "pred": "supported",
+   "category": "verbatim",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    24
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "世界卫生组织建议城市居民步行 300 米内应能到达公共绿地。"
+  },
+  {
+   "id": "H0129",
+   "label": "supported",
+   "pred": "supported",
+   "category": "verbatim",
+   "score": 0.856,
+   "multi_hop": false,
+   "evidence_idxs": [
+    14
+   ],
+   "reason": "主题覆盖86%且数值一致",
+   "claim": "浓缩咖啡通常在 9 bar 压力下萃取,水温保持在 90 至 96 摄氏度。"
+  },
+  {
+   "id": "H0130",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "magnitude",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    37
+   ],
+   "reason": "主题匹配但数值无证据: 35500000",
+   "claim": "2023 年中国茶叶产量约为 3550 万吨。"
+  },
+  {
+   "id": "H0131",
+   "label": "contradicted",
+   "pred": "unsupported",
+   "category": "modal",
+   "score": 0.075,
+   "multi_hop": false,
+   "evidence_idxs": [
+    0
+   ],
+   "reason": "证据主题覆盖仅8%, 无依据",
+   "claim": "蜜蜂是唯一的动物授粉者。"
+  },
+  {
+   "id": "H0132",
+   "label": "supported",
+   "pred": "supported",
+   "category": "verbatim",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    28
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "整夜 REM 睡眠约占总睡眠时间的 20% 至 25%。"
+  },
+  {
+   "id": "H0133",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "number_alter",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    1
+   ],
+   "reason": "主题匹配但数值无证据: 3000",
+   "claim": "A queen bee can lay up to 3,000 eggs per day during the spring peak."
+  },
+  {
+   "id": "H0134",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "entity_swap",
+   "score": 0.167,
+   "multi_hop": false,
+   "evidence_idxs": [
+    24
+   ],
+   "reason": "实体错配: 论断指向 singapore 但证据是 los_angeles",
+   "claim": "新加坡自 2017 年起在多条街道试用浅灰色反射涂层路面。"
+  },
+  {
+   "id": "H0135",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "plausible_absent",
+   "score": 0.149,
+   "multi_hop": false,
+   "evidence_idxs": [
+    29
+   ],
+   "reason": "证据主题覆盖仅15%, 无依据",
+   "claim": "午睡超过 30 分钟会显著增加心血管疾病风险。"
+  },
+  {
+   "id": "H0136",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "near_miss",
+   "score": 0.325,
+   "multi_hop": false,
+   "evidence_idxs": [
+    20
+   ],
+   "reason": "证据主题覆盖仅32%, 无依据",
+   "claim": "共享单车的维护成本主要由用户押金覆盖。"
+  },
+  {
+   "id": "H0137",
+   "label": "supported",
+   "pred": "supported",
+   "category": "paraphrase_zh",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    34
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "中国西南地区是茶树的原产地,当地种茶的历史已经超过两千年。"
+  },
+  {
+   "id": "H0138",
+   "label": "supported",
+   "pred": "supported",
+   "category": "crosslingual",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    9
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "美拉德反应会生成数百种香气物质,也让咖啡豆变成褐色。"
+  },
+  {
+   "id": "H0139",
+   "label": "supported",
+   "pred": "supported",
+   "category": "paraphrase_zh",
+   "score": 0.679,
+   "multi_hop": true,
+   "evidence_idxs": [
+    36,
+    35
+   ],
+   "reason": "主题覆盖68%且数值一致",
+   "claim": "制作红茶时,儿茶素在多酚氧化酶的催化下转变成茶黄素和茶红素。"
+  },
+  {
+   "id": "H0140",
+   "label": "supported",
+   "pred": "supported",
+   "category": "paraphrase_zh",
+   "score": 0.561,
+   "multi_hop": false,
+   "evidence_idxs": [
+    17
+   ],
+   "reason": "主题覆盖56%且数值一致",
+   "claim": "在哥本哈根,差不多每两个通勤者里就有一个骑车上班上学。"
+  },
+  {
+   "id": "H0141",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "magnitude",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    4
+   ],
+   "reason": "主题匹配但数值无证据: 19000000",
+   "claim": "全球天然蜂蜜产量在 2022 年约为 1900 万吨。"
+  },
+  {
+   "id": "H0142",
+   "label": "supported",
+   "pred": "supported",
+   "category": "paraphrase_zh",
+   "score": 0.585,
+   "multi_hop": true,
+   "evidence_idxs": [
+    35,
+    36
+   ],
+   "reason": "主题覆盖59%且数值一致",
+   "claim": "绿茶加工要用高温杀青让多酚氧化酶失去活性,茶汤才能保持清亮。"
+  },
+  {
+   "id": "H0143",
+   "label": "supported",
+   "pred": "supported",
+   "category": "crosslingual",
+   "score": 0.783,
+   "multi_hop": true,
+   "evidence_idxs": [
+    14,
+    38
+   ],
+   "reason": "主题覆盖78%且数值一致",
+   "claim": "萃取不足的浓缩咖啡会偏酸,因为有机酸溶解得比较早。"
+  },
+  {
+   "id": "H0144",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "entity_swap",
+   "score": 0.818,
+   "multi_hop": false,
+   "evidence_idxs": [
+    20
+   ],
+   "reason": "实体错配: 论断指向 norway 但证据是 australia,netherlands",
+   "claim": "挪威的自行车盗窃率约为每年每千辆 15 辆。"
+  },
+  {
+   "id": "H0145",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "plausible_absent",
+   "score": 0.402,
+   "multi_hop": false,
+   "evidence_idxs": [
+    19
+   ],
+   "reason": "证据主题覆盖仅40%, 无依据",
+   "claim": "电动自行车的电池续航普遍超过 100 公里。"
+  },
+  {
+   "id": "H0146",
+   "label": "contradicted",
+   "pred": "unsupported",
+   "category": "temporal",
+   "score": 0.185,
+   "multi_hop": false,
+   "evidence_idxs": [
+    37
+   ],
+   "reason": "证据主题覆盖仅18%, 无依据",
+   "claim": "全球咖啡产量在 2003/04 季约为 1.78 亿个 60 公斤袋。"
+  },
+  {
+   "id": "H0147",
+   "label": "supported",
+   "pred": "supported",
+   "category": "crosslingual",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    2
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "蜜蜂用摇摆舞把食物所在的方向和距离告诉同伴。"
+  },
+  {
+   "id": "H0148",
+   "label": "supported",
+   "pred": "supported",
+   "category": "verbatim",
+   "score": 1.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    18
+   ],
+   "reason": "主题覆盖100%且数值一致",
+   "claim": "物理隔离自行车道可将骑行者严重伤害事故降低约 60% 至 75%。"
+  },
+  {
+   "id": "H0149",
+   "label": "supported",
+   "pred": "supported",
+   "category": "crosslingual",
+   "score": 0.774,
+   "multi_hop": false,
+   "evidence_idxs": [
+    34
+   ],
+   "reason": "主题覆盖77%且数值一致",
+   "claim": "Tea bushes do best where the annual average temperature stays between fifteen an"
+  },
+  {
+   "id": "H0150",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "near_miss",
+   "score": 0.503,
+   "multi_hop": false,
+   "evidence_idxs": [
+    16
+   ],
+   "reason": "证据主题覆盖仅50%, 无依据",
+   "claim": "阿姆斯特丹的自行车高速路网总长已超过 500 公里。"
+  }
+ ]
+}

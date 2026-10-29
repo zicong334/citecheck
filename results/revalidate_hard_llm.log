@@ -1,0 +1,76 @@
+{
+ "mode": "llm",
+ "model": "deepseek-chat",
+ "retriever": "lexical",
+ "gold": "G:\\C盘大文件迁移\\claude code projects\\citecheck\\gold\\hard_gold.jsonl",
+ "n": 49,
+ "accuracy": 1.0,
+ "per_class": {
+  "supported": {
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n": 25
+  },
+  "unsupported": {
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n": 9
+  },
+  "contradicted": {
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n": 15
+  }
+ },
+ "by_category": {
+  "crosslingual": {
+   "n": 8,
+   "accuracy": 1.0
+  },
+  "direction": {
+   "n": 5,
+   "accuracy": 1.0
+  },
+  "entity_swap": {
+   "n": 3,
+   "accuracy": 1.0
+  },
+  "multi_hop": {
+   "n": 7,
+   "accuracy": 1.0
+  },
+  "near_miss": {
+   "n": 3,
+   "accuracy": 1.0
+  },
+  "number_alter": {
+   "n": 5,
+   "accuracy": 1.0
+  },
+  "paraphrase_zh": {
+   "n": 6,
+   "accuracy": 1.0
+  },
+  "plausible_absent": {
+   "n": 6,
+   "accuracy": 1.0
+  },
+  "unit": {
+   "n": 2,
+   "accuracy": 1.0
+  },
+  "verbatim": {
+   "n": 4,
+   "accuracy": 1.0
+  }
+ },
+ "multi_hop": {
+  "expected": 7,
+  "detected": 7,
+  "recall": 1.0
+ }
+}
+full -> G:\C盘大文件迁移\claude code projects\citecheck\results\gold_validation_hard_llm.json

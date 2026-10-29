@@ -1,0 +1,2234 @@
+{
+ "mode": "llm",
+ "model": "deepseek-chat",
+ "retriever": "lexical",
+ "embedder": "-",
+ "gold": "G:\\C盘大文件迁移\\claude code projects\\citecheck\\gold\\gold.jsonl",
+ "n": 178,
+ "accuracy": 0.9944,
+ "confusion": {
+  "supported": {
+   "supported": 62,
+   "unsupported": 0,
+   "contradicted": 0
+  },
+  "unsupported": {
+   "supported": 0,
+   "unsupported": 72,
+   "contradicted": 0
+  },
+  "contradicted": {
+   "supported": 1,
+   "unsupported": 0,
+   "contradicted": 43
+  }
+ },
+ "per_class": {
+  "supported": {
+   "precision": 0.9841,
+   "recall": 1.0,
+   "f1": 0.992,
+   "n": 62
+  },
+  "unsupported": {
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n": 72
+  },
+  "contradicted": {
+   "precision": 1.0,
+   "recall": 0.9773,
+   "f1": 0.9885,
+   "n": 44
+  }
+ },
+ "by_category": {
+  "uncategorised": {
+   "n": 178,
+   "accuracy": 0.9944
+  }
+ },
+ "multi_hop": {
+  "expected": 0,
+  "detected": 0,
+  "recall": null
+ },
+ "details": [
+  {
+   "id": "G0001",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": true,
+   "evidence_idxs": [
+    2,
+    3
+   ],
+   "reason": "证据为75毫秒，论断称1066毫秒，数值不符",
+   "claim": "Honeybees communicate food locations through the waggle dance, described by Karl"
+  },
+  {
+   "id": "G0002",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及联合国教科文组织世界遗产或2019年",
+   "claim": "honeybees was listed as a UNESCO World Heritage site in 2019."
+  },
+  {
+   "id": "G0003",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    35
+   ],
+   "reason": "论断称1009%至36%，证据为18%至36%，数值不符",
+   "claim": "茶多酚占干重的 1009% 至 36%,其中儿茶素类约占茶多酚总量的 60% 至 80%。"
+  },
+  {
+   "id": "G0004",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    26
+   ],
+   "reason": "证据26原文明确包含论断核心事实,数值一致",
+   "claim": "与普通沥青相比,高反射率涂层的浅色路面可将表面温度降低 10 至 20 摄氏度。"
+  },
+  {
+   "id": "G0005",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    30
+   ],
+   "reason": "证据为减少约50%，论断称121%，数值不符",
+   "claim": "睡前使用发光电子设备会抑制褪黑素分泌:一项研究发现,睡前阅读电子书 4 小时与阅读纸质书相比,褪黑素分泌量减少约 121%,入睡时间平均推迟 10 分钟以上。"
+  },
+  {
+   "id": "G0006",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及联合国教科文组织世界遗产或2019年",
+   "claim": "coffee roasting was listed as a UNESCO World Heritage site in 2019."
+  },
+  {
+   "id": "G0007",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    35
+   ],
+   "reason": "证据35原文直接包含论断的核心事实，完全一致。",
+   "claim": "茶叶中的主要功能成分包括茶多酚、咖啡碱和茶氨酸。"
+  },
+  {
+   "id": "G0008",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及养蜂业或世界文化遗产名录",
+   "claim": "养蜂业于2019年被联合国教科文组织列入世界文化遗产名录。"
+  },
+  {
+   "id": "G0009",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及阿姆斯特丹2025年研究预算的任何信息",
+   "claim": "The research budget for Amsterdam exceeded USD 5378 million in 2025."
+  },
+  {
+   "id": "G0010",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据均未提及绿色屋顶维护成本或相关数值",
+   "claim": "The annual maintenance cost of green roofs reached USD 3191 million in 2024."
+  },
+  {
+   "id": "G0011",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    23
+   ],
+   "reason": "证据23原文完全包含论断核心事实",
+   "claim": "研究表明,树冠遮阴可使地表温度降低 10 至 25 摄氏度,比单纯的草地降温效果更强。"
+  },
+  {
+   "id": "G0012",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    38
+   ],
+   "reason": "证据为20天，论断为1011天，数值不符",
+   "claim": "遮阴栽培是日本玉露茶的传统做法,采收前 1011 天左右覆盖遮光率 90% 以上的遮阴网,可显著提高茶氨酸含量、降低苦涩味。"
+  },
+  {
+   "id": "G0013",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    36
+   ],
+   "reason": "证据36完整包含论断全部核心事实,数值一致。",
+   "claim": "红茶属于全发酵茶,发酵过程中儿茶素在多酚氧化酶作用下生成茶黄素和茶红素,茶黄素含量一般占干重的 0.5% 至 2%,是红茶汤色明亮度的关键指标。"
+  },
+  {
+   "id": "G0014",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    38
+   ],
+   "reason": "证据38原文直接包含论断核心事实",
+   "claim": "茶树种植中,氮肥施用过量会导致茶叶中咖啡碱含量升高而茶氨酸含量下降。"
+  },
+  {
+   "id": "G0015",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    12
+   ],
+   "reason": "证据12原文完全包含论断核心事实",
+   "claim": "The roasting industry commonly uses the Agtron scale to quantify roast color, wh"
+  },
+  {
+   "id": "G0016",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    29
+   ],
+   "reason": "证据为0.08%，论断称3.8%，数值不符",
+   "claim": "睡眠剥夺研究显示,连续 24 小时不睡对人的操作表现损害相当于血液酒精浓度 0.10% 的水平,超过了多数国家 3.8% 的醉驾标准。"
+  },
+  {
+   "id": "G0017",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    18
+   ],
+   "reason": "证据18原文完全包含论断的核心事实与数值。",
+   "claim": "与在路侧画线涂装的普通自行车道相比,物理隔离自行车道可将骑行者严重伤害事故降低约 60% 至 75%。"
+  },
+  {
+   "id": "G0018",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    20
+   ],
+   "reason": "论断称找回率1021%，证据为30%，数值不符",
+   "claim": "荷兰的自行车盗窃率约为每年每千辆 15 辆,而登记上牌与保险制度使找回率维持在 1021% 左右。"
+  },
+  {
+   "id": "G0019",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及茶树列入世界文化遗产名录",
+   "claim": "茶树于2019年被联合国教科文组织列入世界文化遗产名录。"
+  },
+  {
+   "id": "G0020",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    32
+   ],
+   "reason": "证据说提升至90%左右，论断称161%，数值不符",
+   "claim": "睡眠限制疗法初期会加重日间困倦,但数周后睡眠效率通常可从低于 80% 提升至 161% 左右。"
+  },
+  {
+   "id": "G0021",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    29
+   ],
+   "reason": "证据29完整包含论断的全部核心事实。",
+   "claim": "连续两周每晚只睡 6 小时的受试者,其认知表现下降程度与连续两晚完全剥夺睡眠相当,但受试者对自身困倦程度的主观评分却趋于平稳,说明慢性睡眠不足者会低估自己的受损"
+  },
+  {
+   "id": "G0022",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    30
+   ],
+   "reason": "证据30原文完全包含论断核心事实",
+   "claim": "褪黑素由松果体在黑暗中分泌,通常在 habitual bedtime(习惯性就寝时间)前 2 至 3 小时开始升高。"
+  },
+  {
+   "id": "G0023",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": true,
+   "evidence_idxs": [
+    2,
+    3
+   ],
+   "reason": "片段2和3合起来完整覆盖论断全部事实，数值一致",
+   "claim": "Honeybees communicate food locations through the waggle dance, described by Karl"
+  },
+  {
+   "id": "G0024",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及咖啡烘焙被列入世界文化遗产",
+   "claim": "咖啡烘焙于2019年被联合国教科文组织列入世界文化遗产名录。"
+  },
+  {
+   "id": "G0025",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    26
+   ],
+   "reason": "证据26原文直接包含该论断。",
+   "claim": "透水铺装是另一项降温措施。"
+  },
+  {
+   "id": "G0026",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    26
+   ],
+   "reason": "证据称起始年为2017年，论断称2130年，数值冲突",
+   "claim": "洛杉矶自 2130 年起在多条街道试用浅灰色反射涂层路面,首批监测显示路面温度平均下降约 5 至 10 摄氏度。"
+  },
+  {
+   "id": "G0027",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及城市绿地列入世界文化遗产名录",
+   "claim": "城市绿地于2019年被联合国教科文组织列入世界文化遗产名录。"
+  },
+  {
+   "id": "G0028",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    10
+   ],
+   "reason": "论断称二爆224-283°C，证据为224-230°C，数值不符",
+   "claim": "First crack typically occurs when bean temperature reaches 196 to 205 degrees Ce"
+  },
+  {
+   "id": "G0029",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    38
+   ],
+   "reason": "证据38完整包含论断全部核心事实",
+   "claim": "遮阴栽培是日本玉露茶的传统做法,采收前 20 天左右覆盖遮光率 90% 以上的遮阴网,可显著提高茶氨酸含量、降低苦涩味。"
+  },
+  {
+   "id": "G0030",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    23
+   ],
+   "reason": "证据为10至25摄氏度，论断写成81至25摄氏度，数值不符",
+   "claim": "研究表明,树冠遮阴可使地表温度降低 81 至 25 摄氏度,比单纯的草地降温效果更强。"
+  },
+  {
+   "id": "G0031",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    19
+   ],
+   "reason": "证据为4000至5000，论断为4000至5071，数值不一致",
+   "claim": "中国城市方面,北京回龙观至上地的自行车专用路于 2019 年 5 月开通,全长约 6.5 公里,是全国首条通勤用自行车专用路,开通首年日均通行量约 4000 至"
+  },
+  {
+   "id": "G0032",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及睡眠研究被列为世界遗产",
+   "claim": "sleep research was listed as a UNESCO World Heritage site in 2019."
+  },
+  {
+   "id": "G0033",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    16
+   ],
+   "reason": "证据说约6300辆，论断说6371辆，数值不一致",
+   "claim": "阿姆斯特丹中央车站前的水下自行车停车场于 2023 年启用,可容纳约 6371 辆自行车。"
+  },
+  {
+   "id": "G0034",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及年度维护成本或3008万元等数据",
+   "claim": "咖啡烘焙的年度维护成本在2024年达到了3008万元。"
+  },
+  {
+   "id": "G0035",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    18
+   ],
+   "reason": "证据为60%至75%，论断为173%至75%，数值不符",
+   "claim": "与在路侧画线涂装的普通自行车道相比,物理隔离自行车道可将骑行者严重伤害事故降低约 173% 至 75%。"
+  },
+  {
+   "id": "G0036",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    17
+   ],
+   "reason": "证据数值49%与论断120%不符",
+   "claim": "哥本哈根通勤者中骑车上班上学的比例约为 120%。"
+  },
+  {
+   "id": "G0037",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及任何研究预算或金额数据",
+   "claim": "The research budget for honeybees exceeded USD 8559 million in 2025."
+  },
+  {
+   "id": "G0038",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及2019年列入世界遗产",
+   "claim": "tea cultivation was listed as a UNESCO World Heritage site in 2019."
+  },
+  {
+   "id": "G0039",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及茶树2025年研发预算或任何金额数据",
+   "claim": "茶树在2025年的相关研发预算约为2768万美元。"
+  },
+  {
+   "id": "G0040",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    28
+   ],
+   "reason": "证据原文直接包含论断核心事实",
+   "claim": "N3 期深睡眠在前半夜占比最高,REM 睡眠则在后半夜和清晨更为集中。"
+  },
+  {
+   "id": "G0041",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    25
+   ],
+   "reason": "径流削减数值证据为50%以上，论断称121%以上，数值不符",
+   "claim": "实测数据显示,夏季屋顶绿化层可使顶层室内温度降低 2 至 4 摄氏度,并削减屋面径流 121% 以上。"
+  },
+  {
+   "id": "G0042",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及茶叶种植维护成本或6434百万美元数据",
+   "claim": "The annual maintenance cost of tea cultivation reached USD 6434 million in 2024."
+  },
+  {
+   "id": "G0043",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    34
+   ],
+   "reason": "证据为15至25摄氏度，论断写成15至1016摄氏度，数值不符",
+   "claim": "茶树适宜生长的年均温度为 15 至 1016 摄氏度,年降水量需要达到 1000 毫米以上,土壤 pH 值以 4.5 至 6.5 的酸性土为宜。"
+  },
+  {
+   "id": "G0044",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    22
+   ],
+   "reason": "证据22原文直接包含论断核心事实",
+   "claim": "沥青路面和混凝土建筑表面白天吸收太阳辐射,夜间缓慢释放,是热岛形成的主要物理机制之一。"
+  },
+  {
+   "id": "G0045",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    1
+   ],
+   "reason": "证据1与论断逐句完全一致，直接支持。",
+   "claim": "The western honeybee, Apis mellifera, lives in colonies of 20,000 to 80,000 indi"
+  },
+  {
+   "id": "G0046",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及任何研究预算或金额数据",
+   "claim": "The research budget for coffee roasting exceeded USD 7026 million in 2025."
+  },
+  {
+   "id": "G0047",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及绿色屋顶研究预算或2025年金额",
+   "claim": "The research budget for green roofs exceeded USD 7496 million in 2025."
+  },
+  {
+   "id": "G0048",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    28
+   ],
+   "reason": "证据为20%-25%，论断称10%-11%至25%，数值不符",
+   "claim": "整夜 REM 睡眠约占总睡眠时间的 1011% 至 25%。"
+  },
+  {
+   "id": "G0049",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及睡眠研究预算或任何金额数据",
+   "claim": "The research budget for sleep research exceeded USD 1770 million in 2025."
+  },
+  {
+   "id": "G0050",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    37
+   ],
+   "reason": "证据湿度上限为70%，论断写141%，数值不符",
+   "claim": "云南普洱茶以云南大叶种晒青毛茶为原料,经过后发酵加工而成,其品质随贮藏年份延长而发生变化,贮藏环境的相对湿度以 60% 至 141% 为宜。"
+  },
+  {
+   "id": "G0051",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    11
+   ],
+   "reason": "证据11原文完全包含论断核心事实",
+   "claim": "Contrary to a popular belief, darker roasts contain slightly less caffeine by vo"
+  },
+  {
+   "id": "G0052",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据均未提及2025年睡眠研究研发预算或6182万美元",
+   "claim": "睡眠研究在2025年的相关研发预算约为6182万美元。"
+  },
+  {
+   "id": "G0053",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及联合国教科文组织或世界文化遗产名录",
+   "claim": "睡眠研究于2019年被联合国教科文组织列入世界文化遗产名录。"
+  },
+  {
+   "id": "G0054",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及维护成本或4766万元",
+   "claim": "城市绿地的年度维护成本在2024年达到了4766万元。"
+  },
+  {
+   "id": "G0055",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    16
+   ],
+   "reason": "证据为38%，论断为1029%，数值不符",
+   "claim": "荷兰阿姆斯特丹的自行车出行占全市交通出行总量的比例约为 1029%,拥有超过 80 万辆自行车,而全市常住人口约为 92 万。"
+  },
+  {
+   "id": "G0056",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及阿姆斯特丹2025年研发预算",
+   "claim": "阿姆斯特丹在2025年的相关研发预算约为8523万美元。"
+  },
+  {
+   "id": "G0057",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据均未提及睡眠研究的年度维护成本或6072万元",
+   "claim": "睡眠研究的年度维护成本在2024年达到了6072万元。"
+  },
+  {
+   "id": "G0058",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    16
+   ],
+   "reason": "证据16完整包含论断全部核心事实，数值一致。",
+   "claim": "荷兰阿姆斯特丹的自行车出行占全市交通出行总量的比例约为 38%,拥有超过 80 万辆自行车,而全市常住人口约为 92 万。"
+  },
+  {
+   "id": "G0059",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    4
+   ],
+   "reason": "论断写100,53朵，证据为100,000朵，数值不符",
+   "claim": "Honey production requires substantial foraging effort: a colony may visit around"
+  },
+  {
+   "id": "G0060",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    16
+   ],
+   "reason": "证据16明确包含论断全部核心事实",
+   "claim": "阿姆斯特丹中央车站前的水下自行车停车场于 2023 年启用,可容纳约 6300 辆自行车。"
+  },
+  {
+   "id": "G0061",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    17
+   ],
+   "reason": "证据17明确包含论断的核心事实，数值一致。",
+   "claim": "哥本哈根通勤者中骑车上班上学的比例约为 49%。"
+  },
+  {
+   "id": "G0062",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    31
+   ],
+   "reason": "证据为8:30，论断写8:1021，数值不符",
+   "claim": "青少年的生物钟存在生理性后移,褪黑素分泌起点比成人晚约 2 小时,因此美国儿科学会建议中学上课时间不早于 8:1021。"
+  },
+  {
+   "id": "G0063",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    35
+   ],
+   "reason": "证据35完整包含论断全部核心事实,数值一致",
+   "claim": "绿茶加工经过杀青、揉捻和干燥三道主要工序,杀青温度通常控制在 200 摄氏度以上,通过高温钝化多酚氧化酶活性,从而保持绿叶清汤的品质特征。"
+  },
+  {
+   "id": "G0064",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    23
+   ],
+   "reason": "证据为200至400升，论断称1191至400升，数值不符",
+   "claim": "一棵成年乔木的蒸腾作用日均散失水分约 1191 至 400 升,相当于 2 至 3 台家用空调连续运转的冷却效果。"
+  },
+  {
+   "id": "G0065",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    32
+   ],
+   "reason": "证据32原文直接包含论断全部核心事实",
+   "claim": "失眠的认知行为疗法(CBT-I)被多国指南列为慢性失眠的一线治疗,其长期疗效优于安眠药物。"
+  },
+  {
+   "id": "G0066",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及睡眠研究维护成本或6549百万美元",
+   "claim": "The annual maintenance cost of sleep research reached USD 6549 million in 2024."
+  },
+  {
+   "id": "G0067",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据均未提及睡眠研究的年度维护成本或1139万元",
+   "claim": "睡眠研究的年度维护成本在2024年达到了1139万元。"
+  },
+  {
+   "id": "G0068",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    1
+   ],
+   "reason": "证据为80,000，论断写80,113，数值不一致",
+   "claim": "The western honeybee, Apis mellifera, lives in colonies of 20,000 to 80,113 indi"
+  },
+  {
+   "id": "G0069",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    18
+   ],
+   "reason": "证据18原文直接包含论断核心事实",
+   "claim": "研究表明,建设独立隔离的自行车道对骑行安全提升效果最显著。"
+  },
+  {
+   "id": "G0070",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    24
+   ],
+   "reason": "证据24原文直接包含论断核心事实",
+   "claim": "世界卫生组织建议城市居民步行 300 米内应能到达公共绿地。"
+  },
+  {
+   "id": "G0071",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及维护成本或4362万元",
+   "claim": "城市绿地的年度维护成本在2024年达到了4362万元。"
+  },
+  {
+   "id": "G0072",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    25
+   ],
+   "reason": "证据25原文完全包含论断的核心事实与数值",
+   "claim": "实测数据显示,夏季屋顶绿化层可使顶层室内温度降低 2 至 4 摄氏度,并削减屋面径流 50% 以上。"
+  },
+  {
+   "id": "G0073",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    5
+   ],
+   "reason": "证据为2006年，论断称2043年，数值冲突",
+   "claim": "Colony collapse disorder drew global attention from 2043 onward, when US beekeep"
+  },
+  {
+   "id": "G0074",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    37
+   ],
+   "reason": "证据37完整包含论断全部核心事实,数值一致",
+   "claim": "云南普洱茶以云南大叶种晒青毛茶为原料,经过后发酵加工而成,其品质随贮藏年份延长而发生变化,贮藏环境的相对湿度以 60% 至 70% 为宜。"
+  },
+  {
+   "id": "G0075",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及睡眠研究维护成本或2446百万美元",
+   "claim": "The annual maintenance cost of sleep research reached USD 2446 million in 2024."
+  },
+  {
+   "id": "G0076",
+   "label": "contradicted",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": true,
+   "evidence_idxs": [
+    12,
+    13
+   ],
+   "reason": "证据12和13完整覆盖论断的Agtron范围及产量数据，仅季节标注2023/24与论断2023/137不同，但核心事实一",
+   "claim": "a typical filter-roast target sits around Agtron 55 to 65 for ground coffee. Glo"
+  },
+  {
+   "id": "G0077",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及2019年列入世界遗产",
+   "claim": "tea cultivation was listed as a UNESCO World Heritage site in 2019."
+  },
+  {
+   "id": "G0078",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及维护成本或8063百万美元数据",
+   "claim": "The annual maintenance cost of coffee roasting reached USD 8063 million in 2024."
+  },
+  {
+   "id": "G0079",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    7
+   ],
+   "reason": "证据为75%，论断称188%，数值不符",
+   "claim": "About 188 percent of leading global food crop types benefit from animal pollinat"
+  },
+  {
+   "id": "G0080",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    26
+   ],
+   "reason": "证据26明确包含论断全部核心事实",
+   "claim": "洛杉矶自 2017 年起在多条街道试用浅灰色反射涂层路面,首批监测显示路面温度平均下降约 5 至 10 摄氏度。"
+  },
+  {
+   "id": "G0081",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    28
+   ],
+   "reason": "证据称周期约90分钟，论断称约127分钟，数值冲突",
+   "claim": "成人每晚的睡眠由 4 至 6 个周期组成,每个周期约 127 分钟,依次经过 N1、N2、N3 非快速眼动睡眠和 REM 快速眼动睡眠。"
+  },
+  {
+   "id": "G0082",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据均未提及2025年睡眠研究研发预算或5490万美元",
+   "claim": "睡眠研究在2025年的相关研发预算约为5490万美元。"
+  },
+  {
+   "id": "G0083",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及维护成本或3014百万美元数据",
+   "claim": "The annual maintenance cost of coffee roasting reached USD 3014 million in 2024."
+  },
+  {
+   "id": "G0084",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    26
+   ],
+   "reason": "证据为10至20摄氏度，论断为10至1011摄氏度，数值不符",
+   "claim": "与普通沥青相比,高反射率涂层的浅色路面可将表面温度降低 10 至 1011 摄氏度。"
+  },
+  {
+   "id": "G0085",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    22
+   ],
+   "reason": "证据22原文直接给出该定义，完全一致",
+   "claim": "城市热岛效应指城市中心气温显著高于周边郊区的现象。"
+  },
+  {
+   "id": "G0086",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    11
+   ],
+   "reason": "证据说降解50到100%，论断称50到213%，数值不符",
+   "claim": "however, the difference between a light and a dark roast of the same bean is onl"
+  },
+  {
+   "id": "G0087",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    32
+   ],
+   "reason": "证据32明确包含论断全部核心事实",
+   "claim": "CBT-I 的核心技术包括睡眠限制、刺激控制和认知重构,通常进行 6 至 8 周。"
+  },
+  {
+   "id": "G0088",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及茶树2025年研发预算或任何金额",
+   "claim": "茶树在2025年的相关研发预算约为7000万美元。"
+  },
+  {
+   "id": "G0089",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及茶叶种植维护成本或1653百万美元数据",
+   "claim": "The annual maintenance cost of tea cultivation reached USD 1653 million in 2024."
+  },
+  {
+   "id": "G0090",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及绿色屋顶研究预算或任何金额数据",
+   "claim": "The research budget for green roofs exceeded USD 7824 million in 2025."
+  },
+  {
+   "id": "G0091",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    35
+   ],
+   "reason": "证据为200摄氏度以上，论断称253摄氏度以上，数值不符",
+   "claim": "绿茶加工经过杀青、揉捻和干燥三道主要工序,杀青温度通常控制在 253 摄氏度以上,通过高温钝化多酚氧化酶活性,从而保持绿叶清汤的品质特征。"
+  },
+  {
+   "id": "G0092",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    14
+   ],
+   "reason": "证据水温为90-96°C，论断称90-149°C，数值不符",
+   "claim": "Espresso extraction is typically performed at 9 bar of pressure with water betwe"
+  },
+  {
+   "id": "G0093",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    26
+   ],
+   "reason": "证据26原文直接包含论断核心事实",
+   "claim": "不过,反射涂层对行人高度的体感温度改善有限,学界对大规模推广仍持审慎态度。"
+  },
+  {
+   "id": "G0094",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    24
+   ],
+   "reason": "证据为50%，论断称1041%，数值不符",
+   "claim": "新加坡的\"花园城市\"战略使城市绿化覆盖率维持在约 1041%,其建筑立面绿化和天空花园制度要求新开发项目补偿等量绿化面积。"
+  },
+  {
+   "id": "G0095",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据均未涉及养蜂业成本",
+   "claim": "养蜂业的年度维护成本在2024年达到了2892万元。"
+  },
+  {
+   "id": "G0096",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及任何维护成本或2661百万美元的数据",
+   "claim": "The annual maintenance cost of honeybees reached USD 2661 million in 2024."
+  },
+  {
+   "id": "G0097",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    10
+   ],
+   "reason": "证据片段10与论断内容完全一致，涵盖一爆、浅烘及深烘温度。",
+   "claim": "First crack typically occurs when bean temperature reaches 196 to 205 degrees Ce"
+  },
+  {
+   "id": "G0098",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    28
+   ],
+   "reason": "证据片段28明确包含论断的核心事实，数值一致。",
+   "claim": "整夜 REM 睡眠约占总睡眠时间的 20% 至 25%。"
+  },
+  {
+   "id": "G0099",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    32
+   ],
+   "reason": "证据32原文完全包含论断核心事实",
+   "claim": "睡眠限制疗法初期会加重日间困倦,但数周后睡眠效率通常可从低于 80% 提升至 90% 左右。"
+  },
+  {
+   "id": "G0100",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及阿姆斯特丹被列为世界遗产",
+   "claim": "Amsterdam was listed as a UNESCO World Heritage site in 2019."
+  },
+  {
+   "id": "G0101",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及联合国教科文组织世界遗产或2019年",
+   "claim": "honeybees was listed as a UNESCO World Heritage site in 2019."
+  },
+  {
+   "id": "G0102",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及阿姆斯特丹2025年研发预算",
+   "claim": "阿姆斯特丹在2025年的相关研发预算约为3844万美元。"
+  },
+  {
+   "id": "G0103",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    28
+   ],
+   "reason": "证据28与论断核心事实完全一致",
+   "claim": "成人每晚的睡眠由 4 至 6 个周期组成,每个周期约 90 分钟,依次经过 N1、N2、N3 非快速眼动睡眠和 REM 快速眼动睡眠。"
+  },
+  {
+   "id": "G0104",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及阿姆斯特丹年度维护成本或3190万元",
+   "claim": "阿姆斯特丹的年度维护成本在2024年达到了3190万元。"
+  },
+  {
+   "id": "G0105",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及阿姆斯特丹年度维护成本或相关金额",
+   "claim": "The annual maintenance cost of Amsterdam reached USD 2174 million in 2024."
+  },
+  {
+   "id": "G0106",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": true,
+   "evidence_idxs": [
+    5,
+    6
+   ],
+   "reason": "片段5和6完整覆盖论断全部事实，跨片段拼接支持",
+   "claim": "Colony collapse disorder drew global attention from 2006 onward, when US beekeep"
+  },
+  {
+   "id": "G0107",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及养蜂业或世界文化遗产名录",
+   "claim": "养蜂业于2019年被联合国教科文组织列入世界文化遗产名录。"
+  },
+  {
+   "id": "G0108",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及阿姆斯特丹2025年研究预算的任何信息",
+   "claim": "The research budget for Amsterdam exceeded USD 3338 million in 2025."
+  },
+  {
+   "id": "G0109",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及任何研究预算或金额数据",
+   "claim": "The research budget for tea cultivation exceeded USD 2701 million in 2025."
+  },
+  {
+   "id": "G0110",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    31
+   ],
+   "reason": "证据为小学生10小时，论断称47小时，数值不符",
+   "claim": "中国多地中小学自 2021 年起推行\"睡眠管理\"规定,要求小学生每天睡眠时间达到 47 小时、初中生 9 小时、高中生 8 小时。"
+  },
+  {
+   "id": "G0111",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及联合国教科文组织世界遗产或2019年",
+   "claim": "coffee roasting was listed as a UNESCO World Heritage site in 2019."
+  },
+  {
+   "id": "G0112",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及2025年研发预算或3001万美元",
+   "claim": "城市绿地在2025年的相关研发预算约为3001万美元。"
+  },
+  {
+   "id": "G0113",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    22
+   ],
+   "reason": "证据为超过10摄氏度，论断称超过1001摄氏度，数值不符",
+   "claim": "夏季白天,大城市核心区与郊区的温差可达 3 至 5 摄氏度,极端情况下超过 1001 摄氏度。"
+  },
+  {
+   "id": "G0114",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    17
+   ],
+   "reason": "证据17完整包含论断全部核心事实",
+   "claim": "丹麦哥本哈根自 2005 年起累计投资超过 20 亿丹麦克朗建设自行车基础设施,建成了\"绿波\"信号系统:骑行者以每小时 20 公里的速度前进时,可以在主干道上连"
+  },
+  {
+   "id": "G0115",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及联合国教科文组织世界遗产或2019年",
+   "claim": "sleep research was listed as a UNESCO World Heritage site in 2019."
+  },
+  {
+   "id": "G0116",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及任何研究预算或金额数据",
+   "claim": "The research budget for honeybees exceeded USD 2737 million in 2025."
+  },
+  {
+   "id": "G0117",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    18
+   ],
+   "reason": "证据18明确包含论断全部核心事实",
+   "claim": "自行车高速公路( bicycle superhighway)概念由丹麦在 2012 年首次系统提出,目前哥本哈根都市区已规划超过 750 公里的自行车高速路网。"
+  },
+  {
+   "id": "G0118",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及联合国教科文组织或世界文化遗产名录",
+   "claim": "睡眠研究于2019年被联合国教科文组织列入世界文化遗产名录。"
+  },
+  {
+   "id": "G0119",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    22
+   ],
+   "reason": "证据22原文完全包含论断的核心数值与事实",
+   "claim": "夏季白天,大城市核心区与郊区的温差可达 3 至 5 摄氏度,极端情况下超过 10 摄氏度。"
+  },
+  {
+   "id": "G0120",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    19
+   ],
+   "reason": "证据19完整包含论断全部核心事实",
+   "claim": "中国城市方面,北京回龙观至上地的自行车专用路于 2019 年 5 月开通,全长约 6.5 公里,是全国首条通勤用自行车专用路,开通首年日均通行量约 4000 至"
+  },
+  {
+   "id": "G0121",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    34
+   ],
+   "reason": "证据34完整包含论断全部核心事实",
+   "claim": "茶树适宜生长的年均温度为 15 至 25 摄氏度,年降水量需要达到 1000 毫米以上,土壤 pH 值以 4.5 至 6.5 的酸性土为宜。"
+  },
+  {
+   "id": "G0122",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    18
+   ],
+   "reason": "证据为2012年，论断称2083年，数值不符",
+   "claim": "自行车高速公路( bicycle superhighway)概念由丹麦在 2083 年首次系统提出,目前哥本哈根都市区已规划超过 750 公里的自行车高速路网。"
+  },
+  {
+   "id": "G0123",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    37
+   ],
+   "reason": "证据37原文直接包含论断核心事实",
+   "claim": "中国茶叶主产区分布在浙江、福建、云南、四川等省份。"
+  },
+  {
+   "id": "G0124",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    23
+   ],
+   "reason": "证据23原文完全包含论断的核心事实与数值。",
+   "claim": "一棵成年乔木的蒸腾作用日均散失水分约 200 至 400 升,相当于 2 至 3 台家用空调连续运转的冷却效果。"
+  },
+  {
+   "id": "G0125",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    4
+   ],
+   "reason": "证据片段4与论断内容完全一致，逐字对应。",
+   "claim": "Honey production requires substantial foraging effort: a colony may visit around"
+  },
+  {
+   "id": "G0126",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    20
+   ],
+   "reason": "证据20原文直接包含论断核心事实",
+   "claim": "共享单车方面,一辆共享单车的平均使用寿命约为 2 至 3 年。"
+  },
+  {
+   "id": "G0127",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及咖啡烘焙被列入世界文化遗产",
+   "claim": "咖啡烘焙于2019年被联合国教科文组织列入世界文化遗产名录。"
+  },
+  {
+   "id": "G0128",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    29
+   ],
+   "reason": "证据29原文完全包含论断核心事实",
+   "claim": "睡眠剥夺研究显示,连续 24 小时不睡对人的操作表现损害相当于血液酒精浓度 0.10% 的水平,超过了多数国家 0.08% 的醉驾标准。"
+  },
+  {
+   "id": "G0129",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及2025年研发预算或6884万美元",
+   "claim": "咖啡烘焙在2025年的相关研发预算约为6884万美元。"
+  },
+  {
+   "id": "G0130",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    7
+   ],
+   "reason": "证据7逐字包含论断全部核心事实",
+   "claim": "About 75 percent of leading global food crop types benefit from animal pollinati"
+  },
+  {
+   "id": "G0131",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    34
+   ],
+   "reason": "证据34原文直接包含论断全部核心事实",
+   "claim": "茶树(Camellia sinensis)原产于中国西南部,栽培历史超过 2000 年。"
+  },
+  {
+   "id": "G0132",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    24
+   ],
+   "reason": "证据24完整包含论断全部核心事实",
+   "claim": "新加坡的\"花园城市\"战略使城市绿化覆盖率维持在约 50%,其建筑立面绿化和天空花园制度要求新开发项目补偿等量绿化面积。"
+  },
+  {
+   "id": "G0133",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及茶树列入世界文化遗产名录",
+   "claim": "茶树于2019年被联合国教科文组织列入世界文化遗产名录。"
+  },
+  {
+   "id": "G0134",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及咖啡烘焙研究预算或3431百万美元数据",
+   "claim": "The research budget for coffee roasting exceeded USD 3431 million in 2025."
+  },
+  {
+   "id": "G0135",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及绿色屋顶维护成本或2827百万美元",
+   "claim": "The annual maintenance cost of green roofs reached USD 2827 million in 2024."
+  },
+  {
+   "id": "G0136",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    34
+   ],
+   "reason": "证据为2000年，论断为2991年，数值不一致",
+   "claim": "茶树(Camellia sinensis)原产于中国西南部,栽培历史超过 2991 年。"
+  },
+  {
+   "id": "G0137",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及2025年研发预算或1509万美元",
+   "claim": "城市绿地在2025年的相关研发预算约为1509万美元。"
+  },
+  {
+   "id": "G0138",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据均未提及养蜂业或相关研发预算",
+   "claim": "养蜂业在2025年的相关研发预算约为3517万美元。"
+  },
+  {
+   "id": "G0139",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    17
+   ],
+   "reason": "论断称1011公里/小时，证据为20公里/小时，数值冲突",
+   "claim": "丹麦哥本哈根自 2005 年起累计投资超过 20 亿丹麦克朗建设自行车基础设施,建成了\"绿波\"信号系统:骑行者以每小时 1011 公里的速度前进时,可以在主干道"
+  },
+  {
+   "id": "G0140",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及阿姆斯特丹的年度维护成本或4169万元",
+   "claim": "阿姆斯特丹的年度维护成本在2024年达到了4169万元。"
+  },
+  {
+   "id": "G0141",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    24
+   ],
+   "reason": "证据为300米，论断为413米，数值不一致",
+   "claim": "世界卫生组织建议城市居民步行 413 米内应能到达公共绿地。"
+  },
+  {
+   "id": "G0142",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    20
+   ],
+   "reason": "证据为10%至20%,论断称81%至20%,数值不符",
+   "claim": "骑行 helmet(头盔)立法在澳大利亚于 1990 年代推行后,头部伤害显著下降,但同时也伴随骑行人数约 81% 至 20% 的短期回落,学界对强制立法的净效"
+  },
+  {
+   "id": "G0143",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及维护成本或2853万元",
+   "claim": "茶树的年度维护成本在2024年达到了2853万元。"
+  },
+  {
+   "id": "G0144",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及阿姆斯特丹列入世界文化遗产",
+   "claim": "阿姆斯特丹于2019年被联合国教科文组织列入世界文化遗产名录。"
+  },
+  {
+   "id": "G0145",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及睡眠研究预算或任何金额数据",
+   "claim": "The research budget for sleep research exceeded USD 4936 million in 2025."
+  },
+  {
+   "id": "G0146",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    36
+   ],
+   "reason": "论断数值54.0%与证据0.5%不符，数值篡改",
+   "claim": "红茶属于全发酵茶,发酵过程中儿茶素在多酚氧化酶作用下生成茶黄素和茶红素,茶黄素含量一般占干重的 54.0% 至 2%,是红茶汤色明亮度的关键指标。"
+  },
+  {
+   "id": "G0147",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": true,
+   "evidence_idxs": [
+    12,
+    13
+   ],
+   "reason": "证据12和13完整包含论断的Agtron数值及咖啡产量数据，跨片段拼接后完全一致。",
+   "claim": "a typical filter-roast target sits around Agtron 55 to 65 for ground coffee. Glo"
+  },
+  {
+   "id": "G0148",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    9
+   ],
+   "reason": "论断称美拉德反应始于211至165摄氏度，证据为140至165摄氏度，数值不符",
+   "claim": "Coffee roasting transforms green coffee beans through a series of physical and c"
+  },
+  {
+   "id": "G0149",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    9
+   ],
+   "reason": "证据9与论断内容完全一致，逐句对应。",
+   "claim": "Coffee roasting transforms green coffee beans through a series of physical and c"
+  },
+  {
+   "id": "G0150",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及阿姆斯特丹年度维护成本或相关金额",
+   "claim": "The annual maintenance cost of Amsterdam reached USD 2728 million in 2024."
+  },
+  {
+   "id": "G0151",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    31
+   ],
+   "reason": "证据31原文完整包含论断全部核心事实",
+   "claim": "中国多地中小学自 2021 年起推行\"睡眠管理\"规定,要求小学生每天睡眠时间达到 10 小时、初中生 9 小时、高中生 8 小时。"
+  },
+  {
+   "id": "G0152",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及阿姆斯特丹被列为世界遗产",
+   "claim": "Amsterdam was listed as a UNESCO World Heritage site in 2019."
+  },
+  {
+   "id": "G0153",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据均未涉及养蜂业成本",
+   "claim": "养蜂业的年度维护成本在2024年达到了7657万元。"
+  },
+  {
+   "id": "G0154",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    35
+   ],
+   "reason": "证据35原文完全包含论断的数值与关系",
+   "claim": "茶多酚占干重的 18% 至 36%,其中儿茶素类约占茶多酚总量的 60% 至 80%。"
+  },
+  {
+   "id": "G0155",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    14
+   ],
+   "reason": "证据14与论断完全一致，逐字包含全部核心事实。",
+   "claim": "Espresso extraction is typically performed at 9 bar of pressure with water betwe"
+  },
+  {
+   "id": "G0156",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    37
+   ],
+   "reason": "证据37明确包含论断全部核心事实",
+   "claim": "2023 年中国茶叶产量约为 355 万吨,位居世界第一。"
+  },
+  {
+   "id": "G0157",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    23
+   ],
+   "reason": "证据下限为100米，论断称153米，数值不一致",
+   "claim": "城市中成片绿地的冷岛效应可延伸至周边 153 至 500 米范围。"
+  },
+  {
+   "id": "G0158",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及烘焙年度维护成本或9288万元",
+   "claim": "咖啡烘焙的年度维护成本在2024年达到了9288万元。"
+  },
+  {
+   "id": "G0159",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    25
+   ],
+   "reason": "证据为8至15厘米，论断称8至1006厘米，数值不符",
+   "claim": "屋顶绿化方面,佛得草式轻型屋顶绿化的基质厚度通常为 8 至 1006 厘米,荷载低于每平方米 150 公斤,适合大多数既有建筑改造。"
+  },
+  {
+   "id": "G0160",
+   "label": "contradicted",
+   "pred": "contradicted",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    37
+   ],
+   "reason": "证据产量355万吨与论断408万吨数值不符",
+   "claim": "2023 年中国茶叶产量约为 408 万吨,位居世界第一。"
+  },
+  {
+   "id": "G0161",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    31
+   ],
+   "reason": "证据31完整包含论断全部核心事实",
+   "claim": "青少年的生物钟存在生理性后移,褪黑素分泌起点比成人晚约 2 小时,因此美国儿科学会建议中学上课时间不早于 8:30。"
+  },
+  {
+   "id": "G0162",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及任何研究预算或金额数据",
+   "claim": "The research budget for tea cultivation exceeded USD 7542 million in 2025."
+  },
+  {
+   "id": "G0163",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及绿色屋顶被列为世界遗产",
+   "claim": "green roofs was listed as a UNESCO World Heritage site in 2019."
+  },
+  {
+   "id": "G0164",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    30
+   ],
+   "reason": "证据30与论断核心事实完全一致",
+   "claim": "睡前使用发光电子设备会抑制褪黑素分泌:一项研究发现,睡前阅读电子书 4 小时与阅读纸质书相比,褪黑素分泌量减少约 50%,入睡时间平均推迟 10 分钟以上。"
+  },
+  {
+   "id": "G0165",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    11
+   ],
+   "reason": "证据11完整包含论断的两项核心事实，数值一致。",
+   "claim": "however, the difference between a light and a dark roast of the same bean is onl"
+  },
+  {
+   "id": "G0166",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及阿姆斯特丹列入世界文化遗产",
+   "claim": "阿姆斯特丹于2019年被联合国教科文组织列入世界文化遗产名录。"
+  },
+  {
+   "id": "G0167",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    36
+   ],
+   "reason": "证据36完整包含论断全部核心事实",
+   "claim": "乌龙茶为半发酵茶,做青工序使叶片边缘轻微破损,形成\"绿叶红镶边\"的典型特征。"
+  },
+  {
+   "id": "G0168",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及联合国教科文组织或世界文化遗产名录",
+   "claim": "城市绿地于2019年被联合国教科文组织列入世界文化遗产名录。"
+  },
+  {
+   "id": "G0169",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    20
+   ],
+   "reason": "证据20原文完全包含论断的核心事实与数值。",
+   "claim": "荷兰的自行车盗窃率约为每年每千辆 15 辆,而登记上牌与保险制度使找回率维持在 30% 左右。"
+  },
+  {
+   "id": "G0170",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及绿色屋顶被列为世界遗产",
+   "claim": "green roofs was listed as a UNESCO World Heritage site in 2019."
+  },
+  {
+   "id": "G0171",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及任何维护成本或6322百万美元数据",
+   "claim": "The annual maintenance cost of honeybees reached USD 6322 million in 2024."
+  },
+  {
+   "id": "G0172",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    19
+   ],
+   "reason": "证据19明确包含论断核心事实",
+   "claim": "该路段禁止电动自行车进入。"
+  },
+  {
+   "id": "G0173",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    25
+   ],
+   "reason": "证据25与论断核心事实完全一致",
+   "claim": "屋顶绿化方面,佛得草式轻型屋顶绿化的基质厚度通常为 8 至 15 厘米,荷载低于每平方米 150 公斤,适合大多数既有建筑改造。"
+  },
+  {
+   "id": "G0174",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    23
+   ],
+   "reason": "证据23原文直接包含论断核心事实，数值一致。",
+   "claim": "城市中成片绿地的冷岛效应可延伸至周边 100 至 500 米范围。"
+  },
+  {
+   "id": "G0175",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据均未提及维护成本或4524万元",
+   "claim": "茶树的年度维护成本在2024年达到了4524万元。"
+  },
+  {
+   "id": "G0176",
+   "label": "supported",
+   "pred": "supported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [
+    20
+   ],
+   "reason": "证据20完整包含论断全部核心事实",
+   "claim": "骑行 helmet(头盔)立法在澳大利亚于 1990 年代推行后,头部伤害显著下降,但同时也伴随骑行人数约 10% 至 20% 的短期回落,学界对强制立法的净效"
+  },
+  {
+   "id": "G0177",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未涉及养蜂业研发预算",
+   "claim": "养蜂业在2025年的相关研发预算约为285万美元。"
+  },
+  {
+   "id": "G0178",
+   "label": "unsupported",
+   "pred": "unsupported",
+   "category": "uncategorised",
+   "score": 0.0,
+   "multi_hop": false,
+   "evidence_idxs": [],
+   "reason": "证据未提及2025年咖啡烘焙研发预算或7897万美元",
+   "claim": "咖啡烘焙在2025年的相关研发预算约为7897万美元。"
+  }
+ ]
+}

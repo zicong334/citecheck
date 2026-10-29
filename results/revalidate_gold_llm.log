@@ -1,0 +1,44 @@
+[gold] 50/178
+[gold] 100/178
+[gold] 150/178
+{
+ "mode": "llm",
+ "model": "deepseek-chat",
+ "retriever": "lexical",
+ "gold": "G:\\C盘大文件迁移\\claude code projects\\citecheck\\gold\\gold.jsonl",
+ "n": 178,
+ "accuracy": 0.9944,
+ "per_class": {
+  "supported": {
+   "precision": 0.9841,
+   "recall": 1.0,
+   "f1": 0.992,
+   "n": 62
+  },
+  "unsupported": {
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n": 72
+  },
+  "contradicted": {
+   "precision": 1.0,
+   "recall": 0.9773,
+   "f1": 0.9885,
+   "n": 44
+  }
+ },
+ "by_category": {
+  "uncategorised": {
+   "n": 178,
+   "accuracy": 0.9944
+  }
+ },
+ "multi_hop": {
+  "expected": 0,
+  "detected": 0,
+  "recall": null
+ }
+}
+full -> G:\C盘大文件迁移\claude code projects\citecheck\results\gold_validation_gold_llm.json
+FS_LLM_DONE

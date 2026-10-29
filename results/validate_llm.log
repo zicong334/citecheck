@@ -1,0 +1,31 @@
+[gold] 50/184
+[gold] 100/184
+[gold] 150/184
+{
+ "mode": "llm",
+ "model": "deepseek-chat",
+ "n": 184,
+ "accuracy": 0.9946,
+ "per_class": {
+  "supported": {
+   "precision": 1.0,
+   "recall": 0.9853,
+   "f1": 0.9926,
+   "n": 68
+  },
+  "unsupported": {
+   "precision": 0.9863,
+   "recall": 1.0,
+   "f1": 0.9931,
+   "n": 72
+  },
+  "contradicted": {
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "n": 44
+  }
+ }
+}
+full -> G:\C盘大文件迁移\claude code projects\citecheck\results\gold_validation_llm.json
+LLM_GOLD_DONE

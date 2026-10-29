@@ -11,7 +11,10 @@ build/
 *.egg-info/
 
 # 运行产物
-results/
+results/*
+!results/*.json
+!results/*.jsonl
+!results/*.log
 
 # 密钥:只提交 .env.example。真实密钥放环境变量或 .env.local。
 .env

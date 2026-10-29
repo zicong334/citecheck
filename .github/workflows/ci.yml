@@ -25,7 +25,7 @@ jobs:
       - name: 安装依赖
         run: |
           python -m pip install --upgrade pip
-          python -m pip install -e ".[dev]"
+          python -m pip install -e ".[dev,semantic]"
 
       - name: 重建金标(确定性,用于校验生成器可复现)
         run: python -m faithsift gold
